@@ -1,0 +1,127 @@
+{
+  "status": "PASS",
+  "verified_at_utc": "2026-07-23T11:36:22.794469Z",
+  "sheet_id": "1RXJkgGgnaWKPiNT3DVEvAOQRRaUftzkjpVg35ih9Iew",
+  "sheet_url": "https://docs.google.com/spreadsheets/d/1RXJkgGgnaWKPiNT3DVEvAOQRRaUftzkjpVg35ih9Iew",
+  "source_sha256": "674510507fa784f0926a348b81068cc731e082b992fa9a0fc42d3957e75b6b5f",
+  "roundtrip_sha256": "fbfda1be9657b422e502baa5761fb4907e8e21f4908f5c1751b7c4ab715ab0fb",
+  "source_size": 1435435,
+  "roundtrip_size": 1334543,
+  "sheet_count": 21,
+  "visible_sheets": 11,
+  "hidden_sheets": 10,
+  "formula_count": 57399,
+  "nonformula_constant_count": 100962,
+  "schedule_counts": {
+    "2025_CON": 2,
+    "2025_DIV": 4,
+    "2025_REG": 272,
+    "2025_SB": 1,
+    "2025_WC": 6,
+    "2026_REG": 272
+  },
+  "cached_errors": [
+    [
+      "CALC",
+      "B39",
+      "#DIV/0!"
+    ],
+    [
+      "CALC",
+      "B40",
+      "#DIV/0!"
+    ],
+    [
+      "CALC",
+      "B41",
+      "#DIV/0!"
+    ],
+    [
+      "CALC",
+      "B42",
+      "#DIV/0!"
+    ],
+    [
+      "CALC",
+      "B43",
+      "#DIV/0!"
+    ],
+    [
+      "DATA QUALITY",
+      "B8",
+      "#DIV/0!"
+    ]
+  ],
+  "package_members": 71,
+  "package_members_byte_identical": 47,
+  "package_members_changed": 24,
+  "changed_package_parts": [
+    "xl/sharedStrings.xml",
+    "xl/styles.xml",
+    "xl/workbook.xml",
+    "xl/worksheets/sheet1.xml",
+    "xl/worksheets/sheet10.xml",
+    "xl/worksheets/sheet11.xml",
+    "xl/worksheets/sheet12.xml",
+    "xl/worksheets/sheet13.xml",
+    "xl/worksheets/sheet14.xml",
+    "xl/worksheets/sheet15.xml",
+    "xl/worksheets/sheet16.xml",
+    "xl/worksheets/sheet17.xml",
+    "xl/worksheets/sheet18.xml",
+    "xl/worksheets/sheet19.xml",
+    "xl/worksheets/sheet2.xml",
+    "xl/worksheets/sheet20.xml",
+    "xl/worksheets/sheet21.xml",
+    "xl/worksheets/sheet3.xml",
+    "xl/worksheets/sheet4.xml",
+    "xl/worksheets/sheet5.xml",
+    "xl/worksheets/sheet6.xml",
+    "xl/worksheets/sheet7.xml",
+    "xl/worksheets/sheet8.xml",
+    "xl/worksheets/sheet9.xml"
+  ],
+  "accepted_package_differences": [
+    "Google export deduplicated style IDs and removed no-op style metadata; visual styles on every meaningful cell remain equivalent.",
+    "Google export removed formatting-only cells/column spans beyond each sheet’s populated area; used-column widths remain identical.",
+    "Named-range and data-validation order changed, but definitions and target ranges are identical.",
+    "Shared-string and worksheet XML were repackaged without changing formulas, constants, cached outputs, drawings, or workbook behavior."
+  ],
+  "checks": {
+    "sheet_order_states_exact": true,
+    "sheet_count_21": true,
+    "formula_count_exact": true,
+    "formula_coordinates_text_exact": true,
+    "formula_cached_values_exact": true,
+    "nonformula_constants_exact": true,
+    "defined_names_exact_order_insensitive": true,
+    "data_validations_exact_order_insensitive": true,
+    "meaningful_cell_visual_styles_exact": true,
+    "used_column_widths_exact": true,
+    "zip_members_same": true,
+    "drawings_persons_byte_exact": true,
+    "schedule_2026_272_reg_unscored": true,
+    "usable_market_spreads_zero": true,
+    "active_adjustments_zero": true,
+    "nonzero_qb_deltas_zero": true,
+    "team_overrides_zero": true,
+    "dq_current_week_clean": true,
+    "banner_v11": true,
+    "changelog_alignment_entry_preserved": true,
+    "cached_error_cells_exact": true
+  },
+  "diff_details": {
+    "formula_cache_diffs": [],
+    "constant_diffs": [],
+    "visual_style_diffs": [],
+    "used_width_diffs": []
+  },
+  "production_state": {
+    "usable_market_spreads": 0,
+    "active_adjustments": 0,
+    "nonzero_qb_deltas": 0,
+    "team_overrides": 0,
+    "dq_blocked": 0.0,
+    "dq_warnings": 0.0
+  }
+}
