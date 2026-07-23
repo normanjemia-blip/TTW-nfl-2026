@@ -27,7 +27,7 @@ cell/column trimming, named-range/validation reordering) — see the report.
 
 | File | Role | SHA-256 | Version banner |
 |---|---|---|---|
-| `TTW_NFL_Power_Ratings_2026_v1.1_VERSION_ALIGNMENT_CANDIDATE.xlsx` | **Authoritative v1.1 XLSX source** — the exact package promoted to the native Sheet (filename retains its build-time `CANDIDATE` label; **status is now authoritative**, per this manifest and `promotion/`) | `674510507fa784f0926a348b81068cc731e082b992fa9a0fc42d3957e75b6b5f` | `(v1.1)` |
+| `TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE.xlsx` | **Authoritative v1.1 XLSX source** — the exact package promoted to the native Sheet (renamed from `…_VERSION_ALIGNMENT_CANDIDATE.xlsx` via `git mv`; content SHA-256 unchanged) | `674510507fa784f0926a348b81068cc731e082b992fa9a0fc42d3957e75b6b5f` | `(v1.1)` |
 | `TTW_NFL_v1_1_1 Version 2.xlsx` | **Preserved provenance / rollback** — the original uploaded, audited baseline; keep byte-for-byte, do not overwrite | `243ce78fd0305f0f67afa35bc88e1b29beae4d464fa747e48a8c30952d032998` | `(v1.0)` — *original mislabel; superseded by v1.1* |
 
 - **Canonical version: v1.1** (proven in `audit/Version_Evidence_Report.md`; no internal `v1.1.1` reference exists — the filename token `v1_1_1` is secondary evidence only).
