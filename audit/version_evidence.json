@@ -1,0 +1,104 @@
+[
+  {
+    "sheet": "START HERE",
+    "cell": "A1",
+    "token": "v1.0",
+    "text": "TO THE WINDOW \u2014 NFL POWER RATINGS 2026 (v1.0)"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "A2",
+    "token": "v1.1",
+    "text": "Team ratings are stored WITH the baseline QB; only the active-vs-baseline delta moves projections. v1.1: every row also needs \"Reviewed for season\" = the current season and a fresh Last-update date. A"
+  },
+  {
+    "sheet": "SETTINGS",
+    "cell": "A66",
+    "token": "V1.1",
+    "text": "V1.1 SAFETY CONTROLS"
+  },
+  {
+    "sheet": "SETTINGS",
+    "cell": "A70",
+    "token": "v1.1",
+    "text": "PARAMETER FREEZE: all model weights above were selected AND evaluated on 2025 \u2014 a hyperparameter-overfitting risk. They are frozen as of v1.1 (2026-07-13). 2026 is the first true out-of-sample season."
+  },
+  {
+    "sheet": "HISTORY 2025",
+    "cell": "A2",
+    "token": "v1.1",
+    "text": "Every row is real: nflverse scores + this exact model run walk-forward (zero look-ahead). \"Ref spread/total\" are NFLVERSE HISTORICAL lines \u2014 semantics UNVERIFIED, reference only. v1.1: totals columns "
+  },
+  {
+    "sheet": "HISTORY 2025",
+    "cell": "A2",
+    "token": "v1.0",
+    "text": "Every row is real: nflverse scores + this exact model run walk-forward (zero look-ahead). \"Ref spread/total\" are NFLVERSE HISTORICAL lines \u2014 semantics UNVERIFIED, reference only. v1.1: totals columns "
+  },
+  {
+    "sheet": "BACKTEST",
+    "cell": "A78",
+    "token": "v1.1",
+    "text": "PARAMETER FREEZE (v1.1): 2025 was used for BOTH parameter selection and evaluation. Walk-forward avoided direct look-ahead per game,"
+  },
+  {
+    "sheet": "BACKTEST",
+    "cell": "A81",
+    "token": "v1.1",
+    "text": "v1.1 totals correction: fumble-recovery TDs verified as excluded from def_tds and now removed from offensive PPP."
+  },
+  {
+    "sheet": "BACKTEST",
+    "cell": "A82",
+    "token": "v1.0",
+    "text": "Corrected walk-forward totals MAE: 10.787 vs results / 4.04 vs reference line (v1.0: 10.795 / 4.06). Spread pipeline unaffected."
+  },
+  {
+    "sheet": "BACKTEST",
+    "cell": "A83",
+    "token": "v1.0",
+    "text": "Historical edge buckets above are v1.0 archive values and are intentionally left untouched."
+  },
+  {
+    "sheet": "AUDIT",
+    "cell": "A27",
+    "token": "v1.0",
+    "text": "TEST REPORT \u2014 v1.0 (all executed on recalculated copies of this exact file)"
+  },
+  {
+    "sheet": "AUDIT",
+    "cell": "A44",
+    "token": "V1.1",
+    "text": "V1.1 SAFETY-PASS TEST REPORT (external audit fixes; all on recalculated copies, 57,085 formulas, 0 errors)"
+  },
+  {
+    "sheet": "AUDIT",
+    "cell": "A45",
+    "token": "v1.0",
+    "text": "\u2713 Regression: governed ratings bit-identical to v1.0; wk-18 spreads identical; wk-18 totals match the corrected Python run within rounding; league constants match to 6 decimals."
+  },
+  {
+    "sheet": "DICTIONARY",
+    "cell": "A18",
+    "token": "v1.1",
+    "text": "v1.1 Operational states"
+  },
+  {
+    "sheet": "DICTIONARY",
+    "cell": "A19",
+    "token": "v1.1",
+    "text": "v1.1 Label policy"
+  },
+  {
+    "sheet": "DICTIONARY",
+    "cell": "A20",
+    "token": "v1.1",
+    "text": "v1.1 Totals confidence"
+  },
+  {
+    "sheet": "DICTIONARY",
+    "cell": "A21",
+    "token": "v1.1",
+    "text": "v1.1 Non-offensive TDs"
+  }
+]
