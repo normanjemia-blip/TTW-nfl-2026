@@ -1,0 +1,926 @@
+[
+  {
+    "cell": "C5",
+    "column": "Baseline value",
+    "team": "ARI",
+    "old": 1.5,
+    "new": 0
+  },
+  {
+    "cell": "E5",
+    "column": "Active value",
+    "team": "ARI",
+    "old": 1.5,
+    "new": 0
+  },
+  {
+    "cell": "I5",
+    "column": "Confidence",
+    "team": "ARI",
+    "old": "Low",
+    "new": "High"
+  },
+  {
+    "cell": "J5",
+    "column": "Source/Notes",
+    "team": "ARI",
+    "old": "ESPN roster preview: Brissett expected; Minshew/Beck behind \u2014 TTW scale",
+    "new": "Brissett named Wk1 QB1 (NFL.com/CBS Aug'26); competition resolved for opener, Beck developmental."
+  },
+  {
+    "cell": "K5",
+    "column": "Last update",
+    "team": "ARI",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C6",
+    "column": "Baseline value",
+    "team": "ATL",
+    "old": 3.0,
+    "new": ""
+  },
+  {
+    "cell": "E6",
+    "column": "Active value",
+    "team": "ATL",
+    "old": 3.0,
+    "new": ""
+  },
+  {
+    "cell": "J6",
+    "column": "Source/Notes",
+    "team": "ATL",
+    "old": "Falcons camp: Tua/Penix battle; Tua slight projection \u2014 TTW scale",
+    "new": "Competition officially OPEN but Tua (baseline) strongly favored Wk1: Penix Jr. rehabbing ACL, not medically cleared; Tua taking all 1st-team reps (Rapoport/ESPN/Athlon Aug'26). One depth-chart list showed Penix QB1 -> sources disagree; weight favors Tua."
+  },
+  {
+    "cell": "K6",
+    "column": "Last update",
+    "team": "ATL",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C7",
+    "column": "Baseline value",
+    "team": "BAL",
+    "old": 5.75,
+    "new": 0
+  },
+  {
+    "cell": "E7",
+    "column": "Active value",
+    "team": "BAL",
+    "old": 5.75,
+    "new": 0
+  },
+  {
+    "cell": "J7",
+    "column": "Source/Notes",
+    "team": "BAL",
+    "old": "ESPN exec/scout 2026 QB survey \u2014 TTW scale",
+    "new": "Lamar Jackson entrenched starter; no competition/injury (Yahoo/ESPN camp Aug'26)."
+  },
+  {
+    "cell": "K7",
+    "column": "Last update",
+    "team": "BAL",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C8",
+    "column": "Baseline value",
+    "team": "BUF",
+    "old": 6.5,
+    "new": 0
+  },
+  {
+    "cell": "E8",
+    "column": "Active value",
+    "team": "BUF",
+    "old": 6.5,
+    "new": 0
+  },
+  {
+    "cell": "J8",
+    "column": "Source/Notes",
+    "team": "BUF",
+    "old": "ESPN exec/scout 2026 QB survey (#1) \u2014 TTW scale",
+    "new": "Josh Allen entrenched starter (Yahoo/ESPN Aug'26)."
+  },
+  {
+    "cell": "K8",
+    "column": "Last update",
+    "team": "BUF",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C9",
+    "column": "Baseline value",
+    "team": "CAR",
+    "old": 2.25,
+    "new": 0
+  },
+  {
+    "cell": "E9",
+    "column": "Active value",
+    "team": "CAR",
+    "old": 2.25,
+    "new": 0
+  },
+  {
+    "cell": "J9",
+    "column": "Source/Notes",
+    "team": "CAR",
+    "old": "PFF/WCG 2026 QB ranking \u2014 TTW scale",
+    "new": "Bryce Young starter, Pickett backup (Yahoo depth chart Aug'26)."
+  },
+  {
+    "cell": "K9",
+    "column": "Last update",
+    "team": "CAR",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C10",
+    "column": "Baseline value",
+    "team": "CHI",
+    "old": 4.75,
+    "new": 0
+  },
+  {
+    "cell": "E10",
+    "column": "Active value",
+    "team": "CHI",
+    "old": 4.75,
+    "new": 0
+  },
+  {
+    "cell": "J10",
+    "column": "Source/Notes",
+    "team": "CHI",
+    "old": "ESPN exec/scout 2026 QB survey (#10) \u2014 TTW scale",
+    "new": "Caleb Williams starter (Yahoo/ESPN Aug'26)."
+  },
+  {
+    "cell": "K10",
+    "column": "Last update",
+    "team": "CHI",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C11",
+    "column": "Baseline value",
+    "team": "CIN",
+    "old": 5.75,
+    "new": 0
+  },
+  {
+    "cell": "E11",
+    "column": "Active value",
+    "team": "CIN",
+    "old": 5.75,
+    "new": 0
+  },
+  {
+    "cell": "J11",
+    "column": "Source/Notes",
+    "team": "CIN",
+    "old": "ESPN exec/scout 2026 QB survey (top five) \u2014 TTW scale",
+    "new": "Joe Burrow starter (Yahoo/ESPN Aug'26)."
+  },
+  {
+    "cell": "K11",
+    "column": "Last update",
+    "team": "CIN",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C12",
+    "column": "Baseline value",
+    "team": "CLE",
+    "old": 1.0,
+    "new": ""
+  },
+  {
+    "cell": "E12",
+    "column": "Active value",
+    "team": "CLE",
+    "old": 1.0,
+    "new": ""
+  },
+  {
+    "cell": "J12",
+    "column": "Source/Notes",
+    "team": "CLE",
+    "old": "Browns camp: Watson/Sanders open; Watson current frontrunner \u2014 TTW scale",
+    "new": "OPEN competition Watson vs Shedeur Sanders (also Gabriel/Green); 1st-team reps split, no Wk1 starter named (ESPN/CBS/Yahoo Aug'26). Sources disagree on leader. Potential deviation if Sanders wins."
+  },
+  {
+    "cell": "K12",
+    "column": "Last update",
+    "team": "CLE",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C13",
+    "column": "Baseline value",
+    "team": "DAL",
+    "old": 5.0,
+    "new": 0
+  },
+  {
+    "cell": "E13",
+    "column": "Active value",
+    "team": "DAL",
+    "old": 5.0,
+    "new": 0
+  },
+  {
+    "cell": "J13",
+    "column": "Source/Notes",
+    "team": "DAL",
+    "old": "ESPN/PFF 2026 consensus \u2014 TTW scale",
+    "new": "Dak Prescott starter (Yahoo depth chart Aug'26)."
+  },
+  {
+    "cell": "K13",
+    "column": "Last update",
+    "team": "DAL",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C14",
+    "column": "Baseline value",
+    "team": "DEN",
+    "old": 3.75,
+    "new": 0
+  },
+  {
+    "cell": "E14",
+    "column": "Active value",
+    "team": "DEN",
+    "old": 3.75,
+    "new": 0
+  },
+  {
+    "cell": "J14",
+    "column": "Source/Notes",
+    "team": "DEN",
+    "old": "PFF/WCG 2026 QB ranking \u2014 TTW scale",
+    "new": "Bo Nix full practice, surgically-repaired ankle recovered ('could be full go'); Payton on track (NFL.com/NBC Aug'26)."
+  },
+  {
+    "cell": "K14",
+    "column": "Last update",
+    "team": "DEN",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C15",
+    "column": "Baseline value",
+    "team": "DET",
+    "old": 4.75,
+    "new": 0
+  },
+  {
+    "cell": "E15",
+    "column": "Active value",
+    "team": "DET",
+    "old": 4.75,
+    "new": 0
+  },
+  {
+    "cell": "J15",
+    "column": "Source/Notes",
+    "team": "DET",
+    "old": "ESPN exec/scout 2026 QB survey (#9) \u2014 TTW scale",
+    "new": "Jared Goff starter (Yahoo Aug'26)."
+  },
+  {
+    "cell": "K15",
+    "column": "Last update",
+    "team": "DET",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C16",
+    "column": "Baseline value",
+    "team": "GB",
+    "old": 4.5,
+    "new": 0
+  },
+  {
+    "cell": "E16",
+    "column": "Active value",
+    "team": "GB",
+    "old": 4.5,
+    "new": 0
+  },
+  {
+    "cell": "J16",
+    "column": "Source/Notes",
+    "team": "GB",
+    "old": "ESPN honorable mention + PFF 2026 \u2014 TTW scale",
+    "new": "Jordan Love starter (Yahoo Aug'26)."
+  },
+  {
+    "cell": "K16",
+    "column": "Last update",
+    "team": "GB",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C17",
+    "column": "Baseline value",
+    "team": "HOU",
+    "old": 3.5,
+    "new": 0
+  },
+  {
+    "cell": "E17",
+    "column": "Active value",
+    "team": "HOU",
+    "old": 3.5,
+    "new": 0
+  },
+  {
+    "cell": "J17",
+    "column": "Source/Notes",
+    "team": "HOU",
+    "old": "PFF 2026 QB ranking (#17) \u2014 TTW scale",
+    "new": "C.J. Stroud starter (Yahoo/ESPN Aug'26)."
+  },
+  {
+    "cell": "K17",
+    "column": "Last update",
+    "team": "HOU",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C18",
+    "column": "Baseline value",
+    "team": "IND",
+    "old": 3.25,
+    "new": 0
+  },
+  {
+    "cell": "E18",
+    "column": "Active value",
+    "team": "IND",
+    "old": 3.25,
+    "new": 0
+  },
+  {
+    "cell": "I18",
+    "column": "Confidence",
+    "team": "IND",
+    "old": "Medium",
+    "new": "High"
+  },
+  {
+    "cell": "J18",
+    "column": "Source/Notes",
+    "team": "IND",
+    "old": "PFF/WCG 2026 ranking; Achilles recovery \u2014 TTW scale",
+    "new": "Colts named Daniel Jones Wk1 starter over Richardson; returning from Achilles, reported on/ahead of schedule (NFL.com/Colts.com Aug'26). Recovery monitored."
+  },
+  {
+    "cell": "K18",
+    "column": "Last update",
+    "team": "IND",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C19",
+    "column": "Baseline value",
+    "team": "JAX",
+    "old": 4.25,
+    "new": 0
+  },
+  {
+    "cell": "E19",
+    "column": "Active value",
+    "team": "JAX",
+    "old": 4.25,
+    "new": 0
+  },
+  {
+    "cell": "J19",
+    "column": "Source/Notes",
+    "team": "JAX",
+    "old": "PFF 2026 QB ranking (#11) \u2014 TTW scale",
+    "new": "Trevor Lawrence starter (Yahoo/ESPN Aug'26)."
+  },
+  {
+    "cell": "K19",
+    "column": "Last update",
+    "team": "JAX",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C20",
+    "column": "Baseline value",
+    "team": "KC",
+    "old": 6.25,
+    "new": 0
+  },
+  {
+    "cell": "E20",
+    "column": "Active value",
+    "team": "KC",
+    "old": 6.25,
+    "new": 0
+  },
+  {
+    "cell": "J20",
+    "column": "Source/Notes",
+    "team": "KC",
+    "old": "ESPN exec/scout 2026 QB survey (#2) \u2014 TTW scale",
+    "new": "Mahomes fully cleared for training camp after Dec ACL/LCL surgery, targeting Wk1 opener vs DEN (NFL.com/Reid/Breer Aug'26). Recovery monitored."
+  },
+  {
+    "cell": "K20",
+    "column": "Last update",
+    "team": "KC",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C21",
+    "column": "Baseline value",
+    "team": "LA",
+    "old": 6.0,
+    "new": 0
+  },
+  {
+    "cell": "E21",
+    "column": "Active value",
+    "team": "LA",
+    "old": 6.0,
+    "new": 0
+  },
+  {
+    "cell": "J21",
+    "column": "Source/Notes",
+    "team": "LA",
+    "old": "2025 NFL MVP + ESPN 2026 survey (#3) \u2014 TTW scale",
+    "new": "Matthew Stafford starter (Yahoo Aug'26)."
+  },
+  {
+    "cell": "K21",
+    "column": "Last update",
+    "team": "LA",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C22",
+    "column": "Baseline value",
+    "team": "LAC",
+    "old": 5.25,
+    "new": 0
+  },
+  {
+    "cell": "E22",
+    "column": "Active value",
+    "team": "LAC",
+    "old": 5.25,
+    "new": 0
+  },
+  {
+    "cell": "J22",
+    "column": "Source/Notes",
+    "team": "LAC",
+    "old": "ESPN/PFF 2026 consensus \u2014 TTW scale",
+    "new": "Justin Herbert starter (Yahoo/ESPN Aug'26)."
+  },
+  {
+    "cell": "K22",
+    "column": "Last update",
+    "team": "LAC",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C23",
+    "column": "Baseline value",
+    "team": "LV",
+    "old": 2.0,
+    "new": ""
+  },
+  {
+    "cell": "D23",
+    "column": "Active QB",
+    "team": "LV",
+    "old": "Fernando Mendoza",
+    "new": "Kirk Cousins"
+  },
+  {
+    "cell": "E23",
+    "column": "Active value",
+    "team": "LV",
+    "old": 2.0,
+    "new": ""
+  },
+  {
+    "cell": "I23",
+    "column": "Confidence",
+    "team": "LV",
+    "old": "Medium",
+    "new": "Low"
+  },
+  {
+    "cell": "J23",
+    "column": "Source/Notes",
+    "team": "LV",
+    "old": "No. 1 pick; Cousins mentor/competition \u2014 TTW scale",
+    "new": "DEVIATION: HC Kubiak named Kirk Cousins Wk1 QB1 over priced-in rookie Mendoza (#1 pick); Schefter/ESPN/FOX/BR Aug'26. Mendoza QB2, brought along slowly. Value pending approval - see deviation report."
+  },
+  {
+    "cell": "K23",
+    "column": "Last update",
+    "team": "LV",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C24",
+    "column": "Baseline value",
+    "team": "MIA",
+    "old": 1.75,
+    "new": 0
+  },
+  {
+    "cell": "E24",
+    "column": "Active value",
+    "team": "MIA",
+    "old": 1.75,
+    "new": 0
+  },
+  {
+    "cell": "J24",
+    "column": "Source/Notes",
+    "team": "MIA",
+    "old": "Dolphins camp: Willis expected starter \u2014 TTW scale",
+    "new": "Malik Willis starter, Ewers backup (Yahoo depth chart Aug'26)."
+  },
+  {
+    "cell": "K24",
+    "column": "Last update",
+    "team": "MIA",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C25",
+    "column": "Baseline value",
+    "team": "MIN",
+    "old": 3.0,
+    "new": ""
+  },
+  {
+    "cell": "E25",
+    "column": "Active value",
+    "team": "MIN",
+    "old": 3.0,
+    "new": ""
+  },
+  {
+    "cell": "J25",
+    "column": "Source/Notes",
+    "team": "MIN",
+    "old": "Vikings camp: Murray/McCarthy battle; Murray favorite \u2014 TTW scale",
+    "new": "OPEN competition Murray (favored) vs J.J. McCarthy; 1st-team reps split, not named (StarTribune/Yahoo/ESPN Aug'26). Potential deviation if McCarthy wins."
+  },
+  {
+    "cell": "K25",
+    "column": "Last update",
+    "team": "MIN",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C26",
+    "column": "Baseline value",
+    "team": "NE",
+    "old": 5.5,
+    "new": 0
+  },
+  {
+    "cell": "E26",
+    "column": "Active value",
+    "team": "NE",
+    "old": 5.5,
+    "new": 0
+  },
+  {
+    "cell": "J26",
+    "column": "Source/Notes",
+    "team": "NE",
+    "old": "2025 MVP runner-up + ESPN 2026 survey \u2014 TTW scale",
+    "new": "Drake Maye starter (Yahoo/ESPN Aug'26)."
+  },
+  {
+    "cell": "K26",
+    "column": "Last update",
+    "team": "NE",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C27",
+    "column": "Baseline value",
+    "team": "NO",
+    "old": 2.5,
+    "new": 0
+  },
+  {
+    "cell": "E27",
+    "column": "Active value",
+    "team": "NO",
+    "old": 2.5,
+    "new": 0
+  },
+  {
+    "cell": "J27",
+    "column": "Source/Notes",
+    "team": "NO",
+    "old": "Saints camp: Shough returning starter \u2014 TTW scale",
+    "new": "Tyler Shough returning starter, Rattler backup (Yahoo Aug'26)."
+  },
+  {
+    "cell": "K27",
+    "column": "Last update",
+    "team": "NO",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C28",
+    "column": "Baseline value",
+    "team": "NYG",
+    "old": 2.25,
+    "new": 0
+  },
+  {
+    "cell": "E28",
+    "column": "Active value",
+    "team": "NYG",
+    "old": 2.25,
+    "new": 0
+  },
+  {
+    "cell": "J28",
+    "column": "Source/Notes",
+    "team": "NYG",
+    "old": "Giants camp: Dart returning starter \u2014 TTW scale",
+    "new": "Jaxson Dart starter, Winston backup (Yahoo Aug'26)."
+  },
+  {
+    "cell": "K28",
+    "column": "Last update",
+    "team": "NYG",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C29",
+    "column": "Baseline value",
+    "team": "NYJ",
+    "old": 1.5,
+    "new": 0
+  },
+  {
+    "cell": "E29",
+    "column": "Active value",
+    "team": "NYJ",
+    "old": 1.5,
+    "new": 0
+  },
+  {
+    "cell": "J29",
+    "column": "Source/Notes",
+    "team": "NYJ",
+    "old": "Jets 2026: Geno expected starter \u2014 TTW scale",
+    "new": "Geno Smith starter (Yahoo Aug'26)."
+  },
+  {
+    "cell": "K29",
+    "column": "Last update",
+    "team": "NYJ",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C30",
+    "column": "Baseline value",
+    "team": "PHI",
+    "old": 4.75,
+    "new": 0
+  },
+  {
+    "cell": "E30",
+    "column": "Active value",
+    "team": "PHI",
+    "old": 4.75,
+    "new": 0
+  },
+  {
+    "cell": "J30",
+    "column": "Source/Notes",
+    "team": "PHI",
+    "old": "ESPN/PFF 2026 consensus \u2014 TTW scale",
+    "new": "Jalen Hurts starter (Yahoo/ESPN Aug'26)."
+  },
+  {
+    "cell": "K30",
+    "column": "Last update",
+    "team": "PHI",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C31",
+    "column": "Baseline value",
+    "team": "PIT",
+    "old": 2.75,
+    "new": 0
+  },
+  {
+    "cell": "E31",
+    "column": "Active value",
+    "team": "PIT",
+    "old": 2.75,
+    "new": 0
+  },
+  {
+    "cell": "J31",
+    "column": "Source/Notes",
+    "team": "PIT",
+    "old": "Steelers 2026: Rodgers starter/final season \u2014 TTW scale",
+    "new": "Aaron Rodgers locked QB1 (announced final season) (Yahoo/ESPN Aug'26)."
+  },
+  {
+    "cell": "K31",
+    "column": "Last update",
+    "team": "PIT",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C32",
+    "column": "Baseline value",
+    "team": "SEA",
+    "old": 4.25,
+    "new": 0
+  },
+  {
+    "cell": "E32",
+    "column": "Active value",
+    "team": "SEA",
+    "old": 4.25,
+    "new": 0
+  },
+  {
+    "cell": "J32",
+    "column": "Source/Notes",
+    "team": "SEA",
+    "old": "ESPN honorable mention + PFF 2026 \u2014 TTW scale",
+    "new": "Sam Darnold starter, Lock backup (Yahoo Aug'26)."
+  },
+  {
+    "cell": "K32",
+    "column": "Last update",
+    "team": "SEA",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C33",
+    "column": "Baseline value",
+    "team": "SF",
+    "old": 4.5,
+    "new": 0
+  },
+  {
+    "cell": "E33",
+    "column": "Active value",
+    "team": "SF",
+    "old": 4.5,
+    "new": 0
+  },
+  {
+    "cell": "J33",
+    "column": "Source/Notes",
+    "team": "SF",
+    "old": "ESPN honorable mention + PFF 2026 \u2014 TTW scale",
+    "new": "Brock Purdy starter, Mac Jones backup (Yahoo Aug'26)."
+  },
+  {
+    "cell": "K33",
+    "column": "Last update",
+    "team": "SF",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C34",
+    "column": "Baseline value",
+    "team": "TB",
+    "old": 4.0,
+    "new": 0
+  },
+  {
+    "cell": "E34",
+    "column": "Active value",
+    "team": "TB",
+    "old": 4.0,
+    "new": 0
+  },
+  {
+    "cell": "J34",
+    "column": "Source/Notes",
+    "team": "TB",
+    "old": "PFF/WCG 2026 QB ranking (#17 range) \u2014 TTW scale",
+    "new": "Baker Mayfield starter (Yahoo Aug'26)."
+  },
+  {
+    "cell": "K34",
+    "column": "Last update",
+    "team": "TB",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C35",
+    "column": "Baseline value",
+    "team": "TEN",
+    "old": 2.75,
+    "new": 0
+  },
+  {
+    "cell": "E35",
+    "column": "Active value",
+    "team": "TEN",
+    "old": 2.75,
+    "new": 0
+  },
+  {
+    "cell": "J35",
+    "column": "Source/Notes",
+    "team": "TEN",
+    "old": "Titans 2026: Ward returning starter \u2014 TTW scale",
+    "new": "Cam Ward starter (2025 #1 pick, Year 2) (Yahoo/ESPN Aug'26)."
+  },
+  {
+    "cell": "K35",
+    "column": "Last update",
+    "team": "TEN",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  },
+  {
+    "cell": "C36",
+    "column": "Baseline value",
+    "team": "WAS",
+    "old": 4.75,
+    "new": 0
+  },
+  {
+    "cell": "E36",
+    "column": "Active value",
+    "team": "WAS",
+    "old": 4.75,
+    "new": 0
+  },
+  {
+    "cell": "J36",
+    "column": "Source/Notes",
+    "team": "WAS",
+    "old": "ESPN honorable mention + PFF 2026 \u2014 TTW scale",
+    "new": "Jayden Daniels starter (Yahoo/ESPN Aug'26)."
+  },
+  {
+    "cell": "K36",
+    "column": "Last update",
+    "team": "WAS",
+    "old": "2026-07-13 00:00:00",
+    "new": "2026-08-05 00:00:00"
+  }
+]

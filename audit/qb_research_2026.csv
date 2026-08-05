@@ -1,0 +1,33 @@
+team,row,baseline_qb,projected_week1_starter,active_qb_in_sheet,status,confidence,baseline_value,active_value,delta,priced_in_value_v1_1,reviewed_season,last_update,notes
+ARI,5,Jacoby Brissett,Jacoby Brissett,Jacoby Brissett,settled,High,0,0,0,1.5,2026,2026-08-05,"Brissett named Wk1 QB1 (NFL.com/CBS Aug'26); competition resolved for opener, Beck developmental."
+ATL,6,Tua Tagovailoa,Tua Tagovailoa,Tua Tagovailoa,uncertain,Low,,,0,3.0,2026,2026-08-05,"Competition officially OPEN but Tua (baseline) strongly favored Wk1: Penix Jr. rehabbing ACL, not medically cleared; Tua taking all 1st-team reps (Rapoport/ESPN/Athlon Aug'26). One depth-chart list showed Penix QB1 -> sources disagree; weight favors Tua."
+BAL,7,Lamar Jackson,Lamar Jackson,Lamar Jackson,settled,High,0,0,0,5.75,2026,2026-08-05,Lamar Jackson entrenched starter; no competition/injury (Yahoo/ESPN camp Aug'26).
+BUF,8,Josh Allen,Josh Allen,Josh Allen,settled,High,0,0,0,6.5,2026,2026-08-05,Josh Allen entrenched starter (Yahoo/ESPN Aug'26).
+CAR,9,Bryce Young,Bryce Young,Bryce Young,settled,High,0,0,0,2.25,2026,2026-08-05,"Bryce Young starter, Pickett backup (Yahoo depth chart Aug'26)."
+CHI,10,Caleb Williams,Caleb Williams,Caleb Williams,settled,High,0,0,0,4.75,2026,2026-08-05,Caleb Williams starter (Yahoo/ESPN Aug'26).
+CIN,11,Joe Burrow,Joe Burrow,Joe Burrow,settled,High,0,0,0,5.75,2026,2026-08-05,Joe Burrow starter (Yahoo/ESPN Aug'26).
+CLE,12,Deshaun Watson,(open),Deshaun Watson,uncertain,Low,,,0,1.0,2026,2026-08-05,"OPEN competition Watson vs Shedeur Sanders (also Gabriel/Green); 1st-team reps split, no Wk1 starter named (ESPN/CBS/Yahoo Aug'26). Sources disagree on leader. Potential deviation if Sanders wins."
+DAL,13,Dak Prescott,Dak Prescott,Dak Prescott,settled,High,0,0,0,5.0,2026,2026-08-05,Dak Prescott starter (Yahoo depth chart Aug'26).
+DEN,14,Bo Nix,Bo Nix,Bo Nix,settled,High,0,0,0,3.75,2026,2026-08-05,"Bo Nix full practice, surgically-repaired ankle recovered ('could be full go'); Payton on track (NFL.com/NBC Aug'26)."
+DET,15,Jared Goff,Jared Goff,Jared Goff,settled,High,0,0,0,4.75,2026,2026-08-05,Jared Goff starter (Yahoo Aug'26).
+GB,16,Jordan Love,Jordan Love,Jordan Love,settled,High,0,0,0,4.5,2026,2026-08-05,Jordan Love starter (Yahoo Aug'26).
+HOU,17,C.J. Stroud,C.J. Stroud,C.J. Stroud,settled,High,0,0,0,3.5,2026,2026-08-05,C.J. Stroud starter (Yahoo/ESPN Aug'26).
+IND,18,Daniel Jones,Daniel Jones,Daniel Jones,settled,High,0,0,0,3.25,2026,2026-08-05,"Colts named Daniel Jones Wk1 starter over Richardson; returning from Achilles, reported on/ahead of schedule (NFL.com/Colts.com Aug'26). Recovery monitored."
+JAX,19,Trevor Lawrence,Trevor Lawrence,Trevor Lawrence,settled,High,0,0,0,4.25,2026,2026-08-05,Trevor Lawrence starter (Yahoo/ESPN Aug'26).
+KC,20,Patrick Mahomes,Patrick Mahomes,Patrick Mahomes,settled,High,0,0,0,6.25,2026,2026-08-05,"Mahomes fully cleared for training camp after Dec ACL/LCL surgery, targeting Wk1 opener vs DEN (NFL.com/Reid/Breer Aug'26). Recovery monitored."
+LA,21,Matthew Stafford,Matthew Stafford,Matthew Stafford,settled,High,0,0,0,6.0,2026,2026-08-05,Matthew Stafford starter (Yahoo Aug'26).
+LAC,22,Justin Herbert,Justin Herbert,Justin Herbert,settled,High,0,0,0,5.25,2026,2026-08-05,Justin Herbert starter (Yahoo/ESPN Aug'26).
+LV,23,Fernando Mendoza,Kirk Cousins,Kirk Cousins,deviation,Low,,,0,2.0,2026,2026-08-05,"DEVIATION: HC Kubiak named Kirk Cousins Wk1 QB1 over priced-in rookie Mendoza (#1 pick); Schefter/ESPN/FOX/BR Aug'26. Mendoza QB2, brought along slowly. Value pending approval - see deviation report."
+MIA,24,Malik Willis,Malik Willis,Malik Willis,settled,High,0,0,0,1.75,2026,2026-08-05,"Malik Willis starter, Ewers backup (Yahoo depth chart Aug'26)."
+MIN,25,Kyler Murray,(open),Kyler Murray,uncertain,Low,,,0,3.0,2026,2026-08-05,"OPEN competition Murray (favored) vs J.J. McCarthy; 1st-team reps split, not named (StarTribune/Yahoo/ESPN Aug'26). Potential deviation if McCarthy wins."
+NE,26,Drake Maye,Drake Maye,Drake Maye,settled,High,0,0,0,5.5,2026,2026-08-05,Drake Maye starter (Yahoo/ESPN Aug'26).
+NO,27,Tyler Shough,Tyler Shough,Tyler Shough,settled,High,0,0,0,2.5,2026,2026-08-05,"Tyler Shough returning starter, Rattler backup (Yahoo Aug'26)."
+NYG,28,Jaxson Dart,Jaxson Dart,Jaxson Dart,settled,High,0,0,0,2.25,2026,2026-08-05,"Jaxson Dart starter, Winston backup (Yahoo Aug'26)."
+NYJ,29,Geno Smith,Geno Smith,Geno Smith,settled,High,0,0,0,1.5,2026,2026-08-05,Geno Smith starter (Yahoo Aug'26).
+PHI,30,Jalen Hurts,Jalen Hurts,Jalen Hurts,settled,High,0,0,0,4.75,2026,2026-08-05,Jalen Hurts starter (Yahoo/ESPN Aug'26).
+PIT,31,Aaron Rodgers,Aaron Rodgers,Aaron Rodgers,settled,High,0,0,0,2.75,2026,2026-08-05,Aaron Rodgers locked QB1 (announced final season) (Yahoo/ESPN Aug'26).
+SEA,32,Sam Darnold,Sam Darnold,Sam Darnold,settled,High,0,0,0,4.25,2026,2026-08-05,"Sam Darnold starter, Lock backup (Yahoo Aug'26)."
+SF,33,Brock Purdy,Brock Purdy,Brock Purdy,settled,High,0,0,0,4.5,2026,2026-08-05,"Brock Purdy starter, Mac Jones backup (Yahoo Aug'26)."
+TB,34,Baker Mayfield,Baker Mayfield,Baker Mayfield,settled,High,0,0,0,4.0,2026,2026-08-05,Baker Mayfield starter (Yahoo Aug'26).
+TEN,35,Cam Ward,Cam Ward,Cam Ward,settled,High,0,0,0,2.75,2026,2026-08-05,"Cam Ward starter (2025 #1 pick, Year 2) (Yahoo/ESPN Aug'26)."
+WAS,36,Jayden Daniels,Jayden Daniels,Jayden Daniels,settled,High,0,0,0,4.75,2026,2026-08-05,Jayden Daniels starter (Yahoo/ESPN Aug'26).
