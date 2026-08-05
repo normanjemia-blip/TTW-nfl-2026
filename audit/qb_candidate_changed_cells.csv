@@ -1,0 +1,10 @@
+sheet,cell,old,new
+START HERE,A1,TO THE WINDOW — NFL POWER RATINGS 2026 (v1.1),TO THE WINDOW — NFL POWER RATINGS 2026 (v1.2.1)
+QB VALUES,C23,,0
+QB VALUES,E23,,0.5
+QB VALUES,I23,Low,High
+QB VALUES,J23,"DEVIATION: HC Kubiak named Kirk Cousins Wk1 QB1 over priced-in rookie Mendoza (#1 pick); Schefter/ESPN/FOX/BR Aug'26. Mendoza QB2, brought along slowly. Value pending approval - see deviation report.","Kirk Cousins confirmed Raiders Week 1 QB1 (HC Klint Kubiak named Cousins starter to open camp; ESPN/Schefter, FOX News, Bleacher Report, Aug 2026). Confirmed Week 1 starter; +0.50 deviation reflects veteran experience and Kubiak-scheme familiarity, capped by age, immobility, recent efficiency and tu"
+CHANGELOG,A5,,1.2.1
+CHANGELOG,B5,,2026-08-05
+CHANGELOG,C5,,"QB preseason activation. QB VALUES manual fields populated from current (Aug 2026) research for all 32 teams: 28 teams initialized at zero (active QB == baseline QB), 3 left blank at Low confidence pending open competitions (ATL, CLE, MIN), and 1 approved deviation entered — LV: baseline Fernando Me"
+CHANGELOG,D5,,"Model impact limited to the single approved LV QB delta (+0.50 spread, scaled to totals via QBTotFactor). All other QB deltas remain 0; backtest metrics unchanged."

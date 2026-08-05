@@ -1,0 +1,56 @@
+[
+  {
+    "sheet": "START HERE",
+    "cell": "A1",
+    "old": "TO THE WINDOW \u2014 NFL POWER RATINGS 2026 (v1.1)",
+    "new": "TO THE WINDOW \u2014 NFL POWER RATINGS 2026 (v1.2.1)"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "C23",
+    "old": "",
+    "new": "0"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "E23",
+    "old": "",
+    "new": "0.5"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "I23",
+    "old": "Low",
+    "new": "High"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "J23",
+    "old": "DEVIATION: HC Kubiak named Kirk Cousins Wk1 QB1 over priced-in rookie Mendoza (#1 pick); Schefter/ESPN/FOX/BR Aug'26. Mendoza QB2, brought along slowly. Value pending approval - see deviation report.",
+    "new": "Kirk Cousins confirmed Raiders Week 1 QB1 (HC Klint Kubiak named Cousins starter to open camp; ESPN/Schefter, FOX News, Bleacher Report, Aug 2026). Confirmed Week 1 starter; +0.50 deviation reflects veteran experience and Kubiak-scheme familiarity, capped by age, immobility, recent efficiency and turnover concerns. Baseline QB Fernando Mendoza = 0. Approved 2026-08-05."
+  },
+  {
+    "sheet": "CHANGELOG",
+    "cell": "A5",
+    "old": "",
+    "new": "1.2.1"
+  },
+  {
+    "sheet": "CHANGELOG",
+    "cell": "B5",
+    "old": "",
+    "new": "2026-08-05"
+  },
+  {
+    "sheet": "CHANGELOG",
+    "cell": "C5",
+    "old": "",
+    "new": "QB preseason activation. QB VALUES manual fields populated from current (Aug 2026) research for all 32 teams: 28 teams initialized at zero (active QB == baseline QB), 3 left blank at Low confidence pending open competitions (ATL, CLE, MIN), and 1 approved deviation entered \u2014 LV: baseline Fernando Mendoza = 0, active Kirk Cousins = +0.50. No formulas, weights, thresholds, methodology, schedule, market lines, adjustments, ratings, settings, historical or backtest data changed."
+  },
+  {
+    "sheet": "CHANGELOG",
+    "cell": "D5",
+    "old": "",
+    "new": "Model impact limited to the single approved LV QB delta (+0.50 spread, scaled to totals via QBTotFactor). All other QB deltas remain 0; backtest metrics unchanged."
+  }
+]

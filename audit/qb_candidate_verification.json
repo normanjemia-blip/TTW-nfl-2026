@@ -1,0 +1,363 @@
+{
+  "v1_2_sha256": "2d9d36d0b17b4acb7fa7ae1122d94d5adab57413336b029112ad430415ad4c7d",
+  "candidate_sha256": "e6efbbb3a2b75c76f57bf13906de84f50aefd25ea05d59ef6ddba56aa2aee136",
+  "authoritative_sha256": "674510507fa784f0926a348b81068cc731e082b992fa9a0fc42d3957e75b6b5f",
+  "sheet_count": 21,
+  "sheet_order_identical": true,
+  "visibility_identical": true,
+  "formula_count": 57399,
+  "formula_count_is_57399": true,
+  "formula_coords_identical": true,
+  "formula_text_diffs": 0,
+  "total_cell_diffs_vs_v1_2": 9,
+  "diff_sheets": [
+    "CHANGELOG",
+    "QB VALUES",
+    "START HERE"
+  ],
+  "only_allowed_sheets_changed": true,
+  "prohibited_sheet_changes": [],
+  "qb_nonzero_deltas": [
+    {
+      "team": "LV",
+      "delta": 0.5
+    }
+  ],
+  "exactly_one_nonzero_delta_LV_0.50": true,
+  "qb_status_OK": 29,
+  "qb_status_UNCERTAIN": 3,
+  "qb_status_matches_29_3": true,
+  "uncertain_teams": [
+    "ATL",
+    "CLE",
+    "MIN"
+  ],
+  "qb_rows": [
+    {
+      "team": "ARI",
+      "baseline_qb": "Jacoby Brissett",
+      "baseline_value": 0,
+      "active_qb": "Jacoby Brissett",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "ATL",
+      "baseline_qb": "Tua Tagovailoa",
+      "baseline_value": null,
+      "active_qb": "Tua Tagovailoa",
+      "active_value": null,
+      "delta": 0,
+      "confidence": "Low",
+      "status": "UNCERTAIN"
+    },
+    {
+      "team": "BAL",
+      "baseline_qb": "Lamar Jackson",
+      "baseline_value": 0,
+      "active_qb": "Lamar Jackson",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "BUF",
+      "baseline_qb": "Josh Allen",
+      "baseline_value": 0,
+      "active_qb": "Josh Allen",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "CAR",
+      "baseline_qb": "Bryce Young",
+      "baseline_value": 0,
+      "active_qb": "Bryce Young",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "CHI",
+      "baseline_qb": "Caleb Williams",
+      "baseline_value": 0,
+      "active_qb": "Caleb Williams",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "CIN",
+      "baseline_qb": "Joe Burrow",
+      "baseline_value": 0,
+      "active_qb": "Joe Burrow",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "CLE",
+      "baseline_qb": "Deshaun Watson",
+      "baseline_value": null,
+      "active_qb": "Deshaun Watson",
+      "active_value": null,
+      "delta": 0,
+      "confidence": "Low",
+      "status": "UNCERTAIN"
+    },
+    {
+      "team": "DAL",
+      "baseline_qb": "Dak Prescott",
+      "baseline_value": 0,
+      "active_qb": "Dak Prescott",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "DEN",
+      "baseline_qb": "Bo Nix",
+      "baseline_value": 0,
+      "active_qb": "Bo Nix",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "DET",
+      "baseline_qb": "Jared Goff",
+      "baseline_value": 0,
+      "active_qb": "Jared Goff",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "GB",
+      "baseline_qb": "Jordan Love",
+      "baseline_value": 0,
+      "active_qb": "Jordan Love",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "HOU",
+      "baseline_qb": "C.J. Stroud",
+      "baseline_value": 0,
+      "active_qb": "C.J. Stroud",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "IND",
+      "baseline_qb": "Daniel Jones",
+      "baseline_value": 0,
+      "active_qb": "Daniel Jones",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "JAX",
+      "baseline_qb": "Trevor Lawrence",
+      "baseline_value": 0,
+      "active_qb": "Trevor Lawrence",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "KC",
+      "baseline_qb": "Patrick Mahomes",
+      "baseline_value": 0,
+      "active_qb": "Patrick Mahomes",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "LA",
+      "baseline_qb": "Matthew Stafford",
+      "baseline_value": 0,
+      "active_qb": "Matthew Stafford",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "LAC",
+      "baseline_qb": "Justin Herbert",
+      "baseline_value": 0,
+      "active_qb": "Justin Herbert",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "LV",
+      "baseline_qb": "Fernando Mendoza",
+      "baseline_value": 0,
+      "active_qb": "Kirk Cousins",
+      "active_value": 0.5,
+      "delta": 0.5,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "MIA",
+      "baseline_qb": "Malik Willis",
+      "baseline_value": 0,
+      "active_qb": "Malik Willis",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "MIN",
+      "baseline_qb": "Kyler Murray",
+      "baseline_value": null,
+      "active_qb": "Kyler Murray",
+      "active_value": null,
+      "delta": 0,
+      "confidence": "Low",
+      "status": "UNCERTAIN"
+    },
+    {
+      "team": "NE",
+      "baseline_qb": "Drake Maye",
+      "baseline_value": 0,
+      "active_qb": "Drake Maye",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "NO",
+      "baseline_qb": "Tyler Shough",
+      "baseline_value": 0,
+      "active_qb": "Tyler Shough",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "NYG",
+      "baseline_qb": "Jaxson Dart",
+      "baseline_value": 0,
+      "active_qb": "Jaxson Dart",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "NYJ",
+      "baseline_qb": "Geno Smith",
+      "baseline_value": 0,
+      "active_qb": "Geno Smith",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "PHI",
+      "baseline_qb": "Jalen Hurts",
+      "baseline_value": 0,
+      "active_qb": "Jalen Hurts",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "PIT",
+      "baseline_qb": "Aaron Rodgers",
+      "baseline_value": 0,
+      "active_qb": "Aaron Rodgers",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "SEA",
+      "baseline_qb": "Sam Darnold",
+      "baseline_value": 0,
+      "active_qb": "Sam Darnold",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "SF",
+      "baseline_qb": "Brock Purdy",
+      "baseline_value": 0,
+      "active_qb": "Brock Purdy",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "TB",
+      "baseline_qb": "Baker Mayfield",
+      "baseline_value": 0,
+      "active_qb": "Baker Mayfield",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "TEN",
+      "baseline_qb": "Cam Ward",
+      "baseline_value": 0,
+      "active_qb": "Cam Ward",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    },
+    {
+      "team": "WAS",
+      "baseline_qb": "Jayden Daniels",
+      "baseline_value": 0,
+      "active_qb": "Jayden Daniels",
+      "active_value": 0,
+      "delta": 0,
+      "confidence": "High",
+      "status": "OK"
+    }
+  ],
+  "zip_members_changed": [
+    "xl/worksheets/sheet6.xml",
+    "xl/worksheets/sheet21.xml",
+    "xl/sharedStrings.xml"
+  ],
+  "drawings_persons_identical": true
+}
