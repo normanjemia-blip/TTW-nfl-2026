@@ -1,0 +1,608 @@
+[
+  {
+    "sheet": "START HERE",
+    "cell": "A1",
+    "old": "TO THE WINDOW \u2014 NFL POWER RATINGS 2026 (v1.2.1)",
+    "new": "TO THE WINDOW \u2014 NFL POWER RATINGS 2026 (v1.3)"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G5",
+    "old": "",
+    "new": "SEA"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H5",
+    "old": "",
+    "new": "3.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I5",
+    "old": "",
+    "new": "44.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N5",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O5",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P5",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G6",
+    "old": "",
+    "new": "LA"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H6",
+    "old": "",
+    "new": "2.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I6",
+    "old": "",
+    "new": "48.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N6",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O6",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P6",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G7",
+    "old": "",
+    "new": "CHI"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H7",
+    "old": "",
+    "new": "2.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I7",
+    "old": "",
+    "new": "44.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N7",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O7",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P7",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G8",
+    "old": "",
+    "new": "CIN"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H8",
+    "old": "",
+    "new": "3.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I8",
+    "old": "",
+    "new": "50.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N8",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O8",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P8",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G9",
+    "old": "",
+    "new": "DET"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H9",
+    "old": "",
+    "new": "7.0"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I9",
+    "old": "",
+    "new": "48.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N9",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O9",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P9",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G10",
+    "old": "",
+    "new": "BUF"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H10",
+    "old": "",
+    "new": "1.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I10",
+    "old": "",
+    "new": "45.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N10",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O10",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P10",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G11",
+    "old": "",
+    "new": "BAL"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H11",
+    "old": "",
+    "new": "3.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I11",
+    "old": "",
+    "new": "49.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N11",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O11",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P11",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G12",
+    "old": "",
+    "new": "JAX"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H12",
+    "old": "",
+    "new": "7.0"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I12",
+    "old": "",
+    "new": "40.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N12",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O12",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P12",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G13",
+    "old": "",
+    "new": "PIT"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H13",
+    "old": "",
+    "new": "3.0"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I13",
+    "old": "",
+    "new": "42.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N13",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O13",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P13",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G14",
+    "old": "",
+    "new": "TEN"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H14",
+    "old": "",
+    "new": "3.0"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I14",
+    "old": "",
+    "new": "39.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N14",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O14",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P14",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G15",
+    "old": "",
+    "new": "LAC"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H15",
+    "old": "",
+    "new": "11.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I15",
+    "old": "",
+    "new": "45.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N15",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O15",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P15",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G16",
+    "old": "",
+    "new": "LV"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H16",
+    "old": "",
+    "new": "3.0"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I16",
+    "old": "",
+    "new": "41.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N16",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O16",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P16",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G17",
+    "old": "",
+    "new": "GB"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H17",
+    "old": "",
+    "new": "1.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I17",
+    "old": "",
+    "new": "44.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N17",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O17",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P17",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G18",
+    "old": "",
+    "new": "PHI"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H18",
+    "old": "",
+    "new": "5.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I18",
+    "old": "",
+    "new": "46.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N18",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O18",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P18",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G19",
+    "old": "",
+    "new": "DAL"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H19",
+    "old": "",
+    "new": "2.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I19",
+    "old": "",
+    "new": "48.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N19",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O19",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P19",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "G20",
+    "old": "",
+    "new": "KC"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "H20",
+    "old": "",
+    "new": "2.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "I20",
+    "old": "",
+    "new": "42.5"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "N20",
+    "old": "",
+    "new": "DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "O20",
+    "old": "",
+    "new": "2026-05-15"
+  },
+  {
+    "sheet": "MARKET LINES",
+    "cell": "P20",
+    "old": "",
+    "new": "OPENING line, NOT current \u2014 refresh with Novig before any live use. Stale by workbook rule (AsOfDate 2026-07-13 vs line date 2026-05-15)."
+  },
+  {
+    "sheet": "CHANGELOG",
+    "cell": "A6",
+    "old": "",
+    "new": "1.3"
+  },
+  {
+    "sheet": "CHANGELOG",
+    "cell": "B6",
+    "old": "",
+    "new": "2026-08-06"
+  },
+  {
+    "sheet": "CHANGELOG",
+    "cell": "C6",
+    "old": "",
+    "new": "Week 1 market line population (Phase 2). MARKET LINES rows 5-20 populated with the 2026-05-15 DraftKings OPENING lines from the schedule release (favorite + positive spread + total), recorded with true source and line date. These are OPENING lines, not current: the sheet's own staleness rule flags all 16 as STALE against the 2026-07-13 As-of date. Refresh with Novig lines before any live use. No formulas, weights, thresholds, methodology, schedule, QB values, adjustments, team ratings, settings, historical or backtest data changed."
+  },
+  {
+    "sheet": "CHANGELOG",
+    "cell": "D6",
+    "old": "",
+    "new": "No methodology impact. Enables the spread/total edge pipeline for Week 1 against opening lines only; every row is flagged STALE until current lines are entered."
+  }
+]
