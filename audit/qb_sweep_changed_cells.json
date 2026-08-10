@@ -1,0 +1,116 @@
+[
+  {
+    "sheet": "START HERE",
+    "cell": "A1",
+    "old": "TO THE WINDOW \u2014 NFL POWER RATINGS 2026 (v1.2.1)",
+    "new": "TO THE WINDOW \u2014 NFL POWER RATINGS 2026 (v1.2.2)"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "C6",
+    "old": "",
+    "new": "0"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "E6",
+    "old": "",
+    "new": "0"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "I6",
+    "old": "Low",
+    "new": "Medium"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "J6",
+    "old": "Competition officially OPEN but Tua (baseline) strongly favored Wk1: Penix Jr. rehabbing ACL, not medically cleared; Tua taking all 1st-team reps (Rapoport/ESPN/Athlon Aug'26). One depth-chart list showed Penix QB1 -> sources disagree; weight favors Tua.",
+    "new": "RESOLVED to baseline QB. Rapoport/NFL Network 2026-08-09: Tua projected Week 1 starter; Michael Penix Jr. NOT medically cleared after third ACL surgery and not fully practicing \u2014 'this is not a competition until he is fully practicing.' Tua healthy, taking first-team reps (early-camp issue resolved; Cooper Rush signed as veteran depth). Not officially announced and job is conditional, hence Medium. Active == Baseline, delta 0."
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "K6",
+    "old": "2026-08-05 00:00:00",
+    "new": "2026-08-10 00:00:00"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "J12",
+    "old": "OPEN competition Watson vs Shedeur Sanders (also Gabriel/Green); 1st-team reps split, no Wk1 starter named (ESPN/CBS/Yahoo Aug'26). Sources disagree on leader. Potential deviation if Sanders wins.",
+    "new": "STILL OPEN \u2014 not resolvable. Monken has NOT named a starter; Watson and Sanders alternate first-team days and each starts one of the first two preseason games. Decision not expected until after the 2026-08-22 game vs BUF (Washington Post/CBS/ESPN, Aug 2026). Values left blank, Low confidence. Re-verified 2026-08-10."
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "K12",
+    "old": "2026-08-05 00:00:00",
+    "new": "2026-08-10 00:00:00"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "J23",
+    "old": "Kirk Cousins confirmed Raiders Week 1 QB1 (HC Klint Kubiak named Cousins starter to open camp; ESPN/Schefter, FOX News, Bleacher Report, Aug 2026). Confirmed Week 1 starter; +0.50 deviation reflects veteran experience and Kubiak-scheme familiarity, capped by age, immobility, recent efficiency and turnover concerns. Baseline QB Fernando Mendoza = 0. Approved 2026-08-05.",
+    "new": "Kirk Cousins confirmed Raiders Week 1 QB1 \u2014 re-verified 2026-08-10. HC Klint Kubiak named Cousins QB1 to open camp (Raiders.com official, NFL.com, ESPN); Cousins healthy entering 2026; Mendoza developing gradually as QB2 ('competing with, not against'). No credible contradicting evidence. Approved deviation +0.50 unchanged: veteran experience and Kubiak-scheme familiarity, capped by age, immobility, recent efficiency and turnover concerns. Baseline QB Fernando Mendoza = 0."
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "K23",
+    "old": "2026-08-05 00:00:00",
+    "new": "2026-08-10 00:00:00"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "C25",
+    "old": "",
+    "new": "0"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "E25",
+    "old": "",
+    "new": "0"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "I25",
+    "old": "Low",
+    "new": "Medium"
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "J25",
+    "old": "OPEN competition Murray (favored) vs J.J. McCarthy; 1st-team reps split, not named (StarTribune/Yahoo/ESPN Aug'26). Potential deviation if McCarthy wins.",
+    "new": "RESOLVED to baseline QB. Murray out-snapped McCarthy 63-33 with the first team over the last four practices and is 'pulling away'/'separating' (Athlon, MinnesotaSportsFan, TheVikingAge, Aug 2026); ~2/3 of first-team 11-on-11 snaps. The one McCarthy snap edge (32-26) was 2026-08-01 total team snaps incl. scout team, a single-day reversal. No official announcement yet, hence Medium. Active == Baseline, delta 0."
+  },
+  {
+    "sheet": "QB VALUES",
+    "cell": "K25",
+    "old": "2026-08-05 00:00:00",
+    "new": "2026-08-10 00:00:00"
+  },
+  {
+    "sheet": "CHANGELOG",
+    "cell": "A6",
+    "old": "",
+    "new": "1.2.2"
+  },
+  {
+    "sheet": "CHANGELOG",
+    "cell": "B6",
+    "old": "",
+    "new": "2026-08-10"
+  },
+  {
+    "sheet": "CHANGELOG",
+    "cell": "C6",
+    "old": "",
+    "new": "Aug-10 QB preseason sweep (no valuation change). Fresh current-source review of the flagged QB situations. ATL resolved to baseline Tua Tagovailoa (Penix not medically cleared) and MIN resolved to baseline Kyler Murray (separating in first-team snaps) \u2014 both Active == Baseline, initialized 0/0 at Medium confidence. CLE remains genuinely open (no starter named; decision after the 2026-08-22 preseason game) and stays blank at Low. LV re-verified: Cousins confirmed QB1 and healthy, approved +0.50 deviation unchanged. No new nonzero deviation. No formulas, market lines, adjustments, team ratings, settings, schedule, historical or backtest data changed."
+  },
+  {
+    "sheet": "CHANGELOG",
+    "cell": "D6",
+    "old": "",
+    "new": "No model impact: every changed row is zero-delta. The only nonzero QB delta league-wide remains LV +0.50. QB readiness moves from 29 OK / 3 UNCERTAIN to 31 OK / 1 UNCERTAIN."
+  }
+]
