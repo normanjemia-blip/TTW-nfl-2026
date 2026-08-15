@@ -42,6 +42,27 @@ cell/column trimming, named-range/validation reordering) — see the report.
 - The authoritative v1.1 XLSX differs from the original baseline in **exactly 5 cells**: `START HERE!A1` (banner v1.0→v1.1) and the four cells of a new CHANGELOG row 4. All 57,399 formulas, sheet order/visibility, schedule, sample/backtest data, and production-state inputs are identical.
 - The original uploaded workbook is retained **byte-for-byte** as provenance and rollback. No live market-line, injury, QB, or weekly-stat entry has been performed.
 
+## Preseason monitoring (repo-local, proposals only)
+
+Checkpoint **2026-08-15**. Preseason Wk1 intake lives in `preseason/PRESEASON_MONITOR.csv`
+(32 team-game rows, Aug 13-15). Every row is locked at `Decision = PENDING` /
+`Workbook Updated? = N` — no live-workbook or Google Sheet change is authorized.
+Findings are promoted only through `audit/graduation_candidates_2026-08-15.md`.
+
+```bash
+python3 scripts/run_gates.py                  # workbook invariants (read-only)
+python3 scripts/validate_preseason_monitor.py # monitor schema + authorization gates
+python3 scripts/linkcheck_preseason.py        # source URLs
+python3 tests/run_tests.py                    # regression suite (13 tests)
+```
+
+Workflow: `docs/preseason_monitoring.md` · Schema: `preseason/SCHEMA.md`
+Status reconciliation: `audit/Status_Reconciliation_2026-08-15.md`
+`#DIV/0!` diagnosis + proposed patch (not applied): `audit/DQ_DIV0_Diagnosis.md`
+
+Preseason scores, margins, box-score production and small-sample efficiency are
+**never** used as team-strength evidence and never feed power ratings.
+
 ## Grounded facts (source workbook)
 
 - 21 sheets (11 visible / 10 hidden); 57,399 formula cells.
