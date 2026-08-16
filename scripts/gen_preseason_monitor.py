@@ -14,6 +14,11 @@ ROUND14="https://www.joxfm.com/2026/08/14/nfl-preseason-roundup-new-look-dolphin
 NFLPS="https://www.nfl.com/scores/2026/preseason-week-1"
 VIK="https://www.vikings.com/news/kyler-murray-quarterback-starting-2026-nfl-season"
 NFL10="https://www.nfl.com/news/2026-nfl-preseason-week-1-10-things-to-watch"
+SBD15="https://www.sportsbettingdime.com/news/nfl/preseason-week-1-whos-playing-starting-saturday-aug-15/"
+VIKG="https://www.vikings.com/news/jj-mccarthy-kyler-murray-preseason-debut-giants-2026"
+STRIB="https://www.startribune.com/minnesota-vikings-new-york-giants-score-updates-nfl-preseason-game-today-channel-kyler-murray-stats/601873734"
+ESPNBUF="https://www.espn.com/nfl/recap?gameId=401873282"
+PFN15="https://www.profootballnetwork.com/nfl-starters-saturday-preseason-bills-browns/"
 
 B="UNVERIFIED — no qualifying source located for starter participation; post-game confirmation outstanding"
 R=[]
@@ -40,47 +45,67 @@ row("2026-08-14","COMPLETE","TB","NYJ","Away","RESTED","Baker Mayfield","Mayfiel
 row("2026-08-14","COMPLETE","NYJ","TB","Home","STARTERS PLAYED","Geno Smith, Breece Hall, Garrett Wilson","HC Aaron Glenn: 'everyone's playing'; QB1 Geno Smith played with Hall and Wilson","None reported",SBD14,"2026-08-14","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only")
 row("2026-08-14","COMPLETE","MIA","WAS","Away","STARTERS PLAYED","Malik Willis","First look at new QB1 Malik Willis (3yr/$67.5M); new-look offense worked with starters","None reported",ROUND14,"2026-08-14","BEAT REPORT","MEDIUM","QB VALUES","QB VALUES: MIA Source/Last-update fields (confirms baseline QB role)")
 row("2026-08-14","COMPLETE","WAS","MIA","Home","RESTED","Jayden Daniels / Marcus Mariota","QB1 Daniels not expected to suit up; QB2 Mariota started","LT Laremy Tunsil torn triceps (reported 2026-08-12), expected to miss significant time",SBD14,"2026-08-14","BEAT REPORT","MEDIUM","ADJUSTMENTS","ADJUSTMENTS: create documented entry for WAS starting-LT availability (field creation only, no point value)")
-# ---- Aug 15 (NOT PLAYED) ----
-for t,o,site in [("CAR","BUF","Away"),("BUF","CAR","Home"),("CLE","CHI","Away"),("CHI","CLE","Home"),
-                 ("MIN","NYG","Away"),("NYG","MIN","Home"),("LA","KC","Away"),("KC","LA","Home"),
-                 ("JAX","NO","Away"),("NO","JAX","Home"),("PHI","BAL","Away"),("BAL","PHI","Home"),
-                 ("DAL","SEA","Away"),("SEA","DAL","Home")]:
-    if t=="MIN":
-        row("2026-08-15","NOT PLAYED",t,o,site,"TBD","Kyler Murray / J.J. McCarthy",
-            "Pre-game (2026-08-12, OFFICIAL): HC named Murray the regular-season Week 1 starter; McCarthy backup",
-            "None reported",VIK,"2026-08-12","OFFICIAL","HIGH","QB VALUES",
-            "QB VALUES: MIN Confidence field (Medium -> High) + Source/Last-update fields; Active QB already equals Baseline")
-    elif t=="CLE":
-        row("2026-08-15","NOT PLAYED",t,o,site,"TBD","Deshaun Watson / Shedeur Sanders",
-            "Pre-game (OFFICIAL): Watson starts the opener, Sanders starts PS Wk2; HC 'not shutting the door' — competition NOT settled",
-            "None reported",NFL10,"2026-08-12","OFFICIAL","HIGH","QB VALUES",
-            "QB VALUES: CLE Source/Last-update fields; remains UNCERTAIN (no confidence change)")
-    elif t=="KC":
-        row("2026-08-15","NOT PLAYED",t,o,site,"TBD","Patrick Mahomes",
-            "Pre-game: HC indicated Mahomes will not play the opener; cleared for camp after Dec ACL/LCL surgery",
-            "Cleared for camp; participation withheld by choice",NFL10,"2026-08-12","MULTI-SOURCE","HIGH","NONE",
-            "PRESEASON MONITOR log only")
-    elif t=="JAX":
-        row("2026-08-15","NOT PLAYED",t,o,site,"TBD","Starters","Pre-game: HC said starters will not play the opener","None reported",
-            NFL10,"2026-08-12","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only")
-    elif t=="CAR":
-        row("2026-08-15","NOT PLAYED",t,o,site,"TBD","Bryce Young + starters","Pre-game: HC said Young and starters will play the opener",
-            "EDGE Nic Scourton torn ACL (first practice)",NFL10,"2026-08-12","MULTI-SOURCE","MEDIUM","ADJUSTMENTS",
-            "ADJUSTMENTS: create documented entry for CAR EDGE availability (field creation only, no point value)")
-    elif t=="DAL":
-        row("2026-08-15","NOT PLAYED",t,o,site,"TBD","Starters","Pre-game: HC said 'we're not going to play a lot of our starters'","None reported",
-            NFL10,"2026-08-12","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only")
-    elif t=="CHI":
-        row("2026-08-15","NOT PLAYED",t,o,site,"TBD","Secondary / LT","Pre-game: multiple secondary absences; starting LT undecided",
-            "Gordon PUP (calf); Bryant 4-6 mo post knee surgery; Flowers out for season; Bishop suspended 3 games",
-            NFL10,"2026-08-12","OFFICIAL","HIGH","ADJUSTMENTS","ADJUSTMENTS: create documented entries for CHI secondary availability (field creation only)")
-    else:
-        row("2026-08-15","NOT PLAYED",t,o,site,"TBD","UNVERIFIED","Game not yet played; no qualifying pre-game starter-usage statement located",
-            "UNVERIFIED",NFLPS,"2026-08-15","OTHER","LOW","NONE","None","Awaiting kickoff; post-game intake required")
+# ---- Aug 15 (COMPLETE — post-game evidence) ----
+row("2026-08-15","COMPLETE","CAR","BUF","Away","STARTERS PLAYED","Bryce Young + starters",
+    "Young started and played roughly 10-20 snaps; starters opened with a three-and-out",
+    "Haynes King (hamstring); Damien Lewis doubtful; Derrick Brown questionable (knee soreness)",
+    SBD15,"2026-08-15","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only")
+row("2026-08-15","COMPLETE","BUF","CAR","Home","STARTERS PLAYED","Josh Allen + first-string offense",
+    "Allen played a limited series with the first-string starters","None reported",
+    ESPNBUF,"2026-08-15","MULTI-SOURCE","MEDIUM","NONE","PRESEASON MONITOR log only")
+row("2026-08-15","COMPLETE","CLE","CHI","Away","STARTERS PLAYED","Deshaun Watson / Shedeur Sanders",
+    "Watson started and played the first half; Sanders took the second half. CONFLICT: one outlet states Watson was named Week 1 starter, which contradicts the HC's on-record 'not shutting the door' and the stated post-Aug-22 timeline",
+    "None reported",SBD15,"2026-08-15","BEAT REPORT","LOW","QB VALUES",
+    "QB VALUES: CLE Source/Last-update fields; remains UNCERTAIN pending official confirmation",
+    "Unresolved conflict on whether CLE has officially named a Week 1 starter")
+row("2026-08-15","COMPLETE","CHI","CLE","Home","RESTED","Caleb Williams / Tyson Bagent",
+    "QB1 Caleb Williams rested by plan; Bagent started roughly one half",
+    "WR Luther Burden III sidelined by a leg injury (no diagnosis reported)",
+    SBD15,"2026-08-15","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only",
+    "Burden III diagnosis and timeline not reported")
+row("2026-08-15","COMPLETE","MIN","NYG","Away","LIMITED","Kyler Murray / J.J. McCarthy",
+    "Murray made his Vikings debut and led a scoring drive on one series; starters exited by the second quarter; McCarthy, named backup by the HC, took three possessions",
+    "WR Justin Jefferson sat out (reason not reported)",VIKG,"2026-08-15","OFFICIAL","HIGH","QB VALUES",
+    "QB VALUES: MIN Confidence field (Medium -> High) + Source/Last-update fields; Active QB already equals Baseline",
+    "Reason for Jefferson sitting out not reported")
+row("2026-08-15","COMPLETE","NYG","MIN","Home","LIMITED","Jaxson Dart",
+    "Dart started; starters were out by the second quarter","LB/S Jamal Adams carted off in the first half - no diagnosis reported",
+    STRIB,"2026-08-15","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only",
+    "Jamal Adams diagnosis and availability UNVERIFIED - carted off without reported diagnosis")
+row("2026-08-15","COMPLETE","LA","KC","Away","RESTED","Matthew Stafford / Ty Simpson",
+    "QB1 Stafford sat out by plan; rookie Ty Simpson took his first NFL action","None reported",
+    SBD15,"2026-08-15","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only")
+row("2026-08-15","COMPLETE","KC","LA","Home","RESTED","Patrick Mahomes / Justin Fields",
+    "Mahomes held out for ACL/LCL rehab as the HC signalled pre-game; Fields, Nussmeier and Oladokun handled the snaps",
+    "Mahomes withheld for rehab management; previously cleared for camp",SBD15,"2026-08-15","MULTI-SOURCE","HIGH","NONE",
+    "PRESEASON MONITOR log only")
+row("2026-08-15","COMPLETE","JAX","NO","Away","RESTED","Trevor Lawrence + all starters",
+    "HC held all starters out as stated pre-game; Mullens and Bradley took the snaps","None reported",
+    SBD15,"2026-08-15","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only")
+row("2026-08-15","COMPLETE","NO","JAX","Home","MIXED","Spencer Rattler / Tyler Shough",
+    "Rattler started; workbook baseline QB Tyler Shough did not play. Preseason usage is not a Week 1 declaration, but the baseline-vs-usage divergence needs verification",
+    "DT Bryan Bresee and G Dillon Radunz both placed on IR with season-ending knee injuries (upgrades the earlier unconfirmed Bresee report)",
+    SBD15,"2026-08-15","BEAT REPORT","MEDIUM","QB VALUES",
+    "QB VALUES: NO Source/Notes/Last-update fields; flag baseline-vs-usage divergence for verification",
+    "No official statement located on whether NO has changed its Week 1 starter")
+row("2026-08-15","COMPLETE","PHI","BAL","Away","RESTED","Jalen Hurts",
+    "QB1 Hurts rested; Dalton, McKee and Payton handled snaps",
+    "Absent: Quinyon Mitchell, Cooper DeJean, Jalen Carter, Jordan Davis, Zack Baun - reasons not reported",
+    SBD15,"2026-08-15","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only",
+    "Reasons for the five defensive absences UNVERIFIED (rest vs injury not distinguished)")
+row("2026-08-15","COMPLETE","BAL","PHI","Home","RESTED","Lamar Jackson / Tyler Huntley",
+    "QB1 Lamar Jackson rested; Huntley led the quarterback group","None reported",
+    SBD15,"2026-08-15","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only")
+row("2026-08-15","COMPLETE","DAL","SEA","Away","RESTED","Dak Prescott",
+    "QB1 Prescott rested as the HC signalled pre-game; Howell and Milton III split reps","None reported",
+    SBD15,"2026-08-15","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only")
+row("2026-08-15","COMPLETE","SEA","DAL","Home","LIMITED","Sam Darnold",
+    "QB1 Darnold saw limited work; Lock and Milroe took extended snaps","None reported",
+    SBD15,"2026-08-15","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only")
 
 os.makedirs("preseason",exist_ok=True)
 with open("preseason/PRESEASON_MONITOR.csv","w",newline="") as f:
-    w=csv.writer(f); w.writerow(HDR); w.writerows(R)
+    w=csv.writer(f,lineterminator="\n"); w.writerow(HDR); w.writerows(R)
 with open("preseason/intake_template.csv","w",newline="") as f:
-    csv.writer(f).writerow(HDR)
+    csv.writer(f,lineterminator="\n").writerow(HDR)
 print(f"rows={len(R)} teams={len(set(r[3] for r in R))}")

@@ -38,6 +38,9 @@ def main():
         # GATE: games not played cannot claim starter usage
         if r["Game Status"]=="NOT PLAYED" and r["Starter Use"]!="TBD":
             errs.append(f"r{i} {t}: NOT PLAYED must have Starter Use=TBD")
+        # GATE: a COMPLETE game left at TBD must carry a named blocker (never a silent gap)
+        if r["Game Status"]=="COMPLETE" and r["Starter Use"]=="TBD" and not r["Blocker"].strip():
+            errs.append(f"r{i} {t}: COMPLETE game left TBD without a named blocker")
         # GATE: every material claim needs a source URL + date
         if not re.match(r"^https?://", r["Source URL"]): errs.append(f"r{i} {t}: missing/invalid Source URL")
         if not re.match(r"^\d{4}-\d{2}-\d{2}$", r["Source Date"]): errs.append(f"r{i} {t}: bad Source Date")
@@ -54,7 +57,9 @@ def main():
     if errs:
         print("PRESEASON MONITOR VALIDATOR: FAIL"); [print("  -",e) for e in errs]; return 1
     comp=sum(1 for r in rows if r["Game Status"]=="COMPLETE")
+    tbd=sum(1 for r in rows if r["Starter Use"]=="TBD")
     print(f"PRESEASON MONITOR VALIDATOR: PASS ({len(rows)} rows, 32 teams, {comp} complete, "
-          f"{len(rows)-comp} not played, {sum(1 for r in rows if r['Blocker'].strip())} blockers)")
+          f"{len(rows)-comp} not played, {tbd} still TBD w/ blocker, "
+          f"{sum(1 for r in rows if r['Blocker'].strip())} blockers)")
     return 0
 if __name__=="__main__": sys.exit(main())

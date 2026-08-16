@@ -38,6 +38,13 @@ class Monitor(unittest.TestCase):
     def test_unplayed_games_are_tbd(self):
         for r in self.rows:
             if r["Game Status"]=="NOT PLAYED": self.assertEqual(r["Starter Use"],"TBD",r["Team"])
+    def test_complete_tbd_rows_have_blockers(self):
+        for r in self.rows:
+            if r["Game Status"]=="COMPLETE" and r["Starter Use"]=="TBD":
+                self.assertTrue(r["Blocker"].strip(),f"{r['Team']}: COMPLETE+TBD needs a named blocker")
+    def test_all_16_games_present(self):
+        games={tuple(sorted([r["Team"],r["Opponent"]])) for r in self.rows}
+        self.assertEqual(len(games),16,"expected 16 distinct games")
     def test_no_point_values_in_proposals(self):
         import re
         for r in self.rows:
