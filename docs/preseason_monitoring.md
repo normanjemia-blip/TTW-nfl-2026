@@ -25,7 +25,8 @@ python3 tests/run_tests.py                    # full regression suite
 ```
 
 ## Enforced gates
-- `Decision` must stay `PENDING` and `Workbook Updated?` must stay `N` (no live-workbook authorization).
+- Decision/Workbook-Updated lifecycle: `PENDING`, `MONITOR` and `IGNORE` require `N`; `UPDATE` may be `N` before
+  application or `Y` after a successful, owner-authorized workbook application. `PENDING`/`Y` is never permitted.
 - A game with `Game Status = NOT PLAYED` must carry `Starter Use = TBD`.
 - Every row needs a valid `Source URL` (host allowlist) and ISO `Source Date`.
 - Any `UNVERIFIED` finding must carry a **named blocker** — never a silent gap.

@@ -13,7 +13,7 @@ One row per team-game (32 rows for a 16-game preseason week).
 | Player / Unit | Subject of the finding |
 | Confirmed Finding | Concise interpretation; `UNVERIFIED` if unconfirmed |
 | Injury / Availability | Most current verified diagnosis/availability, else `UNVERIFIED` |
-| Source URL | Must be https and on the source-priority host allowlist |
+| Source URL | Must be https and on the source-priority host allowlist. May contain multiple URLs separated by ` ; `; each is validated individually |
 | Source Date | ISO `YYYY-MM-DD` publication date |
 | Evidence Type | `OFFICIAL` \| `MULTI-SOURCE` \| `BEAT REPORT` \| `GAME OBSERVATION` \| `MARKET` \| `OTHER` |
 | Confidence | `HIGH` \| `MEDIUM` \| `LOW` |

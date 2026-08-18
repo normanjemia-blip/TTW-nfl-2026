@@ -4,7 +4,7 @@ import unittest, subprocess, csv, hashlib, os, sys, glob
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 AUTH="TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE.xlsx"
-AUTH_SHA="674510507fa784f0926a348b81068cc731e082b992fa9a0fc42d3957e75b6b5f"
+AUTH_SHA="ffcd5004f5886cbcb1a3b2e5115f40c90cf5a3e1ebc4d971cf3dbb7bae0ca53d"
 
 def sh(cmd): return subprocess.run(cmd,shell=True,capture_output=True,text=True)
 
@@ -31,10 +31,19 @@ class Monitor(unittest.TestCase):
     def setUp(self): self.rows=list(csv.DictReader(open("preseason/PRESEASON_MONITOR.csv")))
     def test_32_team_game_rows(self):
         self.assertEqual(len(self.rows),32); self.assertEqual(len({r["Team"] for r in self.rows}),32)
-    def test_all_decisions_pending_and_unwritten(self):
+    def test_current_tracking_state(self):
+        expected={"MIN":("UPDATE","Y"),"WAS":("MONITOR","N"),"CHI":("MONITOR","N"),"NO":("MONITOR","N")}
         for r in self.rows:
-            self.assertEqual(r["Decision"],"PENDING",r["Team"])
-            self.assertEqual(r["Workbook Updated?"],"N",r["Team"])
+            got=(r["Decision"],r["Workbook Updated?"])
+            self.assertEqual(got, expected.get(r["Team"],("PENDING","N")), r["Team"])
+    def test_decision_updated_lifecycle_consistency(self):
+        for r in self.rows:
+            d,u=r["Decision"],r["Workbook Updated?"]
+            self.assertIn(d,{"PENDING","MONITOR","UPDATE","IGNORE"},r["Team"])
+            self.assertIn(u,{"Y","N"},r["Team"])
+            if d in {"PENDING","MONITOR","IGNORE"}:
+                self.assertEqual(u,"N",f"{r['Team']}: {d} must have N")
+            self.assertFalse(d=="PENDING" and u=="Y",f"{r['Team']}: PENDING/Y forbidden")
     def test_unplayed_games_are_tbd(self):
         for r in self.rows:
             if r["Game Status"]=="NOT PLAYED": self.assertEqual(r["Starter Use"],"TBD",r["Team"])
@@ -49,6 +58,36 @@ class Monitor(unittest.TestCase):
         import re
         for r in self.rows:
             self.assertIsNone(re.search(r"[+-]?\d+(\.\d+)?\s*(pt|point)",r["Proposed Change"],re.I),r["Team"])
+
+class LinkcheckMultiURL(unittest.TestCase):
+    """Source URL may hold several URLs separated by ' ; '. Every one must be validated."""
+    def setUp(self):
+        sys.path.insert(0,os.path.join(ROOT,"scripts"))
+        import linkcheck_preseason as L; self.L=L
+    def test_multi_url_field_splits_into_both_urls(self):
+        f="https://www.vikings.com/a ; https://www.neworleanssaints.com/b"
+        self.assertEqual(self.L.split_source_urls(f),
+                         ["https://www.vikings.com/a","https://www.neworleanssaints.com/b"])
+    def test_both_urls_in_valid_multi_field_are_checked(self):
+        for u in self.L.split_source_urls("https://www.vikings.com/a ; https://www.nfl.com/b"):
+            self.assertTrue(self.L.check_url(u)[0], u)
+    def test_non_allowlisted_second_url_is_detected(self):
+        parts=self.L.split_source_urls("https://www.nfl.com/a ; https://evil.example.com/b")
+        self.assertTrue(self.L.check_url(parts[0])[0])
+        ok,host,reason=self.L.check_url(parts[1])
+        self.assertFalse(ok); self.assertEqual(host,"evil.example.com"); self.assertIn("allowlist",reason)
+    def test_invalid_second_url_is_detected(self):
+        parts=self.L.split_source_urls("https://www.nfl.com/a ; http://www.nfl.com/b")
+        ok,_h,reason=self.L.check_url(parts[1])
+        self.assertFalse(ok); self.assertIn("non-HTTPS", reason)
+    def test_single_url_behaviour_preserved(self):
+        f="https://www.nfl.com/news/x"
+        self.assertEqual(self.L.split_source_urls(f),[f])
+        self.assertTrue(self.L.check_url(f)[0])
+    def test_joined_field_is_never_treated_as_one_url(self):
+        joined="https://www.nfl.com/a ; https://www.vikings.com/b"
+        self.assertFalse(self.L.check_url(joined)[0])          # combined string is not a valid URL
+        self.assertEqual(len(self.L.split_source_urls(joined)),2)
 
 class DQGuardPatch(unittest.TestCase):
     """Proves the PROPOSED CALC guard semantics. No workbook is modified."""

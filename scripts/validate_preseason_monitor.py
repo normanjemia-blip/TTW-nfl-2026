@@ -33,8 +33,13 @@ def main():
                             ("Proposed Destination",DEST),("Decision",DEC),("Game Status",STATUS)):
             if r[col] not in allowed: errs.append(f"r{i} {t}: bad {col}={r[col]!r}")
         # GATE: no live-workbook writes authorized
-        if r["Workbook Updated?"]!="N": errs.append(f"r{i} {t}: Workbook Updated? must be N (no authorization)")
-        if r["Decision"]!="PENDING": errs.append(f"r{i} {t}: Decision must remain PENDING (no authorization)")
+        # GATE: documented Decision/Workbook-Updated lifecycle consistency
+        _d,_u=r["Decision"],r["Workbook Updated?"]
+        if _u not in {"Y","N"}: errs.append(f"r{i} {t}: Workbook Updated? must be Y or N, got {_u!r}")
+        if _d in {"PENDING","MONITOR","IGNORE"} and _u!="N":
+            errs.append(f"r{i} {t}: Decision {_d} requires Workbook Updated? = N")
+        if _d=="PENDING" and _u=="Y": errs.append(f"r{i} {t}: PENDING/Y is never permitted")
+
         # GATE: games not played cannot claim starter usage
         if r["Game Status"]=="NOT PLAYED" and r["Starter Use"]!="TBD":
             errs.append(f"r{i} {t}: NOT PLAYED must have Starter Use=TBD")
