@@ -23,6 +23,7 @@ VIKSTART="https://www.vikings.com/news/kyler-murray-quarterback-starting-2026-nf
 NFLTUNSIL="https://www.nfl.com/news/commanders-lt-laremy-tunsil-suffered-torn-triceps-likely-to-miss-significant-portion-of-season"
 SAINTS1="https://www.neworleanssaints.com/news/garrett-nelson-edge-new-orleans-saints-roster-moves-august-7-2026"
 SAINTS2="https://www.neworleanssaints.com/news/kahlil-saunders-saints-roster-moves-training-camp-august-12-2026"
+CLEQB1="https://sports.yahoo.com/nfl/live/nfl-news-injury-updates-preseason-week-2-schedule-whos-playing-starters-143714619.html"
 
 B="UNVERIFIED — no qualifying source located for starter participation; post-game confirmation outstanding"
 R=[]
@@ -64,10 +65,12 @@ row("2026-08-15","COMPLETE","BUF","CAR","Home","STARTERS PLAYED","Josh Allen + f
     "Allen played a limited series with the first-string starters","None reported",
     ESPNBUF,"2026-08-15","MULTI-SOURCE","MEDIUM","NONE","PRESEASON MONITOR log only")
 row("2026-08-15","COMPLETE","CLE","CHI","Away","STARTERS PLAYED","Deshaun Watson / Shedeur Sanders",
-    "Watson started and played the first half; Sanders took the second half. CONFLICT: one outlet states Watson was named Week 1 starter, which contradicts the HC's on-record 'not shutting the door' and the stated post-Aug-22 timeline",
-    "None reported",SBD15,"2026-08-15","BEAT REPORT","LOW","QB VALUES",
-    "QB VALUES: CLE Source/Last-update fields; remains UNCERTAIN pending official confirmation",
-    "Unresolved conflict on whether CLE has officially named a Week 1 starter")
+    "Watson started and played the first half; Sanders took the second half. RESOLVED 2026-08-24: the Browns "
+    "officially named Deshaun Watson the 2026 starting quarterback over Shedeur Sanders, who becomes the backup.",
+    "None reported",CLEQB1,"2026-08-24","OFFICIAL","HIGH","QB VALUES",
+    "QB VALUES: CLE Confidence Low->High, Source citation and Last-update applied in v1.1_AUTHORITATIVE "
+    "(I12/J12/K12). C12/E12 unchanged at 1.0; no model output changed.",
+    "","UPDATE","Y")
 row("2026-08-15","COMPLETE","CHI","CLE","Home","RESTED",
     "Caleb Williams / Tyson Bagent; secondary: Kyler Gordon, Coby Bryant, Dallis Flowers, Beanie Bishop Jr.",
     "QB1 Caleb Williams rested by plan; Bagent started roughly one half",
@@ -86,9 +89,12 @@ row("2026-08-15","COMPLETE","MIN","NYG","Away","LIMITED","Kyler Murray / J.J. Mc
     "(I25/J25/K25). C25/E25 unchanged at 3.0; no model output changed.",
     "Reason for Jefferson sitting out not reported","UPDATE","Y")
 row("2026-08-15","COMPLETE","NYG","MIN","Home","LIMITED","Jaxson Dart",
-    "Dart started; starters were out by the second quarter","LB/S Jamal Adams carted off in the first half - no diagnosis reported",
-    STRIB,"2026-08-15","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only",
-    "Jamal Adams diagnosis and availability UNVERIFIED - carted off without reported diagnosis")
+    "Dart started; starters were out by the second quarter",
+    "None reported for NYG. RECORD CORRECTION 2026-08-24: the earlier entry attributed a carted-off Jamal Adams "
+    "to New York; Adams is a Minnesota Vikings player who was injured during this game, not a Giants player.",
+    STRIB,"2026-08-15","BEAT REPORT","MEDIUM","NONE",
+    "Monitor-layer record correction only. No points, rating, formula or model change proposed.",
+    "")
 row("2026-08-15","COMPLETE","LA","KC","Away","RESTED","Matthew Stafford / Ty Simpson",
     "QB1 Stafford sat out by plan; rookie Ty Simpson took his first NFL action","None reported",
     SBD15,"2026-08-15","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only")
