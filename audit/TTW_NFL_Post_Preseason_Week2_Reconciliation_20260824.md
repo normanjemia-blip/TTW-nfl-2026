@@ -1,5 +1,8 @@
 # TTW NFL — Post-Preseason Week 2 Reconciliation (2026-08-24)
 
+> **Revision 2 (2026-08-24):** New Orleans NUMERIC REVIEW **rescinded** on owner ruling and official
+> Saints evidence; NO reclassified **UPDATE (metadata only)**. See §8.
+
 **READ-ONLY RESEARCH PRODUCT + ONE APPROVED METADATA APPLICATION.** No formula, rating, QB point value,
 setting, schedule, market line or model output was changed. The live Google Sheet was not accessed.
 
@@ -12,7 +15,7 @@ setting, schedule, market line or model output was changed. The live Google Shee
 ## 2. Authoritative workbook
 - File: `TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE.xlsx`
 - SHA-256 before: `ffcd5004f5886cbcb1a3b2e5115f40c90cf5a3e1ebc4d971cf3dbb7bae0ca53d`
-- SHA-256 after: `4f5496e15090ddad8b63f9fa9c4a7590d3347b836fcc8b91b2bcf65c0253ff39`
+- SHA-256 after: `79923992e9cfe156af47207b1756010af9a375592997be8e194bc75e4e9d313f`
 - Formula count: **57,399 → 57,399**, coordinates identical, 0 formula-text diffs
 - Sheets 21; `SETTINGS!B7` = **2026-07-13** (freeze date unchanged); hidden pipeline tabs untouched
 
@@ -26,7 +29,7 @@ Blocker, plus any team whose Week 2 evidence creates a material new candidate**.
 | New material Week 2 candidates (DET, LAC) | **2** |
 | **Total reconciled** | **21** |
 
-Classification totals: **UPDATE 8 · RECORD CORRECTION 1 · NUMERIC REVIEW 1 · MONITOR 10 · NO CHANGE 1**
+Classification totals: **UPDATE 9 · RECORD CORRECTION 1 · MONITOR 10 · NO CHANGE 1** (NUMERIC REVIEW: 0 — rescinded, see §8)
 
 ## 4. Mandatory reassessments
 
@@ -106,35 +109,50 @@ No Week 2 evidence contradicts it. Entries preserved exactly; **not reapplied, n
 
 ## 7. Exact workbook cells — current and proposed
 
-**Only one workbook change was applied**, and it is metadata-only.
+**Two teams received workbook changes (5 cell writes across CLE and NO), all metadata-only.**
 
 | Cell | Before | After | Type | Justification |
 |---|---|---|---|---|
 | `QB VALUES!I12` (CLE Confidence) | `Low` | `High` | Metadata (text) | Competition officially settled by the club on 2026-08-24 |
 | `QB VALUES!J12` (CLE Source) | `Browns camp: Watson/Sanders open; Watson current frontrunner — TTW scale` | `Cleveland Browns official announcement, 2026-08-24: Deshaun Watson named starting quarterback for the 2026 season over Shedeur Sanders, who becomes the backup.` | Metadata (text) | Replaces pre-announcement camp text with the official citation |
 | `QB VALUES!K12` (CLE Last update) | `2026-07-13` | `2026-08-24` | Metadata (date) | Aligns last-update to the announcement date |
+| `QB VALUES!J27` (NO Source) | `Saints camp: Shough returning starter — TTW scale` | `New Orleans Saints official, 2026-08-21: Tyler Shough is the starting quarterback…` | Metadata (text) | Replaces camp-era text with the official 2026-08-21 citation |
+| `QB VALUES!K27` (NO Last update) | `2026-07-13` | `2026-08-21` | Metadata (date) | Aligns last-update to the official source |
+| `QB VALUES!I27` (NO Confidence) | `High` | `High` — **verified, not rewritten** | (no change) | Already correct; no edit required |
 
 **Explicitly NOT changed:** `C12 = 1.0`, `E12 = 1.0` (CLE QB points), `F12`/`G12`/`H12`/`L12`/`N12` formulas,
-`C25`/`E25` (MIN), `SETTINGS!B7`, all team ratings, priors, weights, HFA, league constants, schedules,
+`C25`/`E25` (MIN), `C27`/`E27` (NO, remain 2.5), `SETTINGS!B7`, all team ratings, priors, weights, HFA, league constants, schedules,
 market lines and downstream outputs.
 
 **Expected recalculation:** `N12` (QBFlag) moves 1 → 0 because `$I12="Low"` no longer holds. `F12` stays
 `1.0 − 1.0 = 0`. No model output moves.
 
 ### Justification for every numerical entry, including proposed zeros
-No numerical entry is proposed anywhere in this reconciliation. **CLE `C12`/`E12` remain 1.0** — unchanged,
+No numerical entry is proposed anywhere in this reconciliation, and the single prior NUMERIC REVIEW has been rescinded. **CLE `C12`/`E12` remain 1.0** — unchanged,
 not re-derived — because Active QB equals Baseline QB, so the governed baseline-delta architecture yields a
 delta of exactly 0 with no value edit required. **No zero was newly written**; existing zeros arise from the
 `F = E − C` formula, which was not touched.
 
-## 8. NUMERIC REVIEW item (escalated, not applied)
+## 8. New Orleans — NUMERIC REVIEW RESCINDED (owner ruling, 2026-08-24)
 
-**New Orleans.** Zach Wilson started Week 2 after outplaying Spencer Rattler; workbook baseline QB **Tyler
-Shough has still not started** in either preseason game. Three different quarterbacks have now been used ahead
-of the baseline. This is materially suggestive of a baseline mismatch, **but no governed mapping exists** that
-converts preseason usage into a QB value change, and New Orleans has issued **no official Week 1 starter
-declaration**. Per the rule, it is classified **NUMERIC REVIEW** and `QB VALUES!C27/E27` are **left unchanged**.
-Explicit approval and a documented methodology rule are required before any numerical move.
+The earlier NUMERIC REVIEW classification was **wrong and is withdrawn**. Official Saints evidence dated
+**2026-08-21** establishes that **Tyler Shough is the starting quarterback**, that New Orleans **rested its
+starters for a second consecutive preseason game**, and that **Zach Wilson and Spencer Rattler were competing
+for the backup job**.
+
+Therefore Shough not starting either preseason game is **expected starter-rest usage**, not evidence of a QB1
+change, and **Wilson starting Week 2 carries no numerical implication**. The baseline-vs-usage "divergence"
+I recorded was an artifact of reading preseason usage as a depth signal.
+
+**Reclassified: UPDATE (metadata only).** `I27` was already `High` and is **verified, not rewritten**; `J27`
+and `K27` still carried camp-era TTW-scale text and the 2026-07-13 freeze date, so they were replaced with the
+official citation and dated 2026-08-21. `C27`/`E27` remain **2.5** — unchanged. The QB1-uncertainty blocker is
+cleared; no unrelated NO blocker existed.
+
+Sources: <https://www.neworleanssaints.com/news/zach-wilson-spencer-rattler-backup-quarterback-spot-new-orleans-saints-preseason>,
+<https://www.neworleanssaints.com/team/depth-chart> (2026-08-21), HIGH.
+
+**No NUMERIC REVIEW item remains anywhere in this cycle.**
 
 ## 9. Record corrections
 
@@ -156,9 +174,9 @@ starter in 2026), and a Buccaneers–Dolphins result that does not match the 202
 | Layer | State |
 |---|---|
 | Repo (this branch) | CLE metadata applied to the local authoritative workbook; Week 1 monitor corrected; Week 2 intake created |
-| **Live Google Sheet** | **NOT ACCESSED, NOT MODIFIED.** It remains at its prior state and now differs from the repo workbook by the three CLE cells plus the previously applied three MIN cells. Reconciling the live Sheet requires separate explicit authorization. |
+| **Live Google Sheet** | **NOT ACCESSED, NOT MODIFIED.** It remains at its prior state and now differs from the repo workbook by three CLE cells, two NO cells and three MIN cells (eight metadata cells total). Reconciling the live Sheet requires separate explicit authorization. |
 
 ## 12. Artifact hashes
-- Authoritative workbook: `4f5496e15090ddad8b63f9fa9c4a7590d3347b836fcc8b91b2bcf65c0253ff39`
-- `preseason/PRESEASON_MONITOR.csv`: `44ff52513fd57dbf46a3121078b996d586a39d5c53d5d485889febe682d3cc2f`
-- `preseason/PRESEASON_WEEK2_INTAKE_20260824.csv`: `ed55d38a873e66f2d2b84d0b9c30cbc84105f9c0c661047739610a3bf681a15e`
+- Authoritative workbook: `79923992e9cfe156af47207b1756010af9a375592997be8e194bc75e4e9d313f`
+- `preseason/PRESEASON_MONITOR.csv`: `7e6b369b7cb7db356f6e458d4a67072dd84e6df2a9e533270e21affe392373ef`
+- `preseason/PRESEASON_WEEK2_INTAKE_20260824.csv`: `fcad20e8a637c2c19f0bfe02e767fce4f9821dc72d671e020b1aeffcf2b6e4de`

@@ -1,5 +1,7 @@
 # Graduation Candidates — 2026-08-24 (post-Preseason Week 2)
 
+> **Revision 2:** New Orleans NUMERIC REVIEW rescinded; NO applied as metadata UPDATE.
+
 Regenerated from actual Week 2 evidence. Count is evidence-driven. The 2026-08-15 report is preserved unchanged as historical evidence.
 
 All rows: `Decision = PENDING` / `Workbook Updated? = N` unless an approved application is recorded.
@@ -10,12 +12,13 @@ All rows: `Decision = PENDING` / `Workbook Updated? = N` unless an approved appl
 |---|---|---|---|---|---|---|---|---|
 | H1 | CLE | QB VALUES | Confidence Low→High, official source, last-update 2026-08-24 | `I12`,`J12`,`K12` | Metadata | Browns officially named Watson QB1 over Sanders, 2026-08-24 | HIGH | **APPLIED** (Decision UPDATE / Updated? Y) |
 | G1 | MIN | QB VALUES | Confidence Low→High, official source, last-update 2026-08-11 | `I25`,`J25`,`K25` | Metadata | Vikings official announcement 2026-08-11 | HIGH | **APPLIED previously** — verified intact, not reapplied |
+| H2 | NO | QB VALUES | Official source citation + last-update 2026-08-21; `I27` already High (verified, not rewritten) | `J27`,`K27` | Metadata | Saints official 2026-08-21: Shough is the starter; starters rested a second straight game; Wilson/Rattler competing for backup | HIGH | **APPLIED** (Decision UPDATE / Updated? Y) |
 
 ## Escalated — requires explicit approval and a governed rule
 
-| ID | Team | Destination | Proposed | Cells | Type | Evidence | Conf | Status |
-|---|---|---|---|---|---|---|---|---|
-| H2 | NO | QB VALUES | **None applied.** Baseline QB Shough has not started in either preseason game; Wilson started Wk2 after outplaying Rattler | `C27`,`E27` (UNCHANGED) | Numerical/model-feeding | Week 2 usage; no official NO Wk1 declaration | MEDIUM | **NUMERIC REVIEW — blocked, no governed mapping** |
+**None.** The only prior escalation (H2, New Orleans) was **rescinded** on 2026-08-24: official Saints evidence
+dated 2026-08-21 confirms Shough as the starter and shows the absences were planned starter rest. No numerical
+change was ever applied, and none is now proposed.
 
 ## Monitor-layer records (no workbook destination)
 
@@ -43,7 +46,7 @@ All rows: `Decision = PENDING` / `Workbook Updated? = N` unless an approved appl
 ## Population totals
 
 - Reconciled teams: **21** (19 blocker rows + 2 new candidates)
-- Applied workbook changes this cycle: **1** (CLE, metadata only)
-- Escalated numeric reviews: **1** (NO)
+- Applied workbook changes this cycle: **2 teams / 5 cells** (CLE `I12`,`J12`,`K12`; NO `J27`,`K27` — all metadata only)
+- Escalated numeric reviews: **0** (NO rescinded 2026-08-24)
 - Record corrections: **1** (NYG)
 - Verified-no-change: **1** (MIN)

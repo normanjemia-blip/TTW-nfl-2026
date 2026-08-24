@@ -23,6 +23,8 @@ VIKSTART="https://www.vikings.com/news/kyler-murray-quarterback-starting-2026-nf
 NFLTUNSIL="https://www.nfl.com/news/commanders-lt-laremy-tunsil-suffered-torn-triceps-likely-to-miss-significant-portion-of-season"
 SAINTS1="https://www.neworleanssaints.com/news/garrett-nelson-edge-new-orleans-saints-roster-moves-august-7-2026"
 SAINTS2="https://www.neworleanssaints.com/news/kahlil-saunders-saints-roster-moves-training-camp-august-12-2026"
+SAINTSQB1="https://www.neworleanssaints.com/news/zach-wilson-spencer-rattler-backup-quarterback-spot-new-orleans-saints-preseason"
+DEPTH="https://www.neworleanssaints.com/team/depth-chart"
 CLEQB1="https://sports.yahoo.com/nfl/live/nfl-news-injury-updates-preseason-week-2-schedule-whos-playing-starters-143714619.html"
 
 B="UNVERIFIED — no qualifying source located for starter participation; post-game confirmation outstanding"
@@ -105,14 +107,14 @@ row("2026-08-15","COMPLETE","KC","LA","Home","RESTED","Patrick Mahomes / Justin 
 row("2026-08-15","COMPLETE","JAX","NO","Away","RESTED","Trevor Lawrence + all starters",
     "HC held all starters out as stated pre-game; Mullens and Bradley took the snaps","None reported",
     SBD15,"2026-08-15","BEAT REPORT","MEDIUM","NONE","PRESEASON MONITOR log only")
-row("2026-08-15","COMPLETE","NO","JAX","Home","MIXED","Spencer Rattler / Tyler Shough",
-    "Rattler started; workbook baseline QB Tyler Shough did not play. Preseason usage is not a Week 1 declaration, "
-    "but the baseline-vs-usage divergence needs verification",
+row("2026-08-15","COMPLETE","NO","JAX","Home","RESTED","Tyler Shough / Spencer Rattler / Zach Wilson",
+    "Saints rested starters. OFFICIAL 2026-08-21: Tyler Shough is the starting quarterback; Wilson and Rattler "
+    "were competing for the backup job. Shough not appearing is expected starter-rest usage, not a QB1 change.",
     "DT Bryan Bresee and OL Dillon Radunz were placed on Injured Reserve.",
-    SAINTS1+" ; "+SAINTS2,"2026-08-12","OFFICIAL","HIGH","QB VALUES",
-    "QB VALUES: NO Source/Notes/Last-update fields; flag baseline-vs-usage divergence for verification. "
-    "IR placements recorded in monitor layer only; duration not characterised by the cited sources.",
-    "No official statement located on whether NO has changed its Week 1 starter","MONITOR","N")
+    SAINTSQB1+" ; "+DEPTH,"2026-08-21","OFFICIAL","HIGH","QB VALUES",
+    "QB VALUES: NO official source citation and last-update applied in v1.1_AUTHORITATIVE (J27/K27); I27 already "
+    "High and verified. C27/E27 unchanged at 2.5; no model output changed.",
+    "","UPDATE","Y")
 row("2026-08-15","COMPLETE","PHI","BAL","Away","RESTED","Jalen Hurts",
     "QB1 Hurts rested; Dalton, McKee and Payton handled snaps",
     "Absent: Quinyon Mitchell, Cooper DeJean, Jalen Carter, Jordan Davis, Zack Baun - reasons not reported",

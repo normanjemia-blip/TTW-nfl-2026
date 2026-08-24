@@ -4,7 +4,7 @@ import unittest, subprocess, csv, hashlib, os, sys, glob
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 AUTH="TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE.xlsx"
-AUTH_SHA="4f5496e15090ddad8b63f9fa9c4a7590d3347b836fcc8b91b2bcf65c0253ff39"
+AUTH_SHA="79923992e9cfe156af47207b1756010af9a375592997be8e194bc75e4e9d313f"
 
 def sh(cmd): return subprocess.run(cmd,shell=True,capture_output=True,text=True)
 
@@ -32,7 +32,7 @@ class Monitor(unittest.TestCase):
     def test_32_team_game_rows(self):
         self.assertEqual(len(self.rows),32); self.assertEqual(len({r["Team"] for r in self.rows}),32)
     def test_current_tracking_state(self):
-        expected={"MIN":("UPDATE","Y"),"CLE":("UPDATE","Y"),"WAS":("MONITOR","N"),"CHI":("MONITOR","N"),"NO":("MONITOR","N")}
+        expected={"MIN":("UPDATE","Y"),"CLE":("UPDATE","Y"),"NO":("UPDATE","Y"),"WAS":("MONITOR","N"),"CHI":("MONITOR","N")}
         for r in self.rows:
             got=(r["Decision"],r["Workbook Updated?"])
             self.assertEqual(got, expected.get(r["Team"],("PENDING","N")), r["Team"])

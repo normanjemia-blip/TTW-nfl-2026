@@ -16,6 +16,8 @@ ESPNBUR="https://www.espn.com/nfl/story/_/id/49574301/sources-bears-luther-burde
 NBCADAMS="https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jamal-adams-is-out-for-the-year-with-a-knee-injury"
 ESPNGRE="https://www.espn.com/nfl/story/_/id/49582563/eagles-olb-greenard-another-couple-weeks-pec-injury"
 SIJEANTY="https://www.si.com/nfl/raiders/onsi/las-vegas-best-case-worst-after-ashton-jeanty-injury"
+SAINTSQB1="https://www.neworleanssaints.com/news/zach-wilson-spencer-rattler-backup-quarterback-spot-new-orleans-saints-preseason"
+DEPTH="https://www.neworleanssaints.com/team/depth-chart"
 SBD2="https://www.sportsbettingdime.com/news/nfl/preseason-week-2-whos-playing-starting-full-guide/"
 V="2026-08-24T14:04Z"
 R=[]
@@ -55,10 +57,10 @@ row("HOU","Blocker row","Blocker: Week 1 starter participation unverified",
  "WR Jayden Higgins (second year) tore his ACL; Xavier Hutchinson moves into the Z receiver role.",
  "MONITOR","NONE","Monitor-layer only: record the Higgins ACL and the resulting depth-chart move. No points or rating proposed.",
  "(none)","Monitor-only",NFLW2,"2026-08-23","MEDIUM","PARTIAL — new injury recorded; Week 1 participation still unverified")
-row("NO","Blocker row","Blocker: no official statement on whether NO changed its Week 1 starter",
- "Zach Wilson started Week 2 against the Rams after outplaying Spencer Rattler; workbook baseline QB Tyler Shough again did not start. Three different QBs have now started or led ahead of the baseline.",
- "NUMERIC REVIEW","QB VALUES","No governed mapping exists for a preseason-usage-driven baseline change. Leave C27/E27 unchanged; escalate for explicit ruling.",
- "QB VALUES!C27, E27 (UNCHANGED)","Numerical/model-feeding (NOT applied)",NFLW2,"2026-08-23","MEDIUM","OPEN — still no official NO Week 1 starter declaration")
+row("NO","Blocker row","Blocker: no official statement on whether NO changed its Week 1 starter; I27 High but J27/K27 were camp-era text and the 2026-07-13 freeze date",
+ "OFFICIAL 2026-08-21: Tyler Shough is the starting quarterback. New Orleans rested its starters for a second consecutive preseason game while Zach Wilson and Spencer Rattler competed for the backup job. Shough not starting either preseason game is expected starter-rest usage and is NOT evidence of a QB1 change; Wilson starting Week 2 has no numerical implication.",
+ "UPDATE","QB VALUES","Apply the official Saints source citation and last-update 2026-08-21. I27 already High (verified, not rewritten). Leave C27/E27 at 2.5.",
+ "QB VALUES!J27, K27 (I27 verified High)","Metadata",SAINTSQB1+" ; "+DEPTH,"2026-08-21","HIGH","RESOLVED — QB1 uncertainty cleared by official evidence","UPDATE","Y")
 row("ATL","Blocker row","Blocker: post-game snap total for Tua unverified",
  "Neither Tua Tagovailoa nor Michael Penix Jr. played in Week 2; Cooper Rush started and was relieved by Jack Strand. No official regular-season starter declaration.",
  "MONITOR","NONE","Monitor-layer only: record that neither QB played and the competition remains officially undeclared.",
