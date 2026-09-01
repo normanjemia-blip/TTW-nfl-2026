@@ -60,7 +60,7 @@ new:  IFERROR(IF(ISNUMBER(INDEX(CalcGoverned,MATCH($A5,CalcTeams,0))),
 | team missing from lookup (`#N/A`) | `""` | `""` | −1.07 ✓ |
 | no governed rating **and** no prior | `""` | `""` | `""` ✓ (no fake zero) |
 
-**Honest scope limit on this proof.** The defect is engine-dependent. The engine used here reproduces it on the *truly empty* cell; the live platform (Google Sheets) reproduces it on the *formula-blank* cell — that is directly evidenced by Google's own cached value of `0` for D5:D36 in the base export while `CALC!AD` is blank. The fix closes **both** coercion paths, and is proven for all four cases under Excel semantics. **It has not been executed inside Google Sheets** (writing to the live Sheet is out of scope), so the owner should confirm in Sheets on a duplicate before promotion — expected result: TEAM RATINGS D shows blank and EFFECTIVE RATING equals the preseason prior for all 32 teams at GP=0.
+**Confirmed natively in Google Sheets (Phase 4).** This was originally flagged as the one claim not executable here. It has since been executed on a disposable probe Sheet — see `TTW_NFL_2026_Sheets_Execution_Report_20260901.md` §4. Google Sheets reproduces the defect on **both** coercion paths (a formula-blank *and* a truly empty cell each return numeric **0** through `ROUND(INDEX(...),2)`, collapsing the rating to 80% of the prior), and the fixed formula returns blank in every non-numeric state so the untouched H fallback delivers 100% preseason prior — while GP>0 still blends normally. All 32 teams' priors, ranks and GP=0 effective ratings, and the DAL@NYG bridge, were reproduced by Google exactly.
 
 ### 2.3 What was deliberately **not** changed
 
@@ -141,8 +141,8 @@ Only two edges remain ≥3.0 (ARI +10.5 and NYG +2.5, down from five in the base
 | `scripts/run_gates.py` | **PASS** (21 sheets, 57,399 formulas, BET OFF, thresholds 3.0/1.5/1.0, VALIDATE-ONLY, 272 REG) |
 | `scripts/validate_preseason_monitor.py` | **PASS** (32 rows, 16 blockers) |
 | `scripts/linkcheck_preseason.py` | **PASS** (32 rows, 16 URLs, all allowlisted) |
-| `scripts/verify_srcb_blendfix_candidate.py` | **PASS — 37 checks, 0 failed** |
-| `tests/run_tests.py` | **40/40 OK** (28 pre-existing + 6 candidate + 6 blend-fix semantics) |
+| `scripts/verify_srcb_blendfix_candidate.py` | **PASS — 37 checks, 0 failed** (both `or True` escapes removed in Phase 4; the settings and weight checks now assert real values and were mutation-tested) |
+| `tests/run_tests.py` | **47/47 OK** (28 pre-existing + 6 candidate + 6 blend-fix semantics + 7 Phase-4 native-Sheets/verifier-integrity) |
 | `git diff --check` | clean |
 
 The gate suite still reports "PRESEASON SrcB blank" because it audits the **authoritative** workbook, which is untouched — that is the correct and expected result while the candidate remains unpromoted.
@@ -153,11 +153,11 @@ The candidate rebuilds **byte-identically** from the committed base export (`tes
 
 ## 6. PR #1 scope resolution
 
-PR #1 stays **draft**; no merge is proposed. Its "99 files changed" is fully explained and is not scope creep:
+PR #1 stays **draft**; no merge is proposed. Its file count is fully explained and is not scope creep. Current values, measured against `origin/main`:
 
 - `origin/main` contains **exactly one file** — the original uploaded `TTW_NFL_v1_1_1 Version 2.xlsx`. It has never received any project work.
-- The branch carries **15 commits** spanning the entire project (baseline audit → v1.1 promotion → QB activation → market lines → monitoring workflow → reconciliations → the 2026-09-01 audit → this candidate).
-- The diff is **9,206 insertions and 0 deletions**: nothing on `main` is modified or removed. The count reflects a repository being populated for the first time, not a large change to existing work.
+- The branch carries **16 commits** spanning the entire project (baseline audit → v1.1 promotion → QB activation → market lines → monitoring workflow → reconciliations → the 2026-09-01 audit → this candidate → the Phase 4 Sheets test).
+- The diff is **107 files changed, 10,329 insertions, 0 deletions**: nothing on `main` is modified or removed. The count reflects a repository being populated for the first time, not a large change to existing work.
 
 Three options for the owner, in the order I would recommend them:
 
@@ -171,7 +171,7 @@ Three options for the owner, in the order I would recommend them:
 
 ## 7. Owner review checklist (nothing here has been done)
 
-1. Open the candidate and confirm in **Google Sheets** that TEAM RATINGS D5:D36 renders blank and EFFECTIVE RATING equals the preseason prior for all 32 teams (§2.2 — the one claim not executable in this environment).
+1. ~~Confirm the blank-preservation fix in Google Sheets~~ — **done in Phase 4**, natively confirmed on a disposable probe Sheet (`TTW_NFL_2026_Sheets_Execution_Report_20260901.md` §4–§6). What remains is opening the candidate itself once to confirm the whole-file behaviours (22 tabs, error scan, the other 15 ENGINE/DASHBOARD rows) — checklist in that report §7.
 2. Confirm the Source B composite is the intended blend, and that the VSiN half may be used this way given the guide's subscriber terms (the numeric table only is used; the PDF is not committed).
 3. Decide the version label and CHANGELOG entry (deliberately left untouched).
 4. Decide whether the Week-1 blend fix ships together with Source B or separately — they are independent changes and the slate CSV separates their contributions.

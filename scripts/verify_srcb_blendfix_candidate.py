@@ -116,16 +116,38 @@ def main(base):
         same = all(wbb[sheet].cell(r, c).value == wbc[sheet].cell(r, c).value
                    for r in range(r0, r1 + 1) for c in range(c0, c1 + 1))
         check("preserved_" + sheet.replace(" ", "_").lower(), same)
-    st = {wbc["SETTINGS"].cell(r, 1).value: wbc["SETTINGS"].cell(r, 2).value for r in range(1, 80)}
-    check("settings_unchanged_core",
-          st.get("Current season") == 2026 and st.get("Current week") is None or True)
+    st = {str(wbc["SETTINGS"].cell(r, 1).value).strip(): wbc["SETTINGS"].cell(r, 2).value
+          for r in range(1, 80) if wbc["SETTINGS"].cell(r, 1).value is not None}
+    expect_settings = [
+        ("Current season", 2026),
+        ("Current week (the week you are projecting)", 1),
+        ("As-of date (update each session; drives staleness checks)", "2026-09-01"),
+        ("Enable BET labels (OFF = 1.5+ ATS edges display STRONG INVESTIGATE)", "Y"),
+        ("ATS BET at >=", 1.5),
+        ("ATS INVESTIGATE at >=", 1.5),
+        ("ATS LEAN at >=", 1.0),
+    ]
+    bad_settings = []
+    for label, want in expect_settings:
+        got = st.get(label, "<label missing>")
+        if hasattr(got, "strftime"):            # as-of date is a real date cell
+            got = got.strftime("%Y-%m-%d")
+        elif isinstance(got, float) and got == int(got) and isinstance(want, int):
+            got = int(got)
+        if got != want:
+            bad_settings.append("%s: got %r want %r" % (label, got, want))
+    check("settings_unchanged_core", not bad_settings, "; ".join(bad_settings))
+
     ps_c, ps_b = wbc["PRESEASON"], wbb["PRESEASON"]
     check("srcC_still_empty", all(ps_c.cell(r, 14).value is None for r in range(5, 37)))
-    check("weights_unchanged_A040_B035_C025",
-          all(ps_c.cell(r, 8).value == 0.4 and ps_c.cell(r, 11 - 0).value is not None or True
-              for r in range(5, 37)) and
-          all(ps_c.cell(r, 8).value == 0.4 and ps_c.cell(r, 13).value == 0.35
-              and ps_c.cell(r, 18).value == 0.25 for r in range(5, 37)))
+    bad_w = ["%s row %d: A=%r B=%r C=%r" % (ps_c.cell(r, 2).value, r,
+                                            ps_c.cell(r, 8).value, ps_c.cell(r, 13).value,
+                                            ps_c.cell(r, 18).value)
+             for r in range(5, 37)
+             if (ps_c.cell(r, 8).value, ps_c.cell(r, 13).value, ps_c.cell(r, 18).value)
+             != (0.4, 0.35, 0.25)]
+    check("weights_unchanged_A040_B035_C025", not bad_w,
+          "; ".join(bad_w) if bad_w else "32/32 rows exactly 0.4/0.35/0.25")
     check("srcA_raw_unchanged", all(ps_b.cell(r, 4).value == ps_c.cell(r, 4).value
                                     for r in range(5, 37)))
     wtmode = [wbc["SETTINGS"].cell(r, 2).value for r in range(1, 80)

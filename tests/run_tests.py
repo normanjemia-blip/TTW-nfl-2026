@@ -205,6 +205,65 @@ class CandidateSrcBBlendFix(unittest.TestCase):
     def test_authoritative_and_live_base_untouched_by_phase3(self):
         self.assertEqual(hashlib.sha256(open(AUTH,'rb').read()).hexdigest(),AUTH_SHA)
 
+class SheetsProbeEvidence(unittest.TestCase):
+    """Phase 4: values executed by Google Sheets in a disposable probe Sheet
+    (1inj6XOyeCZflxkguPaMEyfhlNAjul5wBXEkZvl9r-pY, 2026-09-01). Pins the native
+    evidence so a later edit to the shadow/candidate cannot silently diverge from it."""
+    PROBE="audit/TTW_NFL_2026_Sheets_Probe_Results_20260901.csv"
+    def setUp(self):
+        self.rows=list(csv.reader(open(self.PROBE)))
+    def test_block1_defect_and_fix_as_google_evaluates_them(self):
+        b={r[0]:r for r in self.rows[2:6]}
+        # old formula coerces a blank governed value to 0 -> H collapses to 80% of prior
+        self.assertEqual(b["GP0"][4],"0");    self.assertEqual(b["GP0"][6],"-0.86")
+        self.assertEqual(b["EMPTY"][4],"0");  self.assertEqual(b["EMPTY"][6],"-0.86")
+        # fixed formula stays blank -> H falls back to 100% preseason prior
+        for k in ("GP0","EMPTY","MISS"):
+            self.assertEqual(b[k][5],"",k); self.assertEqual(b[k][7],"-1.07",k)
+        # GP>0 still blends normally through both formulas
+        self.assertEqual(b["GPPOS"][5],"1.23"); self.assertEqual(b["GPPOS"][7],"-0.61")
+        self.assertEqual([b[k][9] for k in ("GP0","GPPOS","EMPTY","MISS")],
+                         ["FALSE","TRUE","FALSE","FALSE"])
+    def test_block2_matches_candidate_and_shadow_for_all_32(self):
+        shadow={r["Team"]:r for r in csv.DictReader(
+            open("audit/TTW_NFL_2026_Preseason_Prior_Shadow_20260901.csv"))}
+        rows=self.rows[9:41]
+        self.assertEqual(len(rows),32)
+        for r in rows:
+            t=r[0]
+            self.assertEqual(float(r[3]),float(shadow[t]["Combined B centered"]),t)
+            self.assertEqual(float(r[4]),float(shadow[t]["Prior A+B combined"]),t)
+            self.assertEqual(float(r[5]),float(r[4]),t)   # GP=0 effective == prior
+    def test_block3_pins_dal_nyg_natively(self):
+        r=self.rows[-1]
+        self.assertEqual(r[:5],["-1.07","-1.9","-0.83","1.6","0.77"])
+        self.assertEqual(r[5],"NYG -0.8")
+        self.assertEqual(r[7],"3.27")
+        self.assertTrue(r[8].startswith("NYG"))
+        self.assertEqual([r[9],r[10]],["22","24"])
+    def test_probe_agrees_with_the_candidate_slate(self):
+        g={r["GameID"]:r for r in csv.DictReader(
+            open("audit/TTW_NFL_2026_Candidate_Week1_Slate_20260901.csv"))}["2026_01_DAL_NYG"]
+        p=self.rows[-1]
+        self.assertEqual((g["FinalMargin"],g["Model spread (fair line)"],g["SpreadEdge"]),
+                         (p[4],p[5],p[7]))
+    def test_no_unexpected_spreadsheet_errors_in_probe(self):
+        blob="\n".join(",".join(r) for r in self.rows)
+        for e in ("#REF!","#VALUE!","#DIV/0!","#N/A","#CIRC"):
+            self.assertNotIn(e,blob,e)
+
+class VerifierHasNoEscapePaths(unittest.TestCase):
+    def test_no_or_true_escapes_remain(self):
+        src=open("scripts/verify_srcb_blendfix_candidate.py").read()
+        self.assertNotIn("or True",src,"verifier must not contain always-true escape paths")
+    def test_settings_and_weight_checks_assert_real_values(self):
+        src=open("scripts/verify_srcb_blendfix_candidate.py").read()
+        for token in ("Current season","Current week (the week you are projecting)",
+                      "As-of date (update each session; drives staleness checks)",
+                      "Enable BET labels","ATS BET at >=","ATS INVESTIGATE at >=","ATS LEAN at >=",
+                      "(0.4, 0.35, 0.25)"):
+            self.assertIn(token,src,token)
+
 def load_tests(loader,tests,pattern):
     sys.path.insert(0,os.path.join(ROOT,"tests"))
     import test_blend_fix_semantics as B
