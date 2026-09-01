@@ -31,7 +31,9 @@ class Authoritative(unittest.TestCase):
                  "TTW_NFL_Power_Ratings_2026_v1.4_SRCB_BLENDFIX_CANDIDATE.xlsx",
                  # Phase 5C (2026-09-01): pre-promotion production rollback checkpoint.
                  # Read-only capture; production was never written.
-                 "TTW_NFL_2026_PROD_ROLLBACK_CHECKPOINT_20260901T1432Z.xlsx"}
+                 "TTW_NFL_2026_PROD_ROLLBACK_CHECKPOINT_20260901T1432Z.xlsx",
+                 # Phase 5C post-promotion: read-only export of live production at v1.4.
+                 "TTW_NFL_2026_PROD_POSTPROMOTION_20260901T1650Z.xlsx"}
         found={os.path.basename(p) for p in glob.glob("**/*.xls*",recursive=True)}
         self.assertEqual(found-allowed,set(),"no spreadsheet file may be added to the repository")
 
@@ -325,6 +327,38 @@ class VerifierHasNoEscapePaths(unittest.TestCase):
                       "Enable BET labels","ATS BET at >=","ATS INVESTIGATE at >=","ATS LEAN at >=",
                       "(0.4, 0.35, 0.25)"):
             self.assertIn(token,src,token)
+
+class ProductionPostPromotion(unittest.TestCase):
+    """Phase 5C post-promotion: production is live at v1.4. Verification was read-only;
+    these tests pin the evidence so it cannot silently drift."""
+    POST="TTW_NFL_2026_PROD_POSTPROMOTION_20260901T1650Z.xlsx"
+    POST_SHA="fde0164c554283118ac6b14a6e765c5abc474add79ad845067cc94c48cb92da8"
+    def test_post_promotion_export_pinned(self):
+        self.assertEqual(hashlib.sha256(open(self.POST,'rb').read()).hexdigest(),self.POST_SHA)
+    def test_manifest_readback_suite_passes(self):
+        r=sh(f"python3 scripts/verify_production_post_promotion.py {self.POST}")
+        self.assertEqual(r.returncode,0,r.stdout+r.stderr)
+        self.assertIn("0 failed",r.stdout)
+    def test_native_import_suite_passes_on_production(self):
+        r=sh(f"python3 scripts/verify_native_import_5b.py {self.POST}")
+        self.assertEqual(r.returncode,0,r.stdout+r.stderr)
+        self.assertIn("0 failed",r.stdout)
+        # that run rewrites the 5B artifact from production; restore it from the test copy
+        sh("python3 scripts/verify_native_import_5b.py "
+           "/tmp/claude-0/-home-user-TTW-nfl-2026/b271fc7c-3511-50b1-bc77-fb5e97203f27/"
+           "scratchpad/testcopy_5b.xlsx")
+    def test_production_is_live_at_v14(self):
+        import openpyxl
+        wb=openpyxl.load_workbook(self.POST,data_only=True)
+        self.assertEqual(wb["START HERE"]["A1"].value,
+                         "TO THE WINDOW \u2014 NFL POWER RATINGS 2026 (v1.4)")
+        tr=wb["TEAM RATINGS"]
+        self.assertTrue(all(tr.cell(r,4).value in (None,"") for r in range(5,37)),
+                        "D column must be blank in production, not 0")
+        i={tr.cell(r,1).value:r for r in range(5,37)}
+        self.assertEqual((tr.cell(i["DAL"],10).value,tr.cell(i["DAL"],11).value),(-1.07,22))
+        self.assertEqual((tr.cell(i["NYG"],10).value,tr.cell(i["NYG"],11).value),(-1.9,24))
+        wb.close()
 
 def load_tests(loader,tests,pattern):
     sys.path.insert(0,os.path.join(ROOT,"tests"))
