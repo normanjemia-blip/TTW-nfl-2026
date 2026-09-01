@@ -23,7 +23,12 @@ class Authoritative(unittest.TestCase):
     def test_no_new_spreadsheet_added(self):
         allowed={"TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE.xlsx","TTW_NFL_v1_1_1 Version 2.xlsx",
                  "TTW_NFL_Power_Ratings_2026_v1.2_QB_WORKING.xlsx","TTW_NFL_Power_Ratings_2026_v1.2.1_QB_CANDIDATE.xlsx",
-                 "TTW_NFL_Power_Ratings_2026_v1.2.2_QB_SWEEP_CANDIDATE.xlsx","TTW_NFL_Power_Ratings_2026_v1.3_MARKET_CANDIDATE.xlsx"}
+                 "TTW_NFL_Power_Ratings_2026_v1.2.2_QB_SWEEP_CANDIDATE.xlsx","TTW_NFL_Power_Ratings_2026_v1.3_MARKET_CANDIDATE.xlsx",
+                 # Phase 3 (2026-09-01): read-only live-Sheet export used as the candidate base,
+                 # and the Source-B + blend-fix candidate built from it. Both are candidate/
+                 # provenance artifacts; neither is authoritative and neither is promoted.
+                 "TTW_NFL_2026_LIVE_EXPORT_20260901_BASE.xlsx",
+                 "TTW_NFL_Power_Ratings_2026_v1.4_SRCB_BLENDFIX_CANDIDATE.xlsx"}
         found={os.path.basename(p) for p in glob.glob("**/*.xls*",recursive=True)}
         self.assertEqual(found-allowed,set(),"no spreadsheet file may be added to the repository")
 
@@ -158,6 +163,53 @@ class ShadowAudit20260901(unittest.TestCase):
         h=hashlib.sha256(open(os.path.join(ROOT,
             "TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE.xlsx"),"rb").read()).hexdigest()
         self.assertEqual(h,AUTH_SHA)
+
+class CandidateSrcBBlendFix(unittest.TestCase):
+    """Phase 3 candidate (2026-09-01): Source B populated + TEAM RATINGS blank-preservation
+    fix, built from the committed read-only live export. Candidate only — never promoted."""
+    BASE="TTW_NFL_2026_LIVE_EXPORT_20260901_BASE.xlsx"
+    BASE_SHA="39c7c567364234068245e68d0af943ca71e4a128b652f57cec258d40ac1e3f35"
+    CAND="TTW_NFL_Power_Ratings_2026_v1.4_SRCB_BLENDFIX_CANDIDATE.xlsx"
+    CAND_SHA="8be3b9511a6fadf6d723d8ce7f0001198f1b4423bf1162c77316fda918f442cb"
+    SLATE="audit/TTW_NFL_2026_Candidate_Week1_Slate_20260901.csv"
+    MANIFEST="audit/TTW_NFL_2026_Candidate_Changed_Cells_20260901.csv"
+    def test_base_and_candidate_pinned_by_sha(self):
+        for p,s in ((self.BASE,self.BASE_SHA),(self.CAND,self.CAND_SHA)):
+            self.assertEqual(hashlib.sha256(open(p,'rb').read()).hexdigest(),s,p)
+    def test_full_verification_suite_passes(self):
+        r=sh(f"python3 scripts/verify_srcb_blendfix_candidate.py {self.BASE}")
+        self.assertEqual(r.returncode,0,r.stdout+r.stderr)
+        self.assertIn("0 failed",r.stdout)
+    def test_candidate_rebuilds_byte_identically(self):
+        import shutil,tempfile
+        with tempfile.TemporaryDirectory() as td:
+            keep=os.path.join(td,"cand.xlsx"); shutil.copy(self.CAND,keep)
+            r=sh(f"python3 scripts/build_srcb_blendfix_candidate.py {self.BASE}")
+            self.assertEqual(r.returncode,0,r.stdout+r.stderr)
+            self.assertEqual(open(self.CAND,'rb').read(),open(keep,'rb').read(),
+                             "candidate must rebuild byte-identically from the committed base")
+    def test_slate_pins_dal_nyg(self):
+        rows={r["GameID"]:r for r in csv.DictReader(open(self.SLATE))}
+        self.assertEqual(len(rows),16)
+        g=rows["2026_01_DAL_NYG"]
+        self.assertEqual(g["Away eff"],"-1.07"); self.assertEqual(g["Home eff"],"-1.9")
+        self.assertEqual(g["FinalMargin"],"0.77")
+        self.assertEqual(g["Model spread (fair line)"],"NYG -0.8")
+        self.assertEqual(g["SpreadEdge"],"3.27")
+        self.assertTrue(g["Supported side"].startswith("NYG"))
+    def test_manifest_covers_every_changed_cell(self):
+        rows=list(csv.DictReader(open(self.MANIFEST)))
+        self.assertEqual(len(rows),32*11,"32 teams x 11 cells")
+        self.assertEqual(len({r["Team"] for r in rows}),32)
+        self.assertEqual(sum(1 for r in rows if "FORMULA CHANGED" in r["Kind"]),32)
+    def test_authoritative_and_live_base_untouched_by_phase3(self):
+        self.assertEqual(hashlib.sha256(open(AUTH,'rb').read()).hexdigest(),AUTH_SHA)
+
+def load_tests(loader,tests,pattern):
+    sys.path.insert(0,os.path.join(ROOT,"tests"))
+    import test_blend_fix_semantics as B
+    tests.addTests(loader.loadTestsFromModule(B))
+    return tests
 
 if __name__=="__main__":
     unittest.main(verbosity=2)

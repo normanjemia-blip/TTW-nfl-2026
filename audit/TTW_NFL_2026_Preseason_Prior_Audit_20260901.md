@@ -73,7 +73,7 @@ Two same-day (2026-09-01) boards were captured; consensus = mean of the two. A s
 
 **Conflicts (reported, not silently resolved)** — six teams differ by exactly 1.0 game between the two same-day books: ARI (3.5 MGM / 4.5 FAN), DAL (9.5 / 8.5), GB (9.5 / 10.5), JAX (9.5 / 8.5), LAC (10.5 / 9.5), NE (10.5 / 9.5). Consensus takes the mid-point and the conflict is flagged per-row in the shadow CSV. Prices are recorded per book in the provenance JSON (note DAL -110/-110 at MGM: a genuinely two-sided 9.5).
 
-Movement since late July (DK Jul-23 → Sep-01 consensus): ATL +1.0, ARI +0.5, SF +1.0, LAC +0.5, JAX +0.5, GB +0.5, NE −0.5, CIN −1.0, DAL −0.5. Direction is coherent with August news flow and matters for §8.
+Cross-book context (DK board of Jul-23 vs the Sep-01 consensus of *different* books): ATL +1.0, ARI +0.5, SF +1.0, LAC +0.5, JAX +0.5, GB +0.5, NE −0.5, CIN −1.0, DAL −0.5. **This is not measured same-book line movement** — the July and September numbers come from different sportsbooks with different pricing and positions, so these deltas are indicative cross-book context only. Direction is nonetheless coherent with August news flow and is used only as soft context in §8.
 
 ### 2.4 Week-1 market spreads (post-hoc reference only — never inputs)
 
@@ -140,11 +140,13 @@ Full table in `TTW_NFL_2026_Week1_Before_After_Shadow_20260901.csv`. Summary:
 - **GP=0-dependent ≥0.8** (|W1-B − W1-A|): JAX, LA, LV, NYJ, SEA.
 - **Win-total book conflict:** ARI, DAL, GB, JAX, LAC, NE.
 
+Rank-tie note: under the A+B+C scenario, **DEN and HOU tie at Week-1 effective 1.78 (shared rank 9)** — their priors differ (2.23 vs 2.22) and the tie is created purely by 2-dp rounding of the 0.8× Week-1 blend (1.784 and 1.776 both round to 1.78). BAL/BUF similarly share 2.71 under A+B+C via rounding at the prior step. Rank comparisons at exact ties should be read as equal, not ordered.
+
 ---
 
 ## 7. Priority teams & DAL/NYG deep dive
 
-**Likely-underrated list (task):** confirmed for **DAL** (rank 27 → 22 A+B → ~19 A+B+C; largest league-wide gap: FPI #11, Makinen exactly league-average, win total 9.0–9.5), **CIN** (23 → 20 → ~12-equivalent by FPI; Makinen 24.0 = average vs TTW −1.91), **KC** (18 → 15; FPI #9, win total 10.5 — but note live QB VALUES holds KC confidence **Low**, so the QB layer already carries caution), **GB** (16 → 12; FPI #7, total 10.0), **BUF** (8 → 3; all sources top-4), **WAS** (mildly: −2.53 → −1.92). **Not supported for LV:** every source agrees with TTW (prior −4.40 vs public −4.61 combined, total 5.5); LV is *not* underrated by this evidence.
+**Likely-underrated list (task):** confirmed for **DAL** (rank 27 → 22 A+B → 21 A+B+C; largest league-wide gap: FPI #11, Makinen exactly league-average, win total 9.0–9.5), **CIN** (23 → 20 → ~12-equivalent by FPI; Makinen 24.0 = average vs TTW −1.91), **KC** (18 → 15; FPI #9, win total 10.5 — but note live QB VALUES holds KC confidence **Low**, so the QB layer already carries caution), **GB** (16 → 12; FPI #7, total 10.0), **BUF** (8 → 3; all sources top-4), **WAS** (mildly: −2.53 → −1.92). **Not supported for LV:** every source agrees with TTW (prior −4.40 vs public −4.61 combined, total 5.5); LV is *not* underrated by this evidence.
 **Likely-overrated list (task):** confirmed for **JAX** (+4.03 vs public +0.5–1.1; FPI #16; nonetheless still favored −7.4 vs CLE and market agrees at −7.5), **HOU** (+3.39 vs public ~+1.1), **IND**, **PIT**, **MIN** (all cross zero under A+B+C), **ATL** (mild), **NO** (mild: −1.17 → −1.64; the QB layer, not the prior, is where NO's uncertainty was already resolved).
 
 **DAL@NYG:** the +4.77 NYG edge decomposes as ≈1.33 pts of DAL-underrating by SrcA (edge falls to +3.44 under A+B) plus ≈0.46 more with Source C (+2.98), leaving ≈3 pts that is genuine model-vs-market disagreement about this matchup (even public-source-blended TTW still makes NYG about −0.4 to −1.0 at home while the market has DAL −2.5). Conclusion — the baseline working position is **confirmed and sharpened**: at least ~40% of the displayed edge is prior-construction artifact; what remains is an ordinary-sized disagreement, not a 4.77-point outlier. Market context (separate opinion layer, not evidence): VSiN's Week-1 systems article independently plays NY GIANTS +2.5 (-105); the guide's NFC preview also leaned Giants win-total Over. These are betting opinions and were given zero weight in any rating.
