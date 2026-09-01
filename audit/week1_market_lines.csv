@@ -1,0 +1,17 @@
+row,game,away,home,favorite,spread_positive,total,market_home_spread,source,line_date,line_type,cross_source_check,fanduel_lookahead,side_flip
+5,NE@SEA,NE,SEA,SEA,3.5,44.5,-3.5,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),AGREE,same as DK,no
+6,SF@LA,SF,LA,LA,2.5,48.5,-2.5,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),DIVERGES,LA -3.5 / 48.5,no
+7,CHI@CAR,CHI,CAR,CHI,2.5,44.5,2.5,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),DIVERGES,CHI -2.5 / 45.5,no
+8,TB@CIN,TB,CIN,CIN,3.5,50.5,-3.5,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),DIVERGES,CIN -3.5 / 51.5,no
+9,NO@DET,NO,DET,DET,7.0,48.5,-7.0,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),DIVERGES,DET -6.5 / 49.5,no
+10,BUF@HOU,BUF,HOU,BUF,1.5,45.5,1.5,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),DIVERGES,BUF -1.5 / 44.5,no
+11,BAL@IND,BAL,IND,BAL,3.5,49.5,3.5,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),DIVERGES,BAL -3.5 / 48.5,no
+12,CLE@JAX,CLE,JAX,JAX,7.0,40.5,-7.0,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),DIVERGES,JAX -7.5 / 40.5,no
+13,ATL@PIT,ATL,PIT,PIT,3.0,42.5,-3.0,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),DIVERGES,PIT -2.5 / 41.5,no
+14,NYJ@TEN,NYJ,TEN,TEN,3.0,39.5,-3.0,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),DIVERGES,TEN -2.5 / 38.5,no
+15,ARI@LAC,ARI,LAC,LAC,11.5,45.5,-11.5,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),DIVERGES,LAC -10.5 / 46.5,no
+16,MIA@LV,MIA,LV,LV,3.0,41.5,-3.0,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),DIVERGES,MIA -3.5 / 40.5 (SIDE FLIP),YES
+17,GB@MIN,GB,MIN,GB,1.5,44.5,1.5,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),AGREE,same as DK,no
+18,WAS@PHI,WAS,PHI,PHI,5.5,46.5,-5.5,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),DIVERGES,PHI -4.5 / 47.5,no
+19,DAL@NYG,DAL,NYG,DAL,2.5,48.5,2.5,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),AGREE,same as DK,no
+20,DEN@KC,DEN,KC,KC,2.5,42.5,-2.5,"DraftKings OPENING (schedule release) via FOX Sports, as of 2026-05-15",2026-05-15,OPENING (not current),DIVERGES,KC -2.5 / 43.5,no

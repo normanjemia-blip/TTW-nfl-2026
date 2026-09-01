@@ -1,0 +1,6 @@
+sheet,cell,type,old,new
+START HERE,A1,version-label correction (proven mislabel),TO THE WINDOW — NFL POWER RATINGS 2026 (v1.0),TO THE WINDOW — NFL POWER RATINGS 2026 (v1.1)
+CHANGELOG,A4,new changelog entry — Version,,1.1
+CHANGELOG,B4,new changelog entry — Date,,2026-07-23
+CHANGELOG,C4,new changelog entry — Change,,"Version-label alignment (documentation only). START HERE banner corrected from (v1.0) to (v1.1) to match the canonical version proven across CHANGELOG latest entry 1.1, SETTINGS parameter-freeze note (frozen as of v1.1, 2026-07-13), DICTIONARY v1.1 sections, AUDIT V1.1 safety-pass test report, and BACKTEST parameter freeze v1.1. No formulas, weights, thresholds, methodology, schedule, sample/backtest data, QB values, adjustments, ratings, or settings changed. Historical v1.0 references (BACKTEST archive values A82/A83, AUDIT v1.0 test report A27/A45, HISTORY 2025 spread-provenance note A2) intentionally left untouched."
+CHANGELOG,D4,new changelog entry — Backtest impact,,None. Documentation-only banner correction; model outputs and backtest metrics unchanged (Spread MAE 10.376; Totals MAE 10.787).

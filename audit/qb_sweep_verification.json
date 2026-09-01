@@ -1,0 +1,50 @@
+{
+  "base_sha256": "e6efbbb3a2b75c76f57bf13906de84f50aefd25ea05d59ef6ddba56aa2aee136",
+  "candidate_sha256": "9271a30f2dbda88dc7128742bb8eee18dd892f69c3ac56e64c475263ae1f48db",
+  "authoritative_sha256": "674510507fa784f0926a348b81068cc731e082b992fa9a0fc42d3957e75b6b5f",
+  "sheet_count": 21,
+  "sheet_count_is_21": true,
+  "sheet_order_identical": true,
+  "visibility_identical": true,
+  "formula_count": 57399,
+  "formula_count_is_57399": true,
+  "formula_coords_identical": true,
+  "formula_text_diffs": 0,
+  "total_cell_diffs": 19,
+  "diff_sheets": [
+    "CHANGELOG",
+    "QB VALUES",
+    "START HERE"
+  ],
+  "only_allowed_sheets_changed": true,
+  "market_lines_changes": [],
+  "adjustments_changes": [],
+  "team_ratings_changes": [],
+  "settings_changes": [],
+  "schedule_changes": [],
+  "history_changes": [],
+  "backtest_changes": [],
+  "preseason_changes": [],
+  "qb_diffs_outside_authorized_rows": [],
+  "qb_OK": 31,
+  "qb_UNCERTAIN": 1,
+  "uncertain_teams": [
+    "CLE"
+  ],
+  "nonzero_deviations": [
+    {
+      "team": "LV",
+      "baseline": "Fernando Mendoza",
+      "active": "Kirk Cousins",
+      "delta": 0.5
+    }
+  ],
+  "exactly_one_nonzero_LV_050": true,
+  "counts_31_1": true,
+  "zip_members_changed": [
+    "xl/worksheets/sheet6.xml",
+    "xl/worksheets/sheet21.xml",
+    "xl/sharedStrings.xml"
+  ],
+  "drawings_persons_identical": true
+}

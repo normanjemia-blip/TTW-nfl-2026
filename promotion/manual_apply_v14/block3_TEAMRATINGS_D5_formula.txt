@@ -1,0 +1,1 @@
+=IFERROR(IF(ISNUMBER(INDEX(CalcGoverned,MATCH($A5,CalcTeams,0))),ROUND(INDEX(CalcGoverned,MATCH($A5,CalcTeams,0)),2),""),"")

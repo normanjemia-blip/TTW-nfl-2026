@@ -1,0 +1,26 @@
+{
+  "source_sha256": "674510507fa784f0926a348b81068cc731e082b992fa9a0fc42d3957e75b6b5f",
+  "working_sha256": "2d9d36d0b17b4acb7fa7ae1122d94d5adab57413336b029112ad430415ad4c7d",
+  "sheet_count_working": 21,
+  "sheet_order_identical": true,
+  "visibility_identical": true,
+  "formula_count_source": 57399,
+  "formula_count_working": 57399,
+  "formula_coords_identical": true,
+  "formula_text_diffs": 0,
+  "total_cell_diffs": 132,
+  "nonQB_cell_diffs": [],
+  "qb_cell_diff_count": 132,
+  "zip_members_source": 71,
+  "zip_members_working": 71,
+  "zip_members_changed": [
+    "xl/worksheets/sheet6.xml"
+  ],
+  "drawings_persons_identical": true,
+  "qb_rows_with_nonzero_delta": [],
+  "confidence_High": 28,
+  "confidence_Low": 4,
+  "confidence_Medium": 0,
+  "baseline_value_zero": 28,
+  "baseline_value_blank": 4
+}

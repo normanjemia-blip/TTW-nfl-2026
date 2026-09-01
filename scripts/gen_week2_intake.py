@@ -1,0 +1,121 @@
+#!/usr/bin/env python3
+"""Generate preseason/PRESEASON_WEEK2_INTAKE_20260824.csv — post-Preseason-Week-2 reconciliation.
+Population = the 19 PRESEASON_MONITOR rows carrying a Blocker, plus teams whose Week 2 evidence
+creates a material new candidate. Count is evidence-driven, not targeted."""
+import csv, os
+HDR=["Team","Population Basis","Prior State","Week 2 Evidence","Classification","Proposed Destination",
+     "Proposed Action","Workbook Cells","Change Type","Source URL","Source Date","Verified At",
+     "Confidence","Blocker Status","Decision","Workbook Updated?"]
+Y24="https://sports.yahoo.com/nfl/live/nfl-news-injury-updates-preseason-week-2-schedule-whos-playing-starters-143714619.html"
+NFLW2="https://www.nfl.com/news/2026-nfl-preseason-week-2-what-we-learned-saturday-games"
+ESPNW2="https://www.espn.com/nfl/story/_/id/49664649/2026-nfl-preseason-week-2-takeaways-analysis-roster-questions"
+CBSW2="https://www.cbssports.com/nfl/news/nfl-preseason-week-2-schedule-live-scores-updates-highlights-drew-allar-will-howard/live/"
+CMDR="https://www.commanders.com/news/commanders-confident-brandon-coleman-tackle-laremy-tunsil"
+ESPNCOLE="https://www.espn.com/nfl/story/_/id/49577471/washington-commanders-brandon-coleman-left-tackle"
+ESPNBUR="https://www.espn.com/nfl/story/_/id/49574301/sources-bears-luther-burden-iii-expected-miss-preseason"
+NBCADAMS="https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/jamal-adams-is-out-for-the-year-with-a-knee-injury"
+ESPNGRE="https://www.espn.com/nfl/story/_/id/49582563/eagles-olb-greenard-another-couple-weeks-pec-injury"
+SIJEANTY="https://www.si.com/nfl/raiders/onsi/las-vegas-best-case-worst-after-ashton-jeanty-injury"
+SAINTSQB1="https://www.neworleanssaints.com/news/zach-wilson-spencer-rattler-backup-quarterback-spot-new-orleans-saints-preseason"
+DEPTH="https://www.neworleanssaints.com/team/depth-chart"
+SBD2="https://www.sportsbettingdime.com/news/nfl/preseason-week-2-whos-playing-starting-full-guide/"
+V="2026-08-24T14:04Z"
+R=[]
+def row(t,basis,prior,ev,cls,dest,act,cells,ctype,url,sd,conf,blk,dec="PENDING",upd="N"):
+    R.append([t,basis,prior,ev,cls,dest,act,cells,ctype,url,sd,V,conf,blk,dec,upd])
+
+# ---- 19 blocker rows ----
+row("CLE","Blocker row","Values blank, Confidence Low, competition explicitly unsettled",
+ "OFFICIAL 2026-08-24: Browns named Deshaun Watson the 2026 starting QB over Shedeur Sanders; Sanders is the backup. Baseline QB in workbook is already Watson, so Active == Baseline.",
+ "UPDATE","QB VALUES","Confidence Low->High; replace source with the official announcement; set last-update 2026-08-24. Leave C12/E12 at 1.0.",
+ "QB VALUES!I12, J12, K12","Metadata",Y24,"2026-08-24","HIGH","RESOLVED — competition officially settled","UPDATE","Y")
+row("WAS","Blocker row","Blocker: replacement left tackle unconfirmed",
+ "OFFICIAL: HC Dan Quinn named Brandon Coleman the starting LT after Laremy Tunsil's torn triceps required surgery; Coleman worked with the starters. Jayden Daniels was active and took 3 snaps in Week 2, his first game action since December.",
+ "UPDATE","NONE","Monitor-layer only: record the named replacement LT and Daniels' return to game action. No points or rating proposed.",
+ "(none)","Monitor-only",CMDR,"2026-08-10","HIGH","RESOLVED — replacement LT now named")
+row("CHI","Blocker row","Blocker: Burden III diagnosis and timeline not reported",
+ "Luther Burden III diagnosis reported as a groin injury sustained in practice; expected to miss the remainder of the preseason but to be available for Week 1.",
+ "UPDATE","NONE","Monitor-layer only: record the diagnosis and expected Week 1 availability. No points or rating proposed.",
+ "(none)","Monitor-only",ESPNBUR,"2026-08-10","HIGH","RESOLVED — diagnosis and timeline now reported")
+row("NYG","Blocker row","Injury field attributed a carted-off Jamal Adams to New York",
+ "RECORD CORRECTION: Jamal Adams is a Minnesota Vikings player, injured during the MIN@NYG game — not a Giants player. Independently, Adams is now confirmed out for the season with a knee injury.",
+ "RECORD CORRECTION","NONE","Remove the misattribution from the NYG monitor row. No points or rating proposed.",
+ "(none)","Monitor-only",NBCADAMS,"2026-08-16","HIGH","RESOLVED — misattribution corrected")
+row("MIN","Blocker row (integrity verify only)","Confidence High, Baseline=Active=Kyler Murray, C25/E25=3.0, last-update 2026-08-11, Decision UPDATE/Y",
+ "No Week 2 evidence contradicts the Vikings' 2026-08-11 official starter announcement. Separately, Vikings S Jamal Adams is out for the season (knee) — a roster fact, not a QB-record fact.",
+ "NO CHANGE","NONE","Preserve all current MIN entries exactly. Verified intact.",
+ "(none — verification only)","Monitor-only",NBCADAMS,"2026-08-16","HIGH","No blocker; integrity confirmed","UPDATE","Y")
+row("PHI","Blocker row","Blocker: reasons for five defensive absences unreported",
+ "OLB Jonathan Greenard on PUP with a pectoral injury; DC Vic Fangio stated he does not know when Greenard will return and there is concern he could miss the start of the regular season.",
+ "MONITOR","NONE","Monitor-layer only: record the Greenard pec injury and Week 1 availability concern. No points or rating proposed.",
+ "(none)","Monitor-only",ESPNGRE,"2026-08-21","HIGH","PARTIAL — Greenard explained; other absences still unreported")
+row("LV","Blocker row","Blocker: Cousins' own Week 1 snap count unverified",
+ "RB Ashton Jeanty left practice with a right knee injury and was helped off; severity not disclosed. No change to the Cousins QB1 position.",
+ "MONITOR","NONE","Monitor-layer only: record the Jeanty injury pending a diagnosis. QB record unchanged; approved +0.50 deviation untouched.",
+ "(none)","Monitor-only",SIJEANTY,"2026-08-24","MEDIUM","OPEN — Jeanty diagnosis and severity not disclosed")
+row("HOU","Blocker row","Blocker: Week 1 starter participation unverified",
+ "WR Jayden Higgins (second year) tore his ACL; Xavier Hutchinson moves into the Z receiver role.",
+ "MONITOR","NONE","Monitor-layer only: record the Higgins ACL and the resulting depth-chart move. No points or rating proposed.",
+ "(none)","Monitor-only",NFLW2,"2026-08-23","MEDIUM","PARTIAL — new injury recorded; Week 1 participation still unverified")
+row("NO","Blocker row","Blocker: no official statement on whether NO changed its Week 1 starter; I27 High but J27/K27 were camp-era text and the 2026-07-13 freeze date",
+ "OFFICIAL 2026-08-21: Tyler Shough is the starting quarterback. New Orleans rested its starters for a second consecutive preseason game while Zach Wilson and Spencer Rattler competed for the backup job. Shough not starting either preseason game is expected starter-rest usage and is NOT evidence of a QB1 change; Wilson starting Week 2 has no numerical implication.",
+ "UPDATE","QB VALUES","Apply the official Saints source citation and last-update 2026-08-21. I27 already High (verified, not rewritten). Leave C27/E27 at 2.5.",
+ "QB VALUES!J27, K27 (I27 verified High)","Metadata",SAINTSQB1+" ; "+DEPTH,"2026-08-21","HIGH","RESOLVED — QB1 uncertainty cleared by official evidence","UPDATE","Y")
+row("ATL","Blocker row","Blocker: post-game snap total for Tua unverified",
+ "Neither Tua Tagovailoa nor Michael Penix Jr. played in Week 2; Cooper Rush started and was relieved by Jack Strand. No official regular-season starter declaration.",
+ "MONITOR","NONE","Monitor-layer only: record that neither QB played and the competition remains officially undeclared.",
+ "(none)","Monitor-only",NFLW2,"2026-08-23","MEDIUM","OPEN — no official ATL Week 1 declaration")
+row("DEN","Blocker row","Blocker: reason for Bo Nix hold-out not stated (rest vs precaution)",
+ "Bo Nix returned to action in Week 2 and was described as sharp, confirming the Week 1 hold-out was not injury-driven.",
+ "UPDATE","NONE","Monitor-layer only: record that Nix returned and the Week 1 hold-out was precautionary/planned rest.",
+ "(none)","Monitor-only",CBSW2,"2026-08-22","MEDIUM","RESOLVED — hold-out reason now evident")
+row("PIT","Blocker row","Blocker: unresolved conflict on whether Rodgers took any Week 1 snaps",
+ "Aaron Rodgers was inactive for the Week 1 preseason game against Green Bay, resolving the conflict: he took no snaps.",
+ "UPDATE","NONE","Monitor-layer only: record that Rodgers was inactive. No points or rating proposed.",
+ "(none)","Monitor-only",SBD2,"2026-08-13","MEDIUM","RESOLVED — Rodgers confirmed inactive")
+row("GB","Blocker row","Blocker: pre-game expectation only; post-game snap confirmation unverified",
+ "Jordan Love played briefly in the Week 1 preseason game against Pittsburgh, confirming participation.",
+ "UPDATE","NONE","Monitor-layer only: confirm Love's participation. No points or rating proposed.",
+ "(none)","Monitor-only",SBD2,"2026-08-13","MEDIUM","RESOLVED — participation confirmed")
+row("ARI","Blocker row","Blocker: Week 1 starter participation unverified",
+ "HC Mike LaFleur said starters would play one drive, two at most, with Jacoby Brissett starting and Gardner Minshew II relieving him.",
+ "UPDATE","NONE","Monitor-layer only: confirm Brissett as the starter and the limited-snap plan.",
+ "(none)","Monitor-only",SBD2,"2026-08-21","MEDIUM","RESOLVED — Brissett confirmed starter")
+row("SF","Blocker row","Blocker: Week 1 starter participation unverified",
+ "Brock Purdy made his 2026 preseason debut in Week 2, taking one to two series with the first-team offense; Mac Jones followed.",
+ "UPDATE","NONE","Monitor-layer only: confirm Purdy's participation and usage.",
+ "(none)","Monitor-only",SBD2,"2026-08-20","MEDIUM","RESOLVED — participation confirmed")
+row("TB","Blocker row","Blocker: Browning diagnosis/timeline not specified",
+ "HC Todd Bowles planned eight to fifteen snaps for the starters in Week 2 and Baker Mayfield played. No further detail published on Jake Browning's back injury.",
+ "MONITOR","NONE","Monitor-layer only: record Mayfield's Week 2 usage; Browning blocker remains.",
+ "(none)","Monitor-only",SBD2,"2026-08-22","MEDIUM","OPEN — Browning diagnosis/timeline still unspecified")
+row("TEN","Blocker row","Blocker: Week 1 starter participation unverified",
+ "Cam Ward played in Week 2, described as getting a chance to settle in. Rookie WR Carnell Tate continues to see significant preseason work.",
+ "MONITOR","NONE","Monitor-layer only: record Ward's Week 2 participation.",
+ "(none)","Monitor-only",Y24,"2026-08-24","MEDIUM","PARTIAL — Week 2 participation noted; Week 1 still unverified")
+row("IND","Blocker row","Blocker: Week 1 starter participation unverified",
+ "Riley Leonard started Week 2 and played the first half. Daniel Jones remains the previously announced regular-season Week 1 starter; preseason usage does not alter that.",
+ "MONITOR","NONE","Monitor-layer only: record Week 2 QB rotation. No change to the Jones baseline.",
+ "(none)","Monitor-only",NFLW2,"2026-08-23","MEDIUM","PARTIAL — Week 1 participation still unverified")
+row("NE","Blocker row","Blocker: Week 1 starter participation unverified",
+ "New England hosted Philadelphia in Week 2 following joint practices. No qualifying source located confirming Drake Maye's participation or snap count.",
+ "MONITOR","NONE","No action. Blocker carried forward.",
+ "(none)","Monitor-only",SBD2,"2026-08-22","LOW","OPEN — participation still unverified")
+# ---- material new candidates (not previously blocker rows) ----
+row("DET","New Week 2 candidate","No prior blocker; Week 1 row recorded rested starters",
+ "All-Pro LT Penei Sewell did not suit up in Week 2 and C Cade Mays sustained a wrist injury during camp.",
+ "MONITOR","NONE","Monitor-layer only: record the offensive-line availability items pending diagnoses.",
+ "(none)","Monitor-only",NFLW2,"2026-08-23","MEDIUM","OPEN — no diagnosis or timeline published for either player")
+row("LAC","New Week 2 candidate","No prior blocker; Week 1 row recorded Herbert rested",
+ "C Tyler Biadasz was lost to injury, affecting the interior offensive line.",
+ "MONITOR","NONE","Monitor-layer only: record the Biadasz injury pending a diagnosis.",
+ "(none)","Monitor-only",ESPNW2,"2026-08-23","MEDIUM","OPEN — diagnosis and timeline not published")
+
+os.makedirs("preseason",exist_ok=True)
+with open("preseason/PRESEASON_WEEK2_INTAKE_20260824.csv","w",newline="") as f:
+    w=csv.writer(f,lineterminator="\n"); w.writerow(HDR); w.writerows(R)
+from collections import Counter
+c=Counter(r[4] for r in R)
+print(f"rows={len(R)} teams={len(set(r[0] for r in R))}")
+print("classification:",dict(c))
+print("blocker-basis rows:",sum(1 for r in R if r[1].startswith("Blocker")),"| new candidates:",sum(1 for r in R if r[1].startswith("New")))

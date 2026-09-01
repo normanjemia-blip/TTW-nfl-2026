@@ -1,0 +1,120 @@
+# TTW NFL Power Ratings 2026 — Repository Manifest
+
+This repository holds the "To The Window" NFL Power Ratings 2026 workbook, its
+preseason-readiness audit trail, and the v1.1 promotion record.
+
+## Authoritative version: **v1.1 (native Google Sheet)**
+
+As of 2026-07-23, **v1.1 is authoritative**. It passed native Google Sheets
+round-trip verification (**PASS — 21/21 checks**) and now lives as the native
+Google Sheet:
+
+- **Native Google Sheet ID:** `1RXJkgGgnaWKPiNT3DVEvAOQRRaUftzkjpVg35ih9Iew`
+- **URL:** https://docs.google.com/spreadsheets/d/1RXJkgGgnaWKPiNT3DVEvAOQRRaUftzkjpVg35ih9Iew
+- **Promoted XLSX source SHA-256:** `674510507fa784f0926a348b81068cc731e082b992fa9a0fc42d3957e75b6b5f`
+- **Round-trip XLSX SHA-256:** `fbfda1be9657b422e502baa5761fb4907e8e21f4908f5c1751b7c4ab715ab0fb`
+
+Round-trip evidence is in [`promotion/`](promotion/). All 57,399 formulas
+(coordinates, text, cached values), constants, drawings/persons, defined names,
+data validations, meaningful cell styles, the 272 unscored 2026 REG games, the
+clean production state (0 usable market spreads / adjustments / QB deltas / team
+overrides), the v1.1 banner, and the CHANGELOG alignment entry all verified
+identical across the round trip. The 24 changed package parts are accepted,
+behavior-neutral Google re-packaging differences (style dedup, formatting-only
+cell/column trimming, named-range/validation reordering) — see the report.
+
+## Workbooks
+
+| File | Role | SHA-256 | Version banner |
+|---|---|---|---|
+| `TTW_NFL_Power_Ratings_2026_v1.4_AUTHORITATIVE.xlsx` | **Authoritative v1.4 XLSX source** — a read-only export of live production taken after the 2026-09-01 v1.4 promotion. This is the single active authoritative workbook. | `39d42aa4863422e0b6df30553e1eb635cd451c9b9ecf63d2272acd78ed2a7fa9` (committed artifact) · semantic fingerprint `b6169953b71eed19579d974a399b0f431eb326d7a7923bd6c03847b591ee183b` | `(v1.4)` |
+| ~~`TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE.xlsx`~~ | **Superseded by v1.4** — removed from the active root at the v1.4 release and preserved in Git history (`git show <pre-5D-commit>:TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE.xlsx`). Content SHA-256 was `79923992e9cfe156af47207b1756010af9a375592997be8e194bc75e4e9d313f`. | — | `(v1.1)` |
+| `TTW_NFL_v1_1_1 Version 2.xlsx` | **Preserved provenance / rollback** — the original uploaded, audited baseline; keep byte-for-byte, do not overwrite | `243ce78fd0305f0f67afa35bc88e1b29beae4d464fa747e48a8c30952d032998` | `(v1.0)` — *original mislabel; superseded by v1.1* |
+| `TTW_NFL_Power_Ratings_2026_v1.2_QB_WORKING.xlsx` | **Working copy (NOT authoritative)** — QB VALUES manual fields populated from live Aug-2026 research; QB deltas all 0 (model output unchanged). Built by surgical edit of the QB sheet only (SHA-256 `2d9d36d0b17b4acb7fa7ae1122d94d5adab57413336b029112ad430415ad4c7d`) | — | `(v1.1)` |
+| `TTW_NFL_Power_Ratings_2026_v1.2.1_QB_CANDIDATE.xlsx` | **Candidate (NOT authoritative)** — approved LV QB deviation entered (Cousins +0.50); 29 OK / 3 UNCERTAIN (SHA-256 `e6efbbb3a2b75c76f57bf13906de84f50aefd25ea05d59ef6ddba56aa2aee136`) | — | `(v1.2.1)` |
+| `TTW_NFL_Power_Ratings_2026_v1.2.2_QB_SWEEP_CANDIDATE.xlsx` | **Candidate (NOT authoritative)** — Aug-10 QB sweep; ATL & MIN resolved to baseline (0/0, Medium), CLE still open; 31 OK / 1 UNCERTAIN (SHA-256 `9271a30f2dbda88dc7128742bb8eee18dd892f69c3ac56e64c475263ae1f48db`) | — | `(v1.2.2)` |
+| `TTW_NFL_Power_Ratings_2026_v1.3_MARKET_CANDIDATE.xlsx` | **Candidate (NOT authoritative)** — Week 1 market lines populated (2026-05-15 DraftKings OPENING lines; all 16 rows flag STALE) (SHA-256 `1e9cb2c564bbe26c5da810b6cefcfba2ce163ee62271c40c49fc4a4dfa50bf9d`) | — | `(v1.3)` |
+
+### v1.4 release (2026-09-01)
+
+Production Sheet `1RXJkgGgnaWKPiNT3DVEvAOQRRaUftzkjpVg35ih9Iew` carries **v1.4**: Source B populated for all 32 teams from the equal-weight VSiN (Makinen p29) / ESPN FPI composite, and `TEAM RATINGS!D5:D36` corrected to the ISNUMBER-protected lookup so a blank `CalcGoverned` no longer coerces to 0 — Week 1 now retains 100% of the preseason prior. Source C remains blank and **VALIDATE-ONLY** pending the 2.1 pts/win calibration. The six inherited zero-sample `#DIV/0!` cells (`CALC!B39:B43`, `DATA QUALITY!B8`) are outside this release and unchanged. See `audit/TTW_NFL_2026_Production_Execution_Report_v14_20260901.md`.
+
+**Drift testing:** never compare Google export ZIP SHAs — Drive repackages the archive on every download, so the SHA changes even when the Sheet does not. Use `scripts/semantic_fingerprint.py` (sheet names + every formula by coordinate/text + every constant by coordinate/value). Pinned SHAs in this repo refer only to the committed local artifacts.
+
+**Superseded one-shot scripts:** the phase-specific build/verify scripts for v1.2–v1.3 (`scripts/build_qb_*.py`, `scripts/verify_qb_*.py`, `scripts/verify_market_candidate.py`, `promotion/verify_roundtrip.py`, and others) still reference `…v1.1_AUTHORITATIVE.xlsx` as the input base they were written against. That is deliberate — they are historical records of how those candidates were built, and repointing them at v1.4 would misstate what they did. The file they name is available from Git history. They are not part of the active suite; nothing in `tests/run_tests.py` invokes them.
+
+- **QB Sweep (2026-08-10):** fresh current-source review of the flagged QB situations. **ATL resolved** to baseline Tua Tagovailoa (Penix not medically cleared after a third ACL surgery) and **MIN resolved** to baseline Kyler Murray (63-33 first-team snap edge over the last four practices) — both zero-delta at Medium. **CLE remains UNCERTAIN** (no starter named; decision after the 2026-08-22 preseason game). **LV +0.50 re-verified and unchanged.** Counts move 29/3 → **31 OK / 1 UNCERTAIN**; still exactly one nonzero deviation league-wide. See `audit/QB_Sweep_2026-08-10_Report.md`.
+- **QB Preseason Activation Phase 1 (2026-08-05):** all 32 QB situations researched from current sources. 28 settled (0/0, High), 3 uncertain (ATL/CLE/MIN, blank/Low), 1 deviation (LV: Cousins over priced-in Mendoza). Deliverables in `audit/qb_*`.
+- **Phase 2 — Market Lines (2026-08-06):** Week 1 rows 5–20 populated with the **2026-05-15 DraftKings OPENING lines** (favorite + positive spread + total), recorded with true source/line date. **Not current** — all 16 rows flag `STALE` against the 2026-07-13 As-of date and must be refreshed with Novig lines before live use. QB values, adjustments and team ratings unchanged. See `audit/Market_Candidate_v1_3_Verification_Report.md`.
+- **QB Candidate v1.2.1 (2026-08-05):** approved LV deviation entered — Baseline Fernando Mendoza = 0, Active Kirk Cousins = **+0.50**, Confidence High. Exactly one non-zero QB delta league-wide; **29 OK / 3 UNCERTAIN** (ATL, CLE, MIN left blank/Low by design). 57,399 formulas unchanged. Candidate is **not promoted**; authoritative v1.1 and the native Google Sheet untouched.
+- **Canonical version: v1.1** (proven in `audit/Version_Evidence_Report.md`; no internal `v1.1.1` reference exists — the filename token `v1_1_1` is secondary evidence only).
+- The authoritative v1.1 XLSX differs from the original baseline in **exactly 5 cells**: `START HERE!A1` (banner v1.0→v1.1) and the four cells of a new CHANGELOG row 4. All 57,399 formulas, sheet order/visibility, schedule, sample/backtest data, and production-state inputs are identical.
+- The original uploaded workbook is retained **byte-for-byte** as provenance and rollback. No live market-line, injury, QB, or weekly-stat entry has been performed.
+
+## Preseason monitoring (repo-local, proposals only)
+
+Checkpoint **2026-08-15**. Preseason Wk1 intake lives in `preseason/PRESEASON_MONITOR.csv`
+(32 team-game rows, Aug 13-15). Every row is locked at `Decision = PENDING` /
+`Workbook Updated? = N` — no live-workbook or Google Sheet change is authorized.
+Findings are promoted only through `audit/graduation_candidates_2026-08-15.md`.
+
+```bash
+python3 scripts/run_gates.py                  # workbook invariants (read-only)
+python3 scripts/validate_preseason_monitor.py # monitor schema + authorization gates
+python3 scripts/linkcheck_preseason.py        # source URLs
+python3 tests/run_tests.py                    # regression suite (13 tests)
+```
+
+Workflow: `docs/preseason_monitoring.md` · Schema: `preseason/SCHEMA.md`
+Status reconciliation: `audit/Status_Reconciliation_2026-08-15.md`
+`#DIV/0!` diagnosis + proposed patch (not applied): `audit/DQ_DIV0_Diagnosis.md`
+
+Preseason scores, margins, box-score production and small-sample efficiency are
+**never** used as team-strength evidence and never feed power ratings.
+
+## Grounded facts (source workbook)
+
+- 21 sheets (11 visible / 10 hidden); 57,399 formula cells.
+- Schedule: 2026 = **272** regular-season games (unscored); 2025 = 285 games (scored, incl. playoffs — the historical sample).
+- 2025 sample/backtest data and 2026 preseason priors both present.
+- Clean production state: 0 usable market spreads, 0 adjustments, 0 non-zero QB deltas, 0 team overrides, 0 DATA QUALITY blocks.
+- 6 `#DIV/0!` cells are expected preseason mean-checks (resolve once weekly stats load), not defects.
+
+## `audit/` — documentation & machine-readable data
+
+| File | Contents |
+|---|---|
+| `NFL_Preseason_Readiness_Audit.md` | Phase 1 baseline audit (grounding, schedule, formula, production-state, defect findings). |
+| `grounding.json` | Reproducible grounded-facts snapshot of the source. |
+| `Version_Evidence_Report.md` | Canonical-version determination + per-cell `v1.0` classification. |
+| `version_evidence.json` | Raw version-token evidence. |
+| `Candidate_Verification_Report.md` | Full source-vs-candidate verification for the v1.1 candidate. |
+| `candidate_verification.json` | Machine-readable verification results. |
+| `changed_cells.csv` / `changed_cells.json` | The exact 5 changed cells (old → new). |
+
+## `promotion/` — v1.1 authoritative round-trip evidence
+
+| File | Contents |
+|---|---|
+| `nfl_v11_roundtrip_verification.md` | Native Google Sheets round-trip verification report (**PASS**, 21/21 checks). |
+| `nfl_v11_roundtrip_verification.json` | Machine-readable round-trip results (SHAs, checks, schedule, production state, accepted package differences). |
+| `verify_roundtrip.py` | The verification script that produced the report/JSON (compares the promoted XLSX against the round-tripped export). |
+
+## `scripts/` — reproducible, read-only audit + build tooling
+
+`audit_workbook.py`, `schedule_audit.py`, `clean_state.py`, `ml_validate.py`,
+`integrity.py`, `generate_grounding.py`, `version_evidence.py`,
+`build_candidate.py`, `verify_candidate.py`, `changed_cells_and_parity.py`.
+
+Requires `openpyxl` (`pip install openpyxl`). None of the audit scripts modify the
+source; `build_candidate.py` reads the source and writes only the candidate file.
+
+## Constraints honored
+
+Original baseline preserved byte-for-byte; no formulas, weights, thresholds,
+methodology, backtest settings, schedule, sample data, MARKET LINES sample rows,
+QB values, adjustments, team ratings, formatting, sheet order or visibility were
+changed. Only the one proven version-label mislabel and a new CHANGELOG entry
+differ in the authoritative v1.1 XLSX. The v1.1 promotion (this manifest +
+`promotion/`) is documentation-only: no workbook or Google Sheet was modified
+during closeout, and no live preseason-data entry was performed.

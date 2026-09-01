@@ -1,0 +1,20 @@
+sheet,cell,old,new
+START HERE,A1,TO THE WINDOW — NFL POWER RATINGS 2026 (v1.2.1),TO THE WINDOW — NFL POWER RATINGS 2026 (v1.2.2)
+QB VALUES,C6,,0
+QB VALUES,E6,,0
+QB VALUES,I6,Low,Medium
+QB VALUES,J6,"Competition officially OPEN but Tua (baseline) strongly favored Wk1: Penix Jr. rehabbing ACL, not medically cleared; Tua taking all 1st-team reps (Rapoport/ESPN/Athlon Aug'26). One depth-chart list showed Penix QB1 -> sources disagree; weight favors Tua.","RESOLVED to baseline QB. Rapoport/NFL Network 2026-08-09: Tua projected Week 1 starter; Michael Penix Jr. NOT medically cleared after third ACL surgery and not fully practicing — 'this is not a competition until he is fully practicing.' Tua healthy, taking first-team reps (early-camp issue resolved;"
+QB VALUES,K6,2026-08-05 00:00:00,2026-08-10 00:00:00
+QB VALUES,J12,"OPEN competition Watson vs Shedeur Sanders (also Gabriel/Green); 1st-team reps split, no Wk1 starter named (ESPN/CBS/Yahoo Aug'26). Sources disagree on leader. Potential deviation if Sanders wins.","STILL OPEN — not resolvable. Monken has NOT named a starter; Watson and Sanders alternate first-team days and each starts one of the first two preseason games. Decision not expected until after the 2026-08-22 game vs BUF (Washington Post/CBS/ESPN, Aug 2026). Values left blank, Low confidence. Re-ver"
+QB VALUES,K12,2026-08-05 00:00:00,2026-08-10 00:00:00
+QB VALUES,J23,"Kirk Cousins confirmed Raiders Week 1 QB1 (HC Klint Kubiak named Cousins starter to open camp; ESPN/Schefter, FOX News, Bleacher Report, Aug 2026). Confirmed Week 1 starter; +0.50 deviation reflects veteran experience and Kubiak-scheme familiarity, capped by age, immobility, recent efficiency and tu","Kirk Cousins confirmed Raiders Week 1 QB1 — re-verified 2026-08-10. HC Klint Kubiak named Cousins QB1 to open camp (Raiders.com official, NFL.com, ESPN); Cousins healthy entering 2026; Mendoza developing gradually as QB2 ('competing with, not against'). No credible contradicting evidence. Approved d"
+QB VALUES,K23,2026-08-05 00:00:00,2026-08-10 00:00:00
+QB VALUES,C25,,0
+QB VALUES,E25,,0
+QB VALUES,I25,Low,Medium
+QB VALUES,J25,"OPEN competition Murray (favored) vs J.J. McCarthy; 1st-team reps split, not named (StarTribune/Yahoo/ESPN Aug'26). Potential deviation if McCarthy wins.","RESOLVED to baseline QB. Murray out-snapped McCarthy 63-33 with the first team over the last four practices and is 'pulling away'/'separating' (Athlon, MinnesotaSportsFan, TheVikingAge, Aug 2026); ~2/3 of first-team 11-on-11 snaps. The one McCarthy snap edge (32-26) was 2026-08-01 total team snaps i"
+QB VALUES,K25,2026-08-05 00:00:00,2026-08-10 00:00:00
+CHANGELOG,A6,,1.2.2
+CHANGELOG,B6,,2026-08-10
+CHANGELOG,C6,,"Aug-10 QB preseason sweep (no valuation change). Fresh current-source review of the flagged QB situations. ATL resolved to baseline Tua Tagovailoa (Penix not medically cleared) and MIN resolved to baseline Kyler Murray (separating in first-team snaps) — both Active == Baseline, initialized 0/0 at Me"
+CHANGELOG,D6,,No model impact: every changed row is zero-delta. The only nonzero QB delta league-wide remains LV +0.50. QB readiness moves from 29 OK / 3 UNCERTAIN to 31 OK / 1 UNCERTAIN.

@@ -1,0 +1,133 @@
+cell,column,team,old,new
+C5,Baseline value,ARI,1.5,0
+E5,Active value,ARI,1.5,0
+I5,Confidence,ARI,Low,High
+J5,Source/Notes,ARI,ESPN roster preview: Brissett expected; Minshew/Beck behind — TTW scale,"Brissett named Wk1 QB1 (NFL.com/CBS Aug'26); competition resolved for opener, Beck developmental."
+K5,Last update,ARI,2026-07-13 00:00:00,2026-08-05 00:00:00
+C6,Baseline value,ATL,3.0,
+E6,Active value,ATL,3.0,
+J6,Source/Notes,ATL,Falcons camp: Tua/Penix battle; Tua slight projection — TTW scale,"Competition officially OPEN but Tua (baseline) strongly favored Wk1: Penix Jr. rehabbing ACL, not medically cleared; Tua taking all 1st-team reps (Rapoport/ESPN/Athlon Aug'26). One depth-chart list showed Penix QB1 -> sources disagree; weight favors Tua."
+K6,Last update,ATL,2026-07-13 00:00:00,2026-08-05 00:00:00
+C7,Baseline value,BAL,5.75,0
+E7,Active value,BAL,5.75,0
+J7,Source/Notes,BAL,ESPN exec/scout 2026 QB survey — TTW scale,Lamar Jackson entrenched starter; no competition/injury (Yahoo/ESPN camp Aug'26).
+K7,Last update,BAL,2026-07-13 00:00:00,2026-08-05 00:00:00
+C8,Baseline value,BUF,6.5,0
+E8,Active value,BUF,6.5,0
+J8,Source/Notes,BUF,ESPN exec/scout 2026 QB survey (#1) — TTW scale,Josh Allen entrenched starter (Yahoo/ESPN Aug'26).
+K8,Last update,BUF,2026-07-13 00:00:00,2026-08-05 00:00:00
+C9,Baseline value,CAR,2.25,0
+E9,Active value,CAR,2.25,0
+J9,Source/Notes,CAR,PFF/WCG 2026 QB ranking — TTW scale,"Bryce Young starter, Pickett backup (Yahoo depth chart Aug'26)."
+K9,Last update,CAR,2026-07-13 00:00:00,2026-08-05 00:00:00
+C10,Baseline value,CHI,4.75,0
+E10,Active value,CHI,4.75,0
+J10,Source/Notes,CHI,ESPN exec/scout 2026 QB survey (#10) — TTW scale,Caleb Williams starter (Yahoo/ESPN Aug'26).
+K10,Last update,CHI,2026-07-13 00:00:00,2026-08-05 00:00:00
+C11,Baseline value,CIN,5.75,0
+E11,Active value,CIN,5.75,0
+J11,Source/Notes,CIN,ESPN exec/scout 2026 QB survey (top five) — TTW scale,Joe Burrow starter (Yahoo/ESPN Aug'26).
+K11,Last update,CIN,2026-07-13 00:00:00,2026-08-05 00:00:00
+C12,Baseline value,CLE,1.0,
+E12,Active value,CLE,1.0,
+J12,Source/Notes,CLE,Browns camp: Watson/Sanders open; Watson current frontrunner — TTW scale,"OPEN competition Watson vs Shedeur Sanders (also Gabriel/Green); 1st-team reps split, no Wk1 starter named (ESPN/CBS/Yahoo Aug'26). Sources disagree on leader. Potential deviation if Sanders wins."
+K12,Last update,CLE,2026-07-13 00:00:00,2026-08-05 00:00:00
+C13,Baseline value,DAL,5.0,0
+E13,Active value,DAL,5.0,0
+J13,Source/Notes,DAL,ESPN/PFF 2026 consensus — TTW scale,Dak Prescott starter (Yahoo depth chart Aug'26).
+K13,Last update,DAL,2026-07-13 00:00:00,2026-08-05 00:00:00
+C14,Baseline value,DEN,3.75,0
+E14,Active value,DEN,3.75,0
+J14,Source/Notes,DEN,PFF/WCG 2026 QB ranking — TTW scale,"Bo Nix full practice, surgically-repaired ankle recovered ('could be full go'); Payton on track (NFL.com/NBC Aug'26)."
+K14,Last update,DEN,2026-07-13 00:00:00,2026-08-05 00:00:00
+C15,Baseline value,DET,4.75,0
+E15,Active value,DET,4.75,0
+J15,Source/Notes,DET,ESPN exec/scout 2026 QB survey (#9) — TTW scale,Jared Goff starter (Yahoo Aug'26).
+K15,Last update,DET,2026-07-13 00:00:00,2026-08-05 00:00:00
+C16,Baseline value,GB,4.5,0
+E16,Active value,GB,4.5,0
+J16,Source/Notes,GB,ESPN honorable mention + PFF 2026 — TTW scale,Jordan Love starter (Yahoo Aug'26).
+K16,Last update,GB,2026-07-13 00:00:00,2026-08-05 00:00:00
+C17,Baseline value,HOU,3.5,0
+E17,Active value,HOU,3.5,0
+J17,Source/Notes,HOU,PFF 2026 QB ranking (#17) — TTW scale,C.J. Stroud starter (Yahoo/ESPN Aug'26).
+K17,Last update,HOU,2026-07-13 00:00:00,2026-08-05 00:00:00
+C18,Baseline value,IND,3.25,0
+E18,Active value,IND,3.25,0
+I18,Confidence,IND,Medium,High
+J18,Source/Notes,IND,PFF/WCG 2026 ranking; Achilles recovery — TTW scale,"Colts named Daniel Jones Wk1 starter over Richardson; returning from Achilles, reported on/ahead of schedule (NFL.com/Colts.com Aug'26). Recovery monitored."
+K18,Last update,IND,2026-07-13 00:00:00,2026-08-05 00:00:00
+C19,Baseline value,JAX,4.25,0
+E19,Active value,JAX,4.25,0
+J19,Source/Notes,JAX,PFF 2026 QB ranking (#11) — TTW scale,Trevor Lawrence starter (Yahoo/ESPN Aug'26).
+K19,Last update,JAX,2026-07-13 00:00:00,2026-08-05 00:00:00
+C20,Baseline value,KC,6.25,0
+E20,Active value,KC,6.25,0
+J20,Source/Notes,KC,ESPN exec/scout 2026 QB survey (#2) — TTW scale,"Mahomes fully cleared for training camp after Dec ACL/LCL surgery, targeting Wk1 opener vs DEN (NFL.com/Reid/Breer Aug'26). Recovery monitored."
+K20,Last update,KC,2026-07-13 00:00:00,2026-08-05 00:00:00
+C21,Baseline value,LA,6.0,0
+E21,Active value,LA,6.0,0
+J21,Source/Notes,LA,2025 NFL MVP + ESPN 2026 survey (#3) — TTW scale,Matthew Stafford starter (Yahoo Aug'26).
+K21,Last update,LA,2026-07-13 00:00:00,2026-08-05 00:00:00
+C22,Baseline value,LAC,5.25,0
+E22,Active value,LAC,5.25,0
+J22,Source/Notes,LAC,ESPN/PFF 2026 consensus — TTW scale,Justin Herbert starter (Yahoo/ESPN Aug'26).
+K22,Last update,LAC,2026-07-13 00:00:00,2026-08-05 00:00:00
+C23,Baseline value,LV,2.0,
+D23,Active QB,LV,Fernando Mendoza,Kirk Cousins
+E23,Active value,LV,2.0,
+I23,Confidence,LV,Medium,Low
+J23,Source/Notes,LV,No. 1 pick; Cousins mentor/competition — TTW scale,"DEVIATION: HC Kubiak named Kirk Cousins Wk1 QB1 over priced-in rookie Mendoza (#1 pick); Schefter/ESPN/FOX/BR Aug'26. Mendoza QB2, brought along slowly. Value pending approval - see deviation report."
+K23,Last update,LV,2026-07-13 00:00:00,2026-08-05 00:00:00
+C24,Baseline value,MIA,1.75,0
+E24,Active value,MIA,1.75,0
+J24,Source/Notes,MIA,Dolphins camp: Willis expected starter — TTW scale,"Malik Willis starter, Ewers backup (Yahoo depth chart Aug'26)."
+K24,Last update,MIA,2026-07-13 00:00:00,2026-08-05 00:00:00
+C25,Baseline value,MIN,3.0,
+E25,Active value,MIN,3.0,
+J25,Source/Notes,MIN,Vikings camp: Murray/McCarthy battle; Murray favorite — TTW scale,"OPEN competition Murray (favored) vs J.J. McCarthy; 1st-team reps split, not named (StarTribune/Yahoo/ESPN Aug'26). Potential deviation if McCarthy wins."
+K25,Last update,MIN,2026-07-13 00:00:00,2026-08-05 00:00:00
+C26,Baseline value,NE,5.5,0
+E26,Active value,NE,5.5,0
+J26,Source/Notes,NE,2025 MVP runner-up + ESPN 2026 survey — TTW scale,Drake Maye starter (Yahoo/ESPN Aug'26).
+K26,Last update,NE,2026-07-13 00:00:00,2026-08-05 00:00:00
+C27,Baseline value,NO,2.5,0
+E27,Active value,NO,2.5,0
+J27,Source/Notes,NO,Saints camp: Shough returning starter — TTW scale,"Tyler Shough returning starter, Rattler backup (Yahoo Aug'26)."
+K27,Last update,NO,2026-07-13 00:00:00,2026-08-05 00:00:00
+C28,Baseline value,NYG,2.25,0
+E28,Active value,NYG,2.25,0
+J28,Source/Notes,NYG,Giants camp: Dart returning starter — TTW scale,"Jaxson Dart starter, Winston backup (Yahoo Aug'26)."
+K28,Last update,NYG,2026-07-13 00:00:00,2026-08-05 00:00:00
+C29,Baseline value,NYJ,1.5,0
+E29,Active value,NYJ,1.5,0
+J29,Source/Notes,NYJ,Jets 2026: Geno expected starter — TTW scale,Geno Smith starter (Yahoo Aug'26).
+K29,Last update,NYJ,2026-07-13 00:00:00,2026-08-05 00:00:00
+C30,Baseline value,PHI,4.75,0
+E30,Active value,PHI,4.75,0
+J30,Source/Notes,PHI,ESPN/PFF 2026 consensus — TTW scale,Jalen Hurts starter (Yahoo/ESPN Aug'26).
+K30,Last update,PHI,2026-07-13 00:00:00,2026-08-05 00:00:00
+C31,Baseline value,PIT,2.75,0
+E31,Active value,PIT,2.75,0
+J31,Source/Notes,PIT,Steelers 2026: Rodgers starter/final season — TTW scale,Aaron Rodgers locked QB1 (announced final season) (Yahoo/ESPN Aug'26).
+K31,Last update,PIT,2026-07-13 00:00:00,2026-08-05 00:00:00
+C32,Baseline value,SEA,4.25,0
+E32,Active value,SEA,4.25,0
+J32,Source/Notes,SEA,ESPN honorable mention + PFF 2026 — TTW scale,"Sam Darnold starter, Lock backup (Yahoo Aug'26)."
+K32,Last update,SEA,2026-07-13 00:00:00,2026-08-05 00:00:00
+C33,Baseline value,SF,4.5,0
+E33,Active value,SF,4.5,0
+J33,Source/Notes,SF,ESPN honorable mention + PFF 2026 — TTW scale,"Brock Purdy starter, Mac Jones backup (Yahoo Aug'26)."
+K33,Last update,SF,2026-07-13 00:00:00,2026-08-05 00:00:00
+C34,Baseline value,TB,4.0,0
+E34,Active value,TB,4.0,0
+J34,Source/Notes,TB,PFF/WCG 2026 QB ranking (#17 range) — TTW scale,Baker Mayfield starter (Yahoo Aug'26).
+K34,Last update,TB,2026-07-13 00:00:00,2026-08-05 00:00:00
+C35,Baseline value,TEN,2.75,0
+E35,Active value,TEN,2.75,0
+J35,Source/Notes,TEN,Titans 2026: Ward returning starter — TTW scale,"Cam Ward starter (2025 #1 pick, Year 2) (Yahoo/ESPN Aug'26)."
+K35,Last update,TEN,2026-07-13 00:00:00,2026-08-05 00:00:00
+C36,Baseline value,WAS,4.75,0
+E36,Active value,WAS,4.75,0
+J36,Source/Notes,WAS,ESPN honorable mention + PFF 2026 — TTW scale,Jayden Daniels starter (Yahoo/ESPN Aug'26).
+K36,Last update,WAS,2026-07-13 00:00:00,2026-08-05 00:00:00

@@ -1,0 +1,673 @@
+{
+ "title": "TTW NFL 2026 preseason-prior audit \u2014 source provenance (machine-readable)",
+ "generated_utc": "2026-09-01",
+ "scope": "Phase 1-2 shadow audit only. Nothing here feeds production. Live Google Sheet was read-only.",
+ "authoritative_workbook": {
+  "path": "TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE.xlsx",
+  "sha256": "79923992e9cfe156af47207b1756010af9a375592997be8e194bc75e4e9d313f",
+  "note": "Formulas frozen; live Sheet (ID 1RXJkgGgnaWKPiNT3DVEvAOQRRaUftzkjpVg35ih9Iew) verified to carry identical SrcA raw/regressed values for all 32 teams via read-only export 2026-09-01."
+ },
+ "live_sheet": {
+  "sheet_id": "1RXJkgGgnaWKPiNT3DVEvAOQRRaUftzkjpVg35ih9Iew",
+  "read_only_export_utc": "2026-09-01T09:56Z",
+  "last_modified_utc": "2026-09-01T04:25:11Z",
+  "as_of_date": "2026-09-01",
+  "divergences_from_repo_workbook": [
+   "SETTINGS as-of 2026-09-01 (repo 2026-07-13)",
+   "ATS BET threshold 1.5 (repo 3.0); Enable BET labels Y (repo N)",
+   "16 Week-1 Novig spreads entered, line date 2026-08-31, OddsLogic snapshot 2026-09-01 00:17-00:19 ET (repo: none)",
+   "QB VALUES baseline/active values restated on absolute TTW scale for all 32 teams, sources rechecked 2026-09-01; only nonzero delta remains LV +0.50 (model-identical: only delta feeds ENGINE)",
+   "CHANGELOG entry 1.1-W1 (2026-09-01) documents the Week-1 promotion",
+   "Extra tab: PRESEASON MONITOR \u2014 NON-FEEDING REVIEW QUEUE (18-col live schema)"
+  ]
+ },
+ "settings_verified": {
+  "season": 2026,
+  "week": 1,
+  "hfa": 1.6,
+  "neutral_hfa": 0,
+  "prior_regression": 0.33,
+  "pts_per_win": 2.1,
+  "win_totals_mode": "VALIDATE-ONLY",
+  "wk1_preseason_weight": 0.8,
+  "src_weights": {
+   "A": 0.4,
+   "B": 0.35,
+   "C": 0.25
+  },
+  "ats_investigate": 1.5,
+  "gp_all_teams": 0
+ },
+ "source_A": {
+  "desc": "Prior-season final model rating regressed 0.33 to mean (workbook-native).",
+  "as_of": "2026-01-05",
+  "values_raw": {
+   "ARI": [
+    -3.86,
+    -2.59
+   ],
+   "ATL": [
+    -0.12,
+    -0.08
+   ],
+   "BAL": [
+    1.72,
+    1.15
+   ],
+   "BUF": [
+    3.27,
+    2.19
+   ],
+   "CAR": [
+    -2.42,
+    -1.62
+   ],
+   "CHI": [
+    1.6,
+    1.07
+   ],
+   "CIN": [
+    -2.85,
+    -1.91
+   ],
+   "CLE": [
+    -4.85,
+    -3.25
+   ],
+   "DAL": [
+    -4.21,
+    -2.82
+   ],
+   "DEN": [
+    3.59,
+    2.41
+   ],
+   "DET": [
+    1.6,
+    1.07
+   ],
+   "GB": [
+    0.95,
+    0.64
+   ],
+   "HOU": [
+    5.06,
+    3.39
+   ],
+   "IND": [
+    1.52,
+    1.02
+   ],
+   "JAX": [
+    6.02,
+    4.03
+   ],
+   "KC": [
+    -0.07,
+    -0.05
+   ],
+   "LA": [
+    7.62,
+    5.11
+   ],
+   "LAC": [
+    1.05,
+    0.7
+   ],
+   "LV": [
+    -6.57,
+    -4.4
+   ],
+   "MIA": [
+    -4.92,
+    -3.3
+   ],
+   "MIN": [
+    0.93,
+    0.62
+   ],
+   "NE": [
+    3.9,
+    2.61
+   ],
+   "NO": [
+    -1.74,
+    -1.17
+   ],
+   "NYG": [
+    -2.97,
+    -1.99
+   ],
+   "NYJ": [
+    -8.71,
+    -5.84
+   ],
+   "PHI": [
+    2.79,
+    1.87
+   ],
+   "PIT": [
+    1.23,
+    0.82
+   ],
+   "SEA": [
+    7.65,
+    5.13
+   ],
+   "SF": [
+    3.31,
+    2.22
+   ],
+   "TB": [
+    -0.89,
+    -0.6
+   ],
+   "TEN": [
+    -5.87,
+    -3.93
+   ],
+   "WAS": [
+    -3.77,
+    -2.53
+   ]
+  }
+ },
+ "source_B_vsin": {
+  "desc": "Steve Makinen power ratings, 2026 VSiN NFL Betting Guide 2.0 (post-preseason update), page 29.",
+  "provenance": "User-supplied private PDF 2026-VSiN-NFL-Betting-Guide-UPDATE.pdf (Drive file 19lMuQAbYPL_AhQZZC4inC-pEZ-kYfXsN, 6,429,473 bytes, uploaded 2026-09-01). PDF itself NOT committed (paid/private reference). Numeric table only, reproduced under fair-use data extraction.",
+  "extracted_utc": "2026-09-01",
+  "league_mean": 24.0,
+  "values": {
+   "LA": 29.5,
+   "SEA": 29.5,
+   "BAL": 28.5,
+   "BUF": 28.5,
+   "SF": 27.5,
+   "DEN": 27.0,
+   "NE": 27.0,
+   "PHI": 27.0,
+   "GB": 26.5,
+   "CHI": 26.0,
+   "DET": 26.0,
+   "KC": 26.0,
+   "HOU": 24.5,
+   "LAC": 24.5,
+   "CIN": 24.0,
+   "DAL": 24.0,
+   "JAX": 24.0,
+   "IND": 23.0,
+   "MIN": 23.0,
+   "PIT": 23.0,
+   "TB": 23.0,
+   "WAS": 23.0,
+   "NO": 22.5,
+   "CAR": 22.0,
+   "NYG": 22.0,
+   "ATL": 21.5,
+   "CLE": 20.5,
+   "TEN": 20.5,
+   "LV": 19.5,
+   "MIA": 18.5,
+   "NYJ": 18.5,
+   "ARI": 17.5
+  }
+ },
+ "source_B_fpi": {
+  "desc": "ESPN Football Power Index, 2026 preseason, numeric FPI values (no ordinal conversion).",
+  "page_url": "https://www.espn.com/nfl/fpi",
+  "api_url": "https://site.web.api.espn.com/apis/fitt/v3/sports/football/nfl/powerindex?region=us&lang=en&limit=40",
+  "espn_last_updated": "2026-08-31T14:44Z",
+  "retrieved_utc": "2026-09-01",
+  "values": {
+   "LA": 5.854,
+   "BUF": 4.11,
+   "SEA": 3.552,
+   "BAL": 3.451,
+   "SF": 2.961,
+   "LAC": 2.9,
+   "GB": 2.718,
+   "DET": 2.624,
+   "KC": 2.548,
+   "PHI": 2.082,
+   "DAL": 1.879,
+   "CIN": 1.839,
+   "HOU": 1.67,
+   "NE": 1.498,
+   "DEN": 1.46,
+   "JAX": 1.124,
+   "CHI": 1.11,
+   "TB": 0.035,
+   "IND": -0.359,
+   "MIN": -0.4,
+   "PIT": -0.558,
+   "WAS": -1.4,
+   "NYG": -1.528,
+   "ATL": -1.802,
+   "NO": -2.817,
+   "CAR": -2.903,
+   "TEN": -4.016,
+   "LV": -4.673,
+   "NYJ": -4.702,
+   "CLE": -5.313,
+   "ARI": -5.382,
+   "MIA": -6.143
+  }
+ },
+ "source_C_win_totals": {
+  "desc": "Market season win totals; consensus = mean of the two same-day (2026-09-01) boards. Conflicts reported, not silently resolved.",
+  "books": {
+   "betmgm": {
+    "date": "2026-09-01",
+    "url": "https://sports.betmgm.com/en/blog/nfl/nfl-over-under-wins-2026-win-totals-all-32-teams-bm16/",
+    "totals": {
+     "ARI": 3.5,
+     "ATL": 7.5,
+     "BAL": 11.5,
+     "BUF": 10.5,
+     "CAR": 7.5,
+     "CHI": 9.5,
+     "CIN": 9.5,
+     "CLE": 5.5,
+     "DAL": 9.5,
+     "DEN": 9.5,
+     "DET": 10.5,
+     "GB": 9.5,
+     "HOU": 9.5,
+     "IND": 7.5,
+     "JAX": 9.5,
+     "KC": 10.5,
+     "LV": 5.5,
+     "LAC": 10.5,
+     "LA": 11.5,
+     "MIA": 4.5,
+     "MIN": 8.5,
+     "NE": 10.5,
+     "NO": 7.5,
+     "NYG": 7.5,
+     "NYJ": 5.5,
+     "PHI": 10.5,
+     "PIT": 8.5,
+     "SF": 10.5,
+     "SEA": 10.5,
+     "TB": 8.5,
+     "TEN": 6.5,
+     "WAS": 7.5
+    },
+    "prices_over_under": {
+     "ARI": [
+      "-155",
+      "+130"
+     ],
+     "ATL": [
+      "+125",
+      "-150"
+     ],
+     "BAL": [
+      "+130",
+      "-155"
+     ],
+     "BUF": [
+      "-130",
+      "+110"
+     ],
+     "CAR": [
+      "+125",
+      "-150"
+     ],
+     "CHI": [
+      "+105",
+      "-125"
+     ],
+     "CIN": [
+      "-155",
+      "+130"
+     ],
+     "CLE": [
+      "-135",
+      "+110"
+     ],
+     "DAL": [
+      "-110",
+      "-110"
+     ],
+     "DEN": [
+      "-125",
+      "+105"
+     ],
+     "DET": [
+      "-130",
+      "+110"
+     ],
+     "GB": [
+      "-130",
+      "+110"
+     ],
+     "HOU": [
+      "-145",
+      "+120"
+     ],
+     "IND": [
+      "-145",
+      "+120"
+     ],
+     "JAX": [
+      "+120",
+      "-145"
+     ],
+     "KC": [
+      "+120",
+      "-145"
+     ],
+     "LV": [
+      "-125",
+      "+105"
+     ],
+     "LAC": [
+      "+135",
+      "-160"
+     ],
+     "LA": [
+      "-140",
+      "+115"
+     ],
+     "MIA": [
+      "+150",
+      "-185"
+     ],
+     "MIN": [
+      "-125",
+      "+105"
+     ],
+     "NE": [
+      "+120",
+      "-145"
+     ],
+     "NO": [
+      "-125",
+      "+105"
+     ],
+     "NYG": [
+      "-102",
+      "-118"
+     ],
+     "NYJ": [
+      "-110",
+      "-110"
+     ],
+     "PHI": [
+      "+120",
+      "-145"
+     ],
+     "PIT": [
+      "+115",
+      "-140"
+     ],
+     "SF": [
+      "+115",
+      "-140"
+     ],
+     "SEA": [
+      "-125",
+      "+105"
+     ],
+     "TB": [
+      "+120",
+      "-145"
+     ],
+     "TEN": [
+      "+115",
+      "-140"
+     ],
+     "WAS": [
+      "+105",
+      "-125"
+     ]
+    }
+   },
+   "fanatics": {
+    "date": "2026-09-01",
+    "url": "https://betfanatics.com/blog/2026-nfl-win-totals",
+    "totals": {
+     "ARI": 4.5,
+     "ATL": 7.5,
+     "BAL": 11.5,
+     "BUF": 10.5,
+     "CAR": 7.5,
+     "CHI": 9.5,
+     "CIN": 9.5,
+     "CLE": 5.5,
+     "DAL": 8.5,
+     "DEN": 9.5,
+     "DET": 10.5,
+     "GB": 10.5,
+     "HOU": 9.5,
+     "IND": 7.5,
+     "JAX": 8.5,
+     "KC": 10.5,
+     "LV": 5.5,
+     "LAC": 9.5,
+     "LA": 11.5,
+     "MIA": 4.5,
+     "MIN": 8.5,
+     "NE": 9.5,
+     "NO": 7.5,
+     "NYG": 7.5,
+     "NYJ": 5.5,
+     "PHI": 10.5,
+     "PIT": 8.5,
+     "SF": 10.5,
+     "SEA": 10.5,
+     "TB": 8.5,
+     "TEN": 6.5,
+     "WAS": 7.5
+    },
+    "prices_over_under": null
+   },
+   "draftkings_jul23": {
+    "date": "2026-07-23",
+    "url": "https://www.foxsports.com/stories/nfl/2026-nfl-win-totals-over-unders-all-32-squads",
+    "totals": {
+     "ARI": 3.5,
+     "ATL": 6.5,
+     "BAL": 11.5,
+     "BUF": 10.5,
+     "CAR": 7.5,
+     "CHI": 9.5,
+     "CIN": 10.5,
+     "CLE": 5.5,
+     "DAL": 9.5,
+     "DEN": 9.5,
+     "DET": 10.5,
+     "GB": 9.5,
+     "HOU": 9.5,
+     "IND": 7.5,
+     "JAX": 8.5,
+     "KC": 10.5,
+     "LV": 5.5,
+     "LAC": 9.5,
+     "LA": 11.5,
+     "MIA": 4.5,
+     "MIN": 8.5,
+     "NE": 10.5,
+     "NO": 7.5,
+     "NYG": 7.5,
+     "NYJ": 5.5,
+     "PHI": 10.5,
+     "PIT": 8.5,
+     "SF": 9.5,
+     "SEA": 10.5,
+     "TB": 8.5,
+     "TEN": 6.5,
+     "WAS": 7.5
+    },
+    "note": "Stale board retained only for line-movement context; excluded from consensus."
+   }
+  },
+  "conflicts": [
+   "ARI",
+   "DAL",
+   "GB",
+   "JAX",
+   "LAC",
+   "NE"
+  ]
+ },
+ "market_lines_week1": {
+  "source": "Live Sheet MARKET LINES (Novig primary), line date 2026-08-31 serial 46266, OddsLogic snapshot 2026-09-01 00:17-00:19 ET",
+  "games": [
+   {
+    "seq": 1,
+    "game_id": "2026_01_NE_SEA",
+    "date": "2026-09-09",
+    "away": "NE",
+    "home": "SEA",
+    "neutral": false,
+    "mkt_home_spread": -3.5
+   },
+   {
+    "seq": 2,
+    "game_id": "2026_01_SF_LA",
+    "date": "2026-09-10",
+    "away": "SF",
+    "home": "LA",
+    "neutral": true,
+    "mkt_home_spread": -3.5
+   },
+   {
+    "seq": 3,
+    "game_id": "2026_01_CHI_CAR",
+    "date": "2026-09-13",
+    "away": "CHI",
+    "home": "CAR",
+    "neutral": false,
+    "mkt_home_spread": 2.5
+   },
+   {
+    "seq": 4,
+    "game_id": "2026_01_TB_CIN",
+    "date": "2026-09-13",
+    "away": "TB",
+    "home": "CIN",
+    "neutral": false,
+    "mkt_home_spread": -3.5
+   },
+   {
+    "seq": 5,
+    "game_id": "2026_01_NO_DET",
+    "date": "2026-09-13",
+    "away": "NO",
+    "home": "DET",
+    "neutral": false,
+    "mkt_home_spread": -6.5
+   },
+   {
+    "seq": 6,
+    "game_id": "2026_01_BUF_HOU",
+    "date": "2026-09-13",
+    "away": "BUF",
+    "home": "HOU",
+    "neutral": false,
+    "mkt_home_spread": 1.5
+   },
+   {
+    "seq": 7,
+    "game_id": "2026_01_BAL_IND",
+    "date": "2026-09-13",
+    "away": "BAL",
+    "home": "IND",
+    "neutral": false,
+    "mkt_home_spread": 3.5
+   },
+   {
+    "seq": 8,
+    "game_id": "2026_01_CLE_JAX",
+    "date": "2026-09-13",
+    "away": "CLE",
+    "home": "JAX",
+    "neutral": false,
+    "mkt_home_spread": -7.5
+   },
+   {
+    "seq": 9,
+    "game_id": "2026_01_ATL_PIT",
+    "date": "2026-09-13",
+    "away": "ATL",
+    "home": "PIT",
+    "neutral": false,
+    "mkt_home_spread": -3.5
+   },
+   {
+    "seq": 10,
+    "game_id": "2026_01_NYJ_TEN",
+    "date": "2026-09-13",
+    "away": "NYJ",
+    "home": "TEN",
+    "neutral": false,
+    "mkt_home_spread": -2.5
+   },
+   {
+    "seq": 11,
+    "game_id": "2026_01_ARI_LAC",
+    "date": "2026-09-13",
+    "away": "ARI",
+    "home": "LAC",
+    "neutral": false,
+    "mkt_home_spread": -10.5
+   },
+   {
+    "seq": 12,
+    "game_id": "2026_01_MIA_LV",
+    "date": "2026-09-13",
+    "away": "MIA",
+    "home": "LV",
+    "neutral": false,
+    "mkt_home_spread": -3.5,
+    "qb_adj_home": 0.5
+   },
+   {
+    "seq": 13,
+    "game_id": "2026_01_GB_MIN",
+    "date": "2026-09-13",
+    "away": "GB",
+    "home": "MIN",
+    "neutral": false,
+    "mkt_home_spread": -1.5
+   },
+   {
+    "seq": 14,
+    "game_id": "2026_01_WAS_PHI",
+    "date": "2026-09-13",
+    "away": "WAS",
+    "home": "PHI",
+    "neutral": false,
+    "mkt_home_spread": -5.0
+   },
+   {
+    "seq": 15,
+    "game_id": "2026_01_DAL_NYG",
+    "date": "2026-09-13",
+    "away": "DAL",
+    "home": "NYG",
+    "neutral": false,
+    "mkt_home_spread": 2.5
+   },
+   {
+    "seq": 16,
+    "game_id": "2026_01_DEN_KC",
+    "date": "2026-09-14",
+    "away": "DEN",
+    "home": "KC",
+    "neutral": false,
+    "mkt_home_spread": -2.5
+   }
+  ]
+ },
+ "engine_semantics": {
+  "final_margin": "(HomeEff-AwayEff) + HFA(1.6; 0 neutral) + QBadjHome + RestAdj(0 wk1 live) + ManualAdj(0)",
+  "spread_edge": "FinalMargin + MarketHomeSpread; positive = value on HOME",
+  "wk1_blend_current": "effective = ROUND(0.8*prior + 0.2*0, 2) because CALC governed is blank at GP=0 but INDEX() coerces blank to 0 in TEAM RATINGS!D, defeating the formula's own IF(D=\"\",F,...) 100%-prior fallback",
+  "qb_deltas": {
+   "LV": 0.5
+  }
+ }
+}

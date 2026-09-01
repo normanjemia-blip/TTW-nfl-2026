@@ -1,0 +1,56 @@
+{
+  "source": "TTW_NFL_v1_1_1 Version 2.xlsx",
+  "candidate": "TTW_NFL_Power_Ratings_2026_v1.1_VERSION_ALIGNMENT_CANDIDATE.xlsx",
+  "source_sha256": "243ce78fd0305f0f67afa35bc88e1b29beae4d464fa747e48a8c30952d032998",
+  "candidate_sha256": "674510507fa784f0926a348b81068cc731e082b992fa9a0fc42d3957e75b6b5f",
+  "source_size": 1435824,
+  "candidate_size": 1435435,
+  "zip_members_source": 71,
+  "zip_members_candidate": 71,
+  "zip_members_added": [],
+  "zip_members_removed": [],
+  "sheet_count_source": 21,
+  "sheet_count_candidate": 21,
+  "sheet_order_identical": true,
+  "visibility_identical": true,
+  "formula_count_source": 57399,
+  "formula_count_candidate": 57399,
+  "formula_coords_identical": true,
+  "formula_text_diffs": 0,
+  "formula_text_diff_examples": [],
+  "total_cell_diffs": 5,
+  "cell_diffs": [
+    {
+      "sheet": "START HERE",
+      "cell": "A1",
+      "source": "TO THE WINDOW \u2014 NFL POWER RATINGS 2026 (v1.0)",
+      "candidate": "TO THE WINDOW \u2014 NFL POWER RATINGS 2026 (v1.1)"
+    },
+    {
+      "sheet": "CHANGELOG",
+      "cell": "A4",
+      "source": null,
+      "candidate": "1.1"
+    },
+    {
+      "sheet": "CHANGELOG",
+      "cell": "B4",
+      "source": null,
+      "candidate": "2026-07-23"
+    },
+    {
+      "sheet": "CHANGELOG",
+      "cell": "C4",
+      "source": null,
+      "candidate": "Version-label alignment (documentation only). START HERE ban"
+    },
+    {
+      "sheet": "CHANGELOG",
+      "cell": "D4",
+      "source": null,
+      "candidate": "None. Documentation-only banner correction; model outputs an"
+    }
+  ],
+  "sched_2026_REG_source": 272,
+  "sched_2026_REG_candidate": 272
+}

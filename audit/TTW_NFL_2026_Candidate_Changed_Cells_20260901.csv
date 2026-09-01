@@ -1,0 +1,353 @@
+Sheet,Cell,Team,Kind,Before,After
+PRESEASON,I5,ARI,input (SrcB paste),,6.059
+PRESEASON,K5,ARI,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L5,ARI,input (SrcB as-of),,2026-09-01
+PRESEASON,J5,ARI,cached (formula unchanged),,-5.96
+PRESEASON,S5,ARI,cached (formula unchanged),-2.59,-4.16
+PRESEASON,T5,ARI,cached (formula unchanged),1,2
+TEAM RATINGS,D5,ARI,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F5,ARI,cached (formula unchanged),-2.59,-4.16
+TEAM RATINGS,H5,ARI,cached (formula unchanged),-2.07,-4.16
+TEAM RATINGS,J5,ARI,cached (formula unchanged),-2.07,-4.16
+TEAM RATINGS,K5,ARI,cached (formula unchanged),26,29
+PRESEASON,I6,ATL,input (SrcB paste),,9.849
+PRESEASON,K6,ATL,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L6,ATL,input (SrcB as-of),,2026-09-01
+PRESEASON,J6,ATL,cached (formula unchanged),,-2.17
+PRESEASON,S6,ATL,cached (formula unchanged),-0.08,-1.06
+PRESEASON,T6,ATL,cached (formula unchanged),1,2
+TEAM RATINGS,D6,ATL,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F6,ATL,cached (formula unchanged),-0.08,-1.06
+TEAM RATINGS,H6,ATL,cached (formula unchanged),-0.06,-1.06
+TEAM RATINGS,J6,ATL,cached (formula unchanged),-0.06,-1.06
+TEAM RATINGS,K6,ATL,cached (formula unchanged),19,21
+PRESEASON,I7,BAL,input (SrcB paste),,15.9755
+PRESEASON,K7,BAL,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L7,BAL,input (SrcB as-of),,2026-09-01
+PRESEASON,J7,BAL,cached (formula unchanged),,3.95
+PRESEASON,S7,BAL,cached (formula unchanged),1.15,2.46
+PRESEASON,T7,BAL,cached (formula unchanged),1,2
+TEAM RATINGS,D7,BAL,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F7,BAL,cached (formula unchanged),1.15,2.46
+TEAM RATINGS,H7,BAL,cached (formula unchanged),0.92,2.46
+TEAM RATINGS,J7,BAL,cached (formula unchanged),0.92,2.46
+TEAM RATINGS,K7,BAL,cached (formula unchanged),10,5
+PRESEASON,I8,BUF,input (SrcB paste),,16.305
+PRESEASON,K8,BUF,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L8,BUF,input (SrcB as-of),,2026-09-01
+PRESEASON,J8,BUF,cached (formula unchanged),,4.28
+PRESEASON,S8,BUF,cached (formula unchanged),2.19,3.17
+PRESEASON,T8,BUF,cached (formula unchanged),1,2
+TEAM RATINGS,D8,BUF,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F8,BUF,cached (formula unchanged),2.19,3.17
+TEAM RATINGS,H8,BUF,cached (formula unchanged),1.75,3.17
+TEAM RATINGS,J8,BUF,cached (formula unchanged),1.75,3.17
+TEAM RATINGS,K8,BUF,cached (formula unchanged),8,3
+PRESEASON,I9,CAR,input (SrcB paste),,9.5485
+PRESEASON,K9,CAR,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L9,CAR,input (SrcB as-of),,2026-09-01
+PRESEASON,J9,CAR,cached (formula unchanged),,-2.47
+PRESEASON,S9,CAR,cached (formula unchanged),-1.62,-2.02
+PRESEASON,T9,CAR,cached (formula unchanged),1,2
+TEAM RATINGS,D9,CAR,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F9,CAR,cached (formula unchanged),-1.62,-2.02
+TEAM RATINGS,H9,CAR,cached (formula unchanged),-1.3,-2.02
+TEAM RATINGS,J9,CAR,cached (formula unchanged),-1.3,-2.02
+TEAM RATINGS,K9,CAR,cached (formula unchanged),22,26
+PRESEASON,I10,CHI,input (SrcB paste),,13.555
+PRESEASON,K10,CHI,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L10,CHI,input (SrcB as-of),,2026-09-01
+PRESEASON,J10,CHI,cached (formula unchanged),,1.53
+PRESEASON,S10,CHI,cached (formula unchanged),1.07,1.28
+PRESEASON,T10,CHI,cached (formula unchanged),1,2
+TEAM RATINGS,D10,CHI,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F10,CHI,cached (formula unchanged),1.07,1.28
+TEAM RATINGS,H10,CHI,cached (formula unchanged),0.86,1.28
+TEAM RATINGS,J10,CHI,cached (formula unchanged),0.86,1.28
+TEAM RATINGS,K10,CHI,cached (formula unchanged),11,13
+PRESEASON,I11,CIN,input (SrcB paste),,12.9195
+PRESEASON,K11,CIN,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L11,CIN,input (SrcB as-of),,2026-09-01
+PRESEASON,J11,CIN,cached (formula unchanged),,0.9
+PRESEASON,S11,CIN,cached (formula unchanged),-1.91,-0.6
+PRESEASON,T11,CIN,cached (formula unchanged),1,2
+TEAM RATINGS,D11,CIN,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F11,CIN,cached (formula unchanged),-1.91,-0.6
+TEAM RATINGS,H11,CIN,cached (formula unchanged),-1.53,-0.6
+TEAM RATINGS,J11,CIN,cached (formula unchanged),-1.53,-0.6
+TEAM RATINGS,K11,CIN,cached (formula unchanged),23,20
+PRESEASON,I12,CLE,input (SrcB paste),,7.593500000000001
+PRESEASON,K12,CLE,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L12,CLE,input (SrcB as-of),,2026-09-01
+PRESEASON,J12,CLE,cached (formula unchanged),,-4.43
+PRESEASON,S12,CLE,cached (formula unchanged),-3.25,-3.8
+PRESEASON,T12,CLE,cached (formula unchanged),1,2
+TEAM RATINGS,D12,CLE,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F12,CLE,cached (formula unchanged),-3.25,-3.8
+TEAM RATINGS,H12,CLE,cached (formula unchanged),-2.6,-3.8
+TEAM RATINGS,J12,CLE,cached (formula unchanged),-2.6,-3.8
+TEAM RATINGS,K12,CLE,cached (formula unchanged),28,27
+PRESEASON,I13,DAL,input (SrcB paste),,12.9395
+PRESEASON,K13,DAL,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L13,DAL,input (SrcB as-of),,2026-09-01
+PRESEASON,J13,DAL,cached (formula unchanged),,0.92
+PRESEASON,S13,DAL,cached (formula unchanged),-2.82,-1.07
+PRESEASON,T13,DAL,cached (formula unchanged),1,2
+TEAM RATINGS,D13,DAL,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F13,DAL,cached (formula unchanged),-2.82,-1.07
+TEAM RATINGS,H13,DAL,cached (formula unchanged),-2.26,-1.07
+TEAM RATINGS,J13,DAL,cached (formula unchanged),-2.26,-1.07
+TEAM RATINGS,K13,DAL,cached (formula unchanged),27,22
+PRESEASON,I14,DEN,input (SrcB paste),,14.23
+PRESEASON,K14,DEN,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L14,DEN,input (SrcB as-of),,2026-09-01
+PRESEASON,J14,DEN,cached (formula unchanged),,2.21
+PRESEASON,S14,DEN,cached (formula unchanged),2.41,2.32
+PRESEASON,T14,DEN,cached (formula unchanged),1,2
+TEAM RATINGS,D14,DEN,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F14,DEN,cached (formula unchanged),2.41,2.32
+TEAM RATINGS,H14,DEN,cached (formula unchanged),1.93,2.32
+TEAM RATINGS,J14,DEN,cached (formula unchanged),1.93,2.32
+TEAM RATINGS,K14,DEN,cached (formula unchanged),6,8
+PRESEASON,I15,DET,input (SrcB paste),,14.312
+PRESEASON,K15,DET,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L15,DET,input (SrcB as-of),,2026-09-01
+PRESEASON,J15,DET,cached (formula unchanged),,2.29
+PRESEASON,S15,DET,cached (formula unchanged),1.07,1.64
+PRESEASON,T15,DET,cached (formula unchanged),1,2
+TEAM RATINGS,D15,DET,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F15,DET,cached (formula unchanged),1.07,1.64
+TEAM RATINGS,H15,DET,cached (formula unchanged),0.86,1.64
+TEAM RATINGS,J15,DET,cached (formula unchanged),0.86,1.64
+TEAM RATINGS,K15,DET,cached (formula unchanged),11,11
+PRESEASON,I16,GB,input (SrcB paste),,14.609
+PRESEASON,K16,GB,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L16,GB,input (SrcB as-of),,2026-09-01
+PRESEASON,J16,GB,cached (formula unchanged),,2.59
+PRESEASON,S16,GB,cached (formula unchanged),0.64,1.55
+PRESEASON,T16,GB,cached (formula unchanged),1,2
+TEAM RATINGS,D16,GB,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F16,GB,cached (formula unchanged),0.64,1.55
+TEAM RATINGS,H16,GB,cached (formula unchanged),0.51,1.55
+TEAM RATINGS,J16,GB,cached (formula unchanged),0.51,1.55
+TEAM RATINGS,K16,GB,cached (formula unchanged),16,12
+PRESEASON,I17,HOU,input (SrcB paste),,13.085
+PRESEASON,K17,HOU,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L17,HOU,input (SrcB as-of),,2026-09-01
+PRESEASON,J17,HOU,cached (formula unchanged),,1.06
+PRESEASON,S17,HOU,cached (formula unchanged),3.39,2.3
+PRESEASON,T17,HOU,cached (formula unchanged),1,2
+TEAM RATINGS,D17,HOU,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F17,HOU,cached (formula unchanged),3.39,2.3
+TEAM RATINGS,H17,HOU,cached (formula unchanged),2.71,2.3
+TEAM RATINGS,J17,HOU,cached (formula unchanged),2.71,2.3
+TEAM RATINGS,K17,HOU,cached (formula unchanged),4,9
+PRESEASON,I18,IND,input (SrcB paste),,11.3205
+PRESEASON,K18,IND,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L18,IND,input (SrcB as-of),,2026-09-01
+PRESEASON,J18,IND,cached (formula unchanged),,-0.7
+PRESEASON,S18,IND,cached (formula unchanged),1.02,0.22
+PRESEASON,T18,IND,cached (formula unchanged),1,2
+TEAM RATINGS,D18,IND,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F18,IND,cached (formula unchanged),1.02,0.22
+TEAM RATINGS,H18,IND,cached (formula unchanged),0.82,0.22
+TEAM RATINGS,J18,IND,cached (formula unchanged),0.82,0.22
+TEAM RATINGS,K18,IND,cached (formula unchanged),13,16
+PRESEASON,I19,JAX,input (SrcB paste),,12.562
+PRESEASON,K19,JAX,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L19,JAX,input (SrcB as-of),,2026-09-01
+PRESEASON,J19,JAX,cached (formula unchanged),,0.54
+PRESEASON,S19,JAX,cached (formula unchanged),4.03,2.4
+PRESEASON,T19,JAX,cached (formula unchanged),1,2
+TEAM RATINGS,D19,JAX,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F19,JAX,cached (formula unchanged),4.03,2.4
+TEAM RATINGS,H19,JAX,cached (formula unchanged),3.22,2.4
+TEAM RATINGS,J19,JAX,cached (formula unchanged),3.22,2.4
+TEAM RATINGS,K19,JAX,cached (formula unchanged),3,7
+PRESEASON,I20,KC,input (SrcB paste),,14.274000000000001
+PRESEASON,K20,KC,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L20,KC,input (SrcB as-of),,2026-09-01
+PRESEASON,J20,KC,cached (formula unchanged),,2.25
+PRESEASON,S20,KC,cached (formula unchanged),-0.05,1.02
+PRESEASON,T20,KC,cached (formula unchanged),1,2
+TEAM RATINGS,D20,KC,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F20,KC,cached (formula unchanged),-0.05,1.02
+TEAM RATINGS,H20,KC,cached (formula unchanged),-0.04,1.02
+TEAM RATINGS,J20,KC,cached (formula unchanged),-0.04,1.02
+TEAM RATINGS,K20,KC,cached (formula unchanged),18,15
+PRESEASON,I21,LA,input (SrcB paste),,17.677
+PRESEASON,K21,LA,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L21,LA,input (SrcB as-of),,2026-09-01
+PRESEASON,J21,LA,cached (formula unchanged),,5.65
+PRESEASON,S21,LA,cached (formula unchanged),5.11,5.36
+PRESEASON,T21,LA,cached (formula unchanged),1,2
+TEAM RATINGS,D21,LA,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F21,LA,cached (formula unchanged),5.11,5.36
+TEAM RATINGS,H21,LA,cached (formula unchanged),4.09,5.36
+TEAM RATINGS,J21,LA,cached (formula unchanged),4.09,5.36
+TEAM RATINGS,K21,LA,cached (formula unchanged),2,1
+PRESEASON,I22,LAC,input (SrcB paste),,13.7
+PRESEASON,K22,LAC,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L22,LAC,input (SrcB as-of),,2026-09-01
+PRESEASON,J22,LAC,cached (formula unchanged),,1.68
+PRESEASON,S22,LAC,cached (formula unchanged),0.7,1.16
+PRESEASON,T22,LAC,cached (formula unchanged),1,2
+TEAM RATINGS,D22,LAC,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F22,LAC,cached (formula unchanged),0.7,1.16
+TEAM RATINGS,H22,LAC,cached (formula unchanged),0.56,1.16
+TEAM RATINGS,J22,LAC,cached (formula unchanged),0.56,1.16
+TEAM RATINGS,K22,LAC,cached (formula unchanged),15,14
+PRESEASON,I23,LV,input (SrcB paste),,7.4135
+PRESEASON,K23,LV,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L23,LV,input (SrcB as-of),,2026-09-01
+PRESEASON,J23,LV,cached (formula unchanged),,-4.61
+PRESEASON,S23,LV,cached (formula unchanged),-4.4,-4.5
+PRESEASON,T23,LV,cached (formula unchanged),1,2
+TEAM RATINGS,D23,LV,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F23,LV,cached (formula unchanged),-4.4,-4.5
+TEAM RATINGS,H23,LV,cached (formula unchanged),-3.52,-4.5
+TEAM RATINGS,J23,LV,cached (formula unchanged),-3.52,-4.5
+TEAM RATINGS,K23,LV,cached (formula unchanged),31,31
+PRESEASON,I24,MIA,input (SrcB paste),,6.1785
+PRESEASON,K24,MIA,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L24,MIA,input (SrcB as-of),,2026-09-01
+PRESEASON,J24,MIA,cached (formula unchanged),,-5.84
+PRESEASON,S24,MIA,cached (formula unchanged),-3.3,-4.49
+PRESEASON,T24,MIA,cached (formula unchanged),1,2
+TEAM RATINGS,D24,MIA,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F24,MIA,cached (formula unchanged),-3.3,-4.49
+TEAM RATINGS,H24,MIA,cached (formula unchanged),-2.64,-4.49
+TEAM RATINGS,J24,MIA,cached (formula unchanged),-2.64,-4.49
+TEAM RATINGS,K24,MIA,cached (formula unchanged),29,30
+PRESEASON,I25,MIN,input (SrcB paste),,11.3
+PRESEASON,K25,MIN,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L25,MIN,input (SrcB as-of),,2026-09-01
+PRESEASON,J25,MIN,cached (formula unchanged),,-0.72
+PRESEASON,S25,MIN,cached (formula unchanged),0.62,-0.01
+PRESEASON,T25,MIN,cached (formula unchanged),1,2
+TEAM RATINGS,D25,MIN,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F25,MIN,cached (formula unchanged),0.62,-0.01
+TEAM RATINGS,H25,MIN,cached (formula unchanged),0.5,-0.01
+TEAM RATINGS,J25,MIN,cached (formula unchanged),0.5,-0.01
+TEAM RATINGS,K25,MIN,cached (formula unchanged),17,18
+PRESEASON,I26,NE,input (SrcB paste),,14.249
+PRESEASON,K26,NE,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L26,NE,input (SrcB as-of),,2026-09-01
+PRESEASON,J26,NE,cached (formula unchanged),,2.23
+PRESEASON,S26,NE,cached (formula unchanged),2.61,2.43
+PRESEASON,T26,NE,cached (formula unchanged),1,2
+TEAM RATINGS,D26,NE,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F26,NE,cached (formula unchanged),2.61,2.43
+TEAM RATINGS,H26,NE,cached (formula unchanged),2.09,2.43
+TEAM RATINGS,J26,NE,cached (formula unchanged),2.09,2.43
+TEAM RATINGS,K26,NE,cached (formula unchanged),5,6
+PRESEASON,I27,NO,input (SrcB paste),,9.8415
+PRESEASON,K27,NO,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L27,NO,input (SrcB as-of),,2026-09-01
+PRESEASON,J27,NO,cached (formula unchanged),,-2.18
+PRESEASON,S27,NO,cached (formula unchanged),-1.17,-1.64
+PRESEASON,T27,NO,cached (formula unchanged),1,2
+TEAM RATINGS,D27,NO,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F27,NO,cached (formula unchanged),-1.17,-1.64
+TEAM RATINGS,H27,NO,cached (formula unchanged),-0.94,-1.64
+TEAM RATINGS,J27,NO,cached (formula unchanged),-0.94,-1.64
+TEAM RATINGS,K27,NO,cached (formula unchanged),21,23
+PRESEASON,I28,NYG,input (SrcB paste),,10.236
+PRESEASON,K28,NYG,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L28,NYG,input (SrcB as-of),,2026-09-01
+PRESEASON,J28,NYG,cached (formula unchanged),,-1.79
+PRESEASON,S28,NYG,cached (formula unchanged),-1.99,-1.9
+PRESEASON,T28,NYG,cached (formula unchanged),1,2
+TEAM RATINGS,D28,NYG,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F28,NYG,cached (formula unchanged),-1.99,-1.9
+TEAM RATINGS,H28,NYG,cached (formula unchanged),-1.59,-1.9
+TEAM RATINGS,J28,NYG,cached (formula unchanged),-1.59,-1.9
+TEAM RATINGS,K28,NYG,cached (formula unchanged),24,24
+PRESEASON,I29,NYJ,input (SrcB paste),,6.899
+PRESEASON,K29,NYJ,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L29,NYJ,input (SrcB as-of),,2026-09-01
+PRESEASON,J29,NYJ,cached (formula unchanged),,-5.12
+PRESEASON,S29,NYJ,cached (formula unchanged),-5.84,-5.5
+PRESEASON,T29,NYJ,cached (formula unchanged),1,2
+TEAM RATINGS,D29,NYJ,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F29,NYJ,cached (formula unchanged),-5.84,-5.5
+TEAM RATINGS,H29,NYJ,cached (formula unchanged),-4.67,-5.5
+TEAM RATINGS,J29,NYJ,cached (formula unchanged),-4.67,-5.5
+TEAM RATINGS,K29,NYJ,cached (formula unchanged),32,32
+PRESEASON,I30,PHI,input (SrcB paste),,14.541
+PRESEASON,K30,PHI,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L30,PHI,input (SrcB as-of),,2026-09-01
+PRESEASON,J30,PHI,cached (formula unchanged),,2.52
+PRESEASON,S30,PHI,cached (formula unchanged),1.87,2.17
+PRESEASON,T30,PHI,cached (formula unchanged),1,2
+TEAM RATINGS,D30,PHI,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F30,PHI,cached (formula unchanged),1.87,2.17
+TEAM RATINGS,H30,PHI,cached (formula unchanged),1.5,2.17
+TEAM RATINGS,J30,PHI,cached (formula unchanged),1.5,2.17
+TEAM RATINGS,K30,PHI,cached (formula unchanged),9,10
+PRESEASON,I31,PIT,input (SrcB paste),,11.221
+PRESEASON,K31,PIT,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L31,PIT,input (SrcB as-of),,2026-09-01
+PRESEASON,J31,PIT,cached (formula unchanged),,-0.8
+PRESEASON,S31,PIT,cached (formula unchanged),0.82,0.06
+PRESEASON,T31,PIT,cached (formula unchanged),1,2
+TEAM RATINGS,D31,PIT,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F31,PIT,cached (formula unchanged),0.82,0.06
+TEAM RATINGS,H31,PIT,cached (formula unchanged),0.66,0.06
+TEAM RATINGS,J31,PIT,cached (formula unchanged),0.66,0.06
+TEAM RATINGS,K31,PIT,cached (formula unchanged),14,17
+PRESEASON,I32,SEA,input (SrcB paste),,16.526
+PRESEASON,K32,SEA,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L32,SEA,input (SrcB as-of),,2026-09-01
+PRESEASON,J32,SEA,cached (formula unchanged),,4.5
+PRESEASON,S32,SEA,cached (formula unchanged),5.13,4.84
+PRESEASON,T32,SEA,cached (formula unchanged),1,2
+TEAM RATINGS,D32,SEA,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F32,SEA,cached (formula unchanged),5.13,4.84
+TEAM RATINGS,H32,SEA,cached (formula unchanged),4.1,4.84
+TEAM RATINGS,J32,SEA,cached (formula unchanged),4.1,4.84
+TEAM RATINGS,K32,SEA,cached (formula unchanged),1,2
+PRESEASON,I33,SF,input (SrcB paste),,15.2305
+PRESEASON,K33,SF,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L33,SF,input (SrcB as-of),,2026-09-01
+PRESEASON,J33,SF,cached (formula unchanged),,3.21
+PRESEASON,S33,SF,cached (formula unchanged),2.22,2.68
+PRESEASON,T33,SF,cached (formula unchanged),1,2
+TEAM RATINGS,D33,SF,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F33,SF,cached (formula unchanged),2.22,2.68
+TEAM RATINGS,H33,SF,cached (formula unchanged),1.78,2.68
+TEAM RATINGS,J33,SF,cached (formula unchanged),1.78,2.68
+TEAM RATINGS,K33,SF,cached (formula unchanged),7,4
+PRESEASON,I34,TB,input (SrcB paste),,11.5175
+PRESEASON,K34,TB,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L34,TB,input (SrcB as-of),,2026-09-01
+PRESEASON,J34,TB,cached (formula unchanged),,-0.5
+PRESEASON,S34,TB,cached (formula unchanged),-0.6,-0.55
+PRESEASON,T34,TB,cached (formula unchanged),1,2
+TEAM RATINGS,D34,TB,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F34,TB,cached (formula unchanged),-0.6,-0.55
+TEAM RATINGS,H34,TB,cached (formula unchanged),-0.48,-0.55
+TEAM RATINGS,J34,TB,cached (formula unchanged),-0.48,-0.55
+TEAM RATINGS,K34,TB,cached (formula unchanged),20,19
+PRESEASON,I35,TEN,input (SrcB paste),,8.242
+PRESEASON,K35,TEN,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L35,TEN,input (SrcB as-of),,2026-09-01
+PRESEASON,J35,TEN,cached (formula unchanged),,-3.78
+PRESEASON,S35,TEN,cached (formula unchanged),-3.93,-3.86
+PRESEASON,T35,TEN,cached (formula unchanged),1,2
+TEAM RATINGS,D35,TEN,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F35,TEN,cached (formula unchanged),-3.93,-3.86
+TEAM RATINGS,H35,TEN,cached (formula unchanged),-3.14,-3.86
+TEAM RATINGS,J35,TEN,cached (formula unchanged),-3.14,-3.86
+TEAM RATINGS,K35,TEN,cached (formula unchanged),30,28
+PRESEASON,I36,WAS,input (SrcB paste),,10.8
+PRESEASON,K36,WAS,input (SrcB source),,VSiN p29 + ESPN FPI composite
+PRESEASON,L36,WAS,input (SrcB as-of),,2026-09-01
+PRESEASON,J36,WAS,cached (formula unchanged),,-1.22
+PRESEASON,S36,WAS,cached (formula unchanged),-2.53,-1.92
+PRESEASON,T36,WAS,cached (formula unchanged),1,2
+TEAM RATINGS,D36,WAS,FORMULA CHANGED + cached,0,(blank)
+TEAM RATINGS,F36,WAS,cached (formula unchanged),-2.53,-1.92
+TEAM RATINGS,H36,WAS,cached (formula unchanged),-2.02,-1.92
+TEAM RATINGS,J36,WAS,cached (formula unchanged),-2.02,-1.92
+TEAM RATINGS,K36,WAS,cached (formula unchanged),25,25

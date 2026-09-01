@@ -1,0 +1,185 @@
+{
+  "base_sha256": "e6efbbb3a2b75c76f57bf13906de84f50aefd25ea05d59ef6ddba56aa2aee136",
+  "candidate_sha256": "1e9cb2c564bbe26c5da810b6cefcfba2ce163ee62271c40c49fc4a4dfa50bf9d",
+  "authoritative_sha256": "674510507fa784f0926a348b81068cc731e082b992fa9a0fc42d3957e75b6b5f",
+  "sheet_count": 21,
+  "sheet_order_identical": true,
+  "visibility_identical": true,
+  "formula_count": 57399,
+  "formula_count_is_57399": true,
+  "formula_coords_identical": true,
+  "formula_text_diffs": 0,
+  "total_cell_diffs": 101,
+  "diff_sheets": [
+    "CHANGELOG",
+    "MARKET LINES",
+    "START HERE"
+  ],
+  "only_allowed_sheets_changed": true,
+  "qb_values_changes": [],
+  "adjustment_changes": [],
+  "team_rating_changes": [],
+  "settings_changes": [],
+  "schedule_changes": [],
+  "history_changes": [],
+  "backtest_changes": [],
+  "market_diffs_outside_week1_inputs": [],
+  "market_cell_diffs": 96,
+  "sample_rows_untouched": true,
+  "input_checks": [
+    {
+      "row": 5,
+      "game": "NE@SEA",
+      "favorite": "SEA",
+      "spread": 3.5,
+      "total": 44.5,
+      "input_check": "OK",
+      "expected_market_home_spread": -3.5
+    },
+    {
+      "row": 6,
+      "game": "SF@LA",
+      "favorite": "LA",
+      "spread": 2.5,
+      "total": 48.5,
+      "input_check": "OK",
+      "expected_market_home_spread": -2.5
+    },
+    {
+      "row": 7,
+      "game": "CHI@CAR",
+      "favorite": "CHI",
+      "spread": 2.5,
+      "total": 44.5,
+      "input_check": "OK",
+      "expected_market_home_spread": 2.5
+    },
+    {
+      "row": 8,
+      "game": "TB@CIN",
+      "favorite": "CIN",
+      "spread": 3.5,
+      "total": 50.5,
+      "input_check": "OK",
+      "expected_market_home_spread": -3.5
+    },
+    {
+      "row": 9,
+      "game": "NO@DET",
+      "favorite": "DET",
+      "spread": 7.0,
+      "total": 48.5,
+      "input_check": "OK",
+      "expected_market_home_spread": -7.0
+    },
+    {
+      "row": 10,
+      "game": "BUF@HOU",
+      "favorite": "BUF",
+      "spread": 1.5,
+      "total": 45.5,
+      "input_check": "OK",
+      "expected_market_home_spread": 1.5
+    },
+    {
+      "row": 11,
+      "game": "BAL@IND",
+      "favorite": "BAL",
+      "spread": 3.5,
+      "total": 49.5,
+      "input_check": "OK",
+      "expected_market_home_spread": 3.5
+    },
+    {
+      "row": 12,
+      "game": "CLE@JAX",
+      "favorite": "JAX",
+      "spread": 7.0,
+      "total": 40.5,
+      "input_check": "OK",
+      "expected_market_home_spread": -7.0
+    },
+    {
+      "row": 13,
+      "game": "ATL@PIT",
+      "favorite": "PIT",
+      "spread": 3.0,
+      "total": 42.5,
+      "input_check": "OK",
+      "expected_market_home_spread": -3.0
+    },
+    {
+      "row": 14,
+      "game": "NYJ@TEN",
+      "favorite": "TEN",
+      "spread": 3.0,
+      "total": 39.5,
+      "input_check": "OK",
+      "expected_market_home_spread": -3.0
+    },
+    {
+      "row": 15,
+      "game": "ARI@LAC",
+      "favorite": "LAC",
+      "spread": 11.5,
+      "total": 45.5,
+      "input_check": "OK",
+      "expected_market_home_spread": -11.5
+    },
+    {
+      "row": 16,
+      "game": "MIA@LV",
+      "favorite": "LV",
+      "spread": 3.0,
+      "total": 41.5,
+      "input_check": "OK",
+      "expected_market_home_spread": -3.0
+    },
+    {
+      "row": 17,
+      "game": "GB@MIN",
+      "favorite": "GB",
+      "spread": 1.5,
+      "total": 44.5,
+      "input_check": "OK",
+      "expected_market_home_spread": 1.5
+    },
+    {
+      "row": 18,
+      "game": "WAS@PHI",
+      "favorite": "PHI",
+      "spread": 5.5,
+      "total": 46.5,
+      "input_check": "OK",
+      "expected_market_home_spread": -5.5
+    },
+    {
+      "row": 19,
+      "game": "DAL@NYG",
+      "favorite": "DAL",
+      "spread": 2.5,
+      "total": 48.5,
+      "input_check": "OK",
+      "expected_market_home_spread": 2.5
+    },
+    {
+      "row": 20,
+      "game": "DEN@KC",
+      "favorite": "KC",
+      "spread": 2.5,
+      "total": 42.5,
+      "input_check": "OK",
+      "expected_market_home_spread": -2.5
+    }
+  ],
+  "all_input_checks_ok": true,
+  "week1_rows_populated": 16,
+  "expected_usable_market_spreads": 16,
+  "all_rows_expected_STALE": true,
+  "zip_members_changed": [
+    "xl/worksheets/sheet4.xml",
+    "xl/worksheets/sheet21.xml",
+    "xl/sharedStrings.xml"
+  ],
+  "drawings_persons_identical": true
+}
