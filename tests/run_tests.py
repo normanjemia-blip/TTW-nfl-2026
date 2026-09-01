@@ -104,5 +104,60 @@ class DQGuardPatch(unittest.TestCase):
     def test_guard_preserves_nonzero_signal(self):
         self.assertNotEqual(self.guarded_mean([0.5,0.5]),"")
 
+class ShadowAudit20260901(unittest.TestCase):
+    """2026-09-01 preseason-prior shadow audit: artifacts regenerate byte-identically
+    from the committed provenance JSON, and the headline invariants hold.
+    Shadow-only: nothing here touches the authoritative workbook or the live Sheet."""
+    PROV=os.path.join(ROOT,"audit","TTW_NFL_2026_Preseason_Prior_Provenance_20260901.json")
+    SHADOW=os.path.join(ROOT,"audit","TTW_NFL_2026_Preseason_Prior_Shadow_20260901.csv")
+    WK1=os.path.join(ROOT,"audit","TTW_NFL_2026_Week1_Before_After_Shadow_20260901.csv")
+    def test_provenance_parses_with_32_teams_everywhere(self):
+        import json
+        p=json.load(open(self.PROV))
+        self.assertEqual(len(p["source_A"]["values_raw"]),32)
+        self.assertEqual(len(p["source_B_vsin"]["values"]),32)
+        self.assertEqual(len(p["source_B_fpi"]["values"]),32)
+        for b in ("betmgm","fanatics","draftkings_jul23"):
+            self.assertEqual(len(p["source_C_win_totals"]["books"][b]["totals"]),32)
+        self.assertEqual(len(p["market_lines_week1"]["games"]),16)
+    def test_vsin_league_mean_exactly_24(self):
+        import json
+        v=json.load(open(self.PROV))["source_B_vsin"]["values"]
+        self.assertAlmostEqual(sum(v.values())/32,24.0,places=9)
+        self.assertEqual(v["DAL"],24.0); self.assertEqual(v["NYG"],22.0)
+    def test_generator_reproduces_both_csvs_byte_identically(self):
+        import subprocess,tempfile,shutil
+        with tempfile.TemporaryDirectory() as td:
+            for f in (self.SHADOW,self.WK1):
+                shutil.copy(f,os.path.join(td,os.path.basename(f)))
+            subprocess.run([sys.executable,os.path.join(ROOT,"scripts","gen_preseason_prior_shadow.py")],
+                           check=True,capture_output=True)
+            for f in (self.SHADOW,self.WK1):
+                with open(f,"rb") as a, open(os.path.join(td,os.path.basename(f)),"rb") as b:
+                    self.assertEqual(a.read(),b.read(),f"{os.path.basename(f)} not byte-identical")
+    def test_shadow_csv_pins_current_production_chain(self):
+        import csv
+        rows={r["Team"]:r for r in csv.DictReader(open(self.SHADOW))}
+        self.assertEqual(len(rows),32)
+        self.assertEqual(rows["DAL"]["SrcA regressed"],"-2.82")
+        self.assertEqual(rows["NYG"]["SrcA regressed"],"-1.99")
+        self.assertEqual(rows["DAL"]["Wk1 eff current (W1-A)"],"-2.26")
+        self.assertEqual(rows["NYG"]["Wk1 eff current (W1-A)"],"-1.59")
+        self.assertEqual(rows["DAL"]["Rank current"],"27")
+        self.assertEqual(rows["NYG"]["Rank current"],"24")
+    def test_wk1_csv_pins_dal_nyg_edge_chain(self):
+        import csv
+        g={r["GameID"]:r for r in csv.DictReader(open(self.WK1))}
+        r=g["2026_01_DAL_NYG"]
+        self.assertEqual(r["Market home spread"],"2.5")
+        self.assertEqual(r["current_W1A FinalMargin"],"2.27")
+        self.assertEqual(r["current_W1A edge"],"4.77")
+        self.assertEqual(r["current_W1A side"],"NYG")
+    def test_authoritative_workbook_untouched_by_shadow_audit(self):
+        import hashlib
+        h=hashlib.sha256(open(os.path.join(ROOT,
+            "TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE.xlsx"),"rb").read()).hexdigest()
+        self.assertEqual(h,AUTH_SHA)
+
 if __name__=="__main__":
     unittest.main(verbosity=2)
