@@ -28,7 +28,10 @@ class Authoritative(unittest.TestCase):
                  # and the Source-B + blend-fix candidate built from it. Both are candidate/
                  # provenance artifacts; neither is authoritative and neither is promoted.
                  "TTW_NFL_2026_LIVE_EXPORT_20260901_BASE.xlsx",
-                 "TTW_NFL_Power_Ratings_2026_v1.4_SRCB_BLENDFIX_CANDIDATE.xlsx"}
+                 "TTW_NFL_Power_Ratings_2026_v1.4_SRCB_BLENDFIX_CANDIDATE.xlsx",
+                 # Phase 5C (2026-09-01): pre-promotion production rollback checkpoint.
+                 # Read-only capture; production was never written.
+                 "TTW_NFL_2026_PROD_ROLLBACK_CHECKPOINT_20260901T1432Z.xlsx"}
         found={os.path.basename(p) for p in glob.glob("**/*.xls*",recursive=True)}
         self.assertEqual(found-allowed,set(),"no spreadsheet file may be added to the repository")
 
@@ -218,6 +221,51 @@ class CandidateSrcBBlendFix(unittest.TestCase):
         wb.close()
     def test_authoritative_and_live_base_untouched_by_phase3(self):
         self.assertEqual(hashlib.sha256(open(AUTH,'rb').read()).hexdigest(),AUTH_SHA)
+
+class ProductionPreflight5C(unittest.TestCase):
+    """Phase 5C: production was read-only preflighted and found at zero drift from the
+    promotion-manifest baseline. No write was performed (the connector has no cell-level
+    write); production stays untouched."""
+    CKPT="TTW_NFL_2026_PROD_ROLLBACK_CHECKPOINT_20260901T1432Z.xlsx"
+    CKPT_SHA="e3349d8ee42fedae6cc411e9ca92f68bc6f7cd9c2ae2f378393bdc2d28199ce9"
+    def test_rollback_checkpoint_pinned(self):
+        self.assertEqual(hashlib.sha256(open(self.CKPT,'rb').read()).hexdigest(),self.CKPT_SHA)
+    def test_preflight_reports_zero_drift(self):
+        r=sh(f"python3 scripts/preflight_production_5c.py {self.CKPT}")
+        self.assertEqual(r.returncode,0,r.stdout+r.stderr)
+        self.assertIn("0 failed",r.stdout)
+    def test_checkpoint_is_pre_promotion_state(self):
+        import openpyxl
+        wb=openpyxl.load_workbook(self.CKPT,data_only=True)
+        tr,ps=wb["TEAM RATINGS"],wb["PRESEASON"]
+        self.assertTrue(all(tr.cell(r,4).value==0 for r in range(5,37)),
+                        "D column must still show the pre-fix coercion to 0")
+        self.assertTrue(all(ps.cell(r,9).value is None for r in range(5,37)),
+                        "Source B must still be empty in production")
+        self.assertEqual(wb["START HERE"]["A1"].value,
+                         "TO THE WINDOW \u2014 NFL POWER RATINGS 2026 (v1.1)")
+        wb.close()
+    def test_manual_apply_blocks_reproduce_the_candidate(self):
+        import openpyxl,csv as _csv
+        C=openpyxl.load_workbook("TTW_NFL_Power_Ratings_2026_v1.4_SRCB_BLENDFIX_CANDIDATE.xlsx",
+                                 data_only=True)
+        ps,ch=C["PRESEASON"],C["CHANGELOG"]
+        D="promotion/manual_apply_v14"
+        b1=[l.strip() for l in open(f"{D}/block1_PRESEASON_I5_I36.tsv")]
+        self.assertEqual(len(b1),32)
+        for i in range(32):
+            self.assertAlmostEqual(float(b1[i]),ps.cell(5+i,9).value,places=9)
+        b2=list(_csv.reader(open(f"{D}/block2_PRESEASON_K5_L36.tsv"),delimiter="\t"))
+        self.assertEqual(len(b2),32)
+        for i in range(32):
+            self.assertEqual(b2[i][0],ps.cell(5+i,11).value)
+            self.assertEqual(b2[i][1],ps.cell(5+i,12).value)
+        b5=list(_csv.reader(open(f"{D}/block5_CHANGELOG_A7_D7.tsv"),delimiter="\t"))[0]
+        for c in range(1,5):
+            self.assertEqual(b5[c-1],ch.cell(7,c).value)
+        self.assertIn("ISNUMBER",open(f"{D}/block3_TEAMRATINGS_D5_formula.txt").read())
+        self.assertIn("(v1.4)",open(f"{D}/block4_STARTHERE_A1_banner.txt").read())
+        C.close()
 
 class SheetsProbeEvidence(unittest.TestCase):
     """Phase 4: values executed by Google Sheets in a disposable probe Sheet
