@@ -1,6 +1,6 @@
 # TTW NFL 2026 — Phase 4 Google Sheets Execution Report (2026-09-01)
 
-**Intended promotion version: v1.4.** Nothing was promoted. The authoritative live Sheet (`1RXJkgGgnaWKPiNT3DVEvAOQRRaUftzkjpVg35ih9Iew`) was **not opened for editing, not copied into, and not changed**. PR #1 remains a draft. The authoritative workbook SHA-256 is unchanged at `79923992e9cfe156af47207b1756010af9a375592997be8e194bc75e4e9d313f`, and the candidate SHA-256 is unchanged at `8be3b9511a6fadf6d723d8ce7f0001198f1b4423bf1162c77316fda918f442cb`.
+**Intended promotion version: v1.4.** Nothing was promoted. The authoritative live Sheet (`1RXJkgGgnaWKPiNT3DVEvAOQRRaUftzkjpVg35ih9Iew`) was **not opened for editing, not copied into, and not changed**. PR #1 remains a draft. The authoritative workbook SHA-256 is unchanged at `79923992e9cfe156af47207b1756010af9a375592997be8e194bc75e4e9d313f`, and the candidate SHA-256 is unchanged at `a71e8ba3356fe456d678eb2db75ec67ddfdbe287e743cc9901600cf57c97e22e`.
 
 ---
 
@@ -132,4 +132,6 @@ They were left in place so the evidence in §4–§6 can be inspected directly r
 
 ## 10. Status
 
-**Stopped for final owner approval.** Intended promotion version **v1.4**. The candidate's internal banner still reads v1.1 and no CHANGELOG entry was added — deliberately, since Phase 4 authorized no candidate edits; both are owner actions at promotion time.
+**Stopped for final owner approval.** Intended promotion version **v1.4**.
+
+*Superseded by Phase 5A:* the banner and CHANGELOG, left untouched here because Phase 4 authorized no candidate edits, were set in Phase 5A on explicit instruction — the candidate now reads **v1.4** and carries a v1.4 CHANGELOG entry. Its checksum moved to `a71e8ba3356fe456d678eb2db75ec67ddfdbe287e743cc9901600cf57c97e22e` as a result. The §4–§6 native-Sheets evidence is unaffected: it tests formula behaviour and computed values, neither of which the banner or CHANGELOG touches. See `TTW_NFL_2026_Promotion_Manifest_v14_20260901.md`.

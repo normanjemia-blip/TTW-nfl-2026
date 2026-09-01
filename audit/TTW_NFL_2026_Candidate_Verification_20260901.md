@@ -1,7 +1,7 @@
 # TTW NFL 2026 — Phase 3 Candidate Verification Report (2026-09-01)
 
 **Candidate:** `TTW_NFL_Power_Ratings_2026_v1.4_SRCB_BLENDFIX_CANDIDATE.xlsx`
-SHA-256 `8be3b9511a6fadf6d723d8ce7f0001198f1b4423bf1162c77316fda918f442cb`
+SHA-256 `a71e8ba3356fe456d678eb2db75ec67ddfdbe287e743cc9901600cf57c97e22e`
 
 **Base:** `TTW_NFL_2026_LIVE_EXPORT_20260901_BASE.xlsx` — a fresh read-only export of the live Google Sheet (`1RXJkgGgnaWKPiNT3DVEvAOQRRaUftzkjpVg35ih9Iew`, modified 2026-09-01T04:25:11Z), SHA-256 `39c7c567364234068245e68d0af943ca71e4a128b652f57cec258d40ac1e3f35`. The stale repo workbook was **not** used as the base.
 
@@ -21,7 +21,9 @@ Three corrections applied to `TTW_NFL_2026_Preseason_Prior_Audit_20260901.md`:
 
 ## 2. What changed in the candidate — exactly
 
-**352 cells written across 2 of 22 tabs; 32 formulas changed; 96 new input constants. Nothing else.**
+**357 cells written across 3 of 22 tabs plus the shared string table; 32 formulas changed; 101 new input constants. Nothing else.**
+
+> Phase 5A added the last two rows of this table (the v1.4 banner and one CHANGELOG entry). Everything above them is unchanged from Phase 3.
 
 | Sheet | Cells | Kind |
 |---|---|---|
@@ -31,6 +33,8 @@ Three corrections applied to `TTW_NFL_2026_Preseason_Prior_Audit_20260901.md`:
 | PRESEASON | J5:J36, S5:S36, T5:T36 | cached values refreshed; **formulas unchanged** (96) |
 | TEAM RATINGS | D5:D36 | **formula changed** — blank-preservation fix (32) |
 | TEAM RATINGS | F, H, J, K ×32 | cached values refreshed; **formulas unchanged** (128) |
+| START HERE | A1 | **text** — version banner v1.1 → v1.4 (1) |
+| CHANGELOG | A7:D7 | **text** — one new v1.4 entry (4) |
 
 Full cell-by-cell listing: `audit/TTW_NFL_2026_Candidate_Changed_Cells_20260901.csv`.
 
@@ -67,22 +71,23 @@ new:  IFERROR(IF(ISNUMBER(INDEX(CalcGoverned,MATCH($A5,CalcTeams,0))),
 - **Source C** stays entirely unpopulated (`srcC_still_empty` — all 32 rows blank) and **WinTotalsMode remains VALIDATE-ONLY** (item 5).
 - No manual team override, no QB change, no weight change, no threshold change. Verified cell-for-cell across MARKET LINES, QB VALUES, ADJUSTMENTS, SETTINGS, and the live-only PRESEASON MONITOR tab.
 - Week-1 blend weight remains **0.80** in SETTINGS and in TEAM RATINGS!G — the fix changes *whether* the in-season term exists, not the schedule.
-- **Version banner and CHANGELOG were left untouched** (the candidate still reads v1.1). Editing them was not among the authorized changes, and "prove only intended cells changed" is stronger with them left alone. Version labelling is an owner decision at promotion.
-- `sharedStrings.xml`, `styles.xml`, `workbook.xml`, all 22 drawings and `persons/person.xml` are **byte-identical** to the base.
+- ~~Version banner and CHANGELOG left untouched~~ — **updated in Phase 5A** on explicit instruction: the banner now reads v1.4 and CHANGELOG row 7 carries the release entry. CHANGELOG rows 1–6 are byte-preserved and row 8 is still empty, so exactly one entry was added.
+- `styles.xml`, `workbook.xml`, all 22 drawings and `persons/person.xml` are **byte-identical** to the base. `sharedStrings.xml` differs by the version banner **and nothing else** — proven by reconstructing the base string table from the candidate's.
 
 ---
 
 ## 3. Proof that only intended cells changed
 
-`scripts/verify_srcb_blendfix_candidate.py` — **37 checks, 0 failed**:
+`scripts/verify_srcb_blendfix_candidate.py` — **41 checks, 0 failed** (37 from Phase 3, plus 4 added in Phase 5A for the banner and CHANGELOG):
 
 - `zip_members_identical_set_and_order` (74 members, same order)
-- `only_two_worksheet_parts_changed` → exactly `sheet17.xml` (PRESEASON) and `sheet8.xml` (TEAM RATINGS)
-- `drawings_persons_byte_identical` (23 parts), `unchanged_sharedStrings.xml`, `unchanged_styles.xml`, `unchanged_workbook.xml`
+- `only_four_expected_parts_changed` → exactly `sheet17.xml` (PRESEASON), `sheet8.xml` (TEAM RATINGS), `sheet22.xml` (CHANGELOG) and `sharedStrings.xml`
+- `drawings_persons_byte_identical` (23 parts), `unchanged_styles.xml`, `unchanged_workbook.xml`, `sharedStrings_differs_only_by_banner`
+- `banner_reads_v14`, `changelog_history_preserved`, `changelog_entry_v14_complete`, `changelog_single_new_row`
 - `formula_count_57399` — unchanged; `formula_coordinates_identical` — no formula added or removed
 - `only_D5_D36_formulas_changed` — 32 changed, and no others anywhere in the workbook
 - `D_column_fix_text_exact` — all 32 match the intended text character-for-character
-- `only_srcB_input_constants_added` — the 96 new constants are exactly PRESEASON I/K/L rows 5–36; no other constant anywhere changed
+- `only_srcB_banner_and_changelog_constants_added` — the 101 new constants are exactly PRESEASON I/K/L rows 5–36, CHANGELOG A7:D7 and START HERE A1; no other constant anywhere changed
 - `preserved_market_lines`, `preserved_qb_values`, `preserved_adjustments`, `preserved_settings`, `preserved_preseason_monitor`
 - `srcA_raw_unchanged`, `weights_unchanged_A040_B035_C025`, `srcC_still_empty`, `win_totals_mode_validate_only`, `blend_wt_wk1_still_080`, `all_GP_zero`
 
@@ -141,8 +146,8 @@ Only two edges remain ≥3.0 (ARI +10.5 and NYG +2.5, down from five in the base
 | `scripts/run_gates.py` | **PASS** (21 sheets, 57,399 formulas, BET OFF, thresholds 3.0/1.5/1.0, VALIDATE-ONLY, 272 REG) |
 | `scripts/validate_preseason_monitor.py` | **PASS** (32 rows, 16 blockers) |
 | `scripts/linkcheck_preseason.py` | **PASS** (32 rows, 16 URLs, all allowlisted) |
-| `scripts/verify_srcb_blendfix_candidate.py` | **PASS — 37 checks, 0 failed** (both `or True` escapes removed in Phase 4; the settings and weight checks now assert real values and were mutation-tested) |
-| `tests/run_tests.py` | **47/47 OK** (28 pre-existing + 6 candidate + 6 blend-fix semantics + 7 Phase-4 native-Sheets/verifier-integrity) |
+| `scripts/verify_srcb_blendfix_candidate.py` | **PASS — 41 checks, 0 failed** (both `or True` escapes removed in Phase 4; the settings and weight checks assert real values and were mutation-tested; 4 banner/CHANGELOG checks added in Phase 5A) |
+| `tests/run_tests.py` | **48/48 OK** (28 pre-existing + 7 candidate + 6 blend-fix semantics + 7 Phase-4 native-Sheets/verifier-integrity) |
 | `git diff --check` | clean |
 
 The gate suite still reports "PRESEASON SrcB blank" because it audits the **authoritative** workbook, which is untouched — that is the correct and expected result while the candidate remains unpromoted.
@@ -174,6 +179,6 @@ Three options for the owner, in the order I would recommend them:
 
 1. ~~Confirm the blank-preservation fix in Google Sheets~~ — **done in Phase 4**, natively confirmed on a disposable probe Sheet (`TTW_NFL_2026_Sheets_Execution_Report_20260901.md` §4–§6). What remains is opening the candidate itself once to confirm the whole-file behaviours (22 tabs, error scan, the other 15 ENGINE/DASHBOARD rows) — checklist in that report §7.
 2. Confirm the Source B composite is the intended blend, and that the VSiN half may be used this way given the guide's subscriber terms (the numeric table only is used; the PDF is not committed).
-3. Decide the version label and CHANGELOG entry (deliberately left untouched).
+3. ~~Decide the version label and CHANGELOG entry~~ — **set in Phase 5A**: banner v1.4, CHANGELOG row 7 dated 2026-09-01. Review the wording in `TTW_NFL_2026_Promotion_Manifest_v14_20260901.md` §1.
 4. Decide whether the Week-1 blend fix ships together with Source B or separately — they are independent changes and the slate CSV separates their contributions.
 5. Source C remains VALIDATE-ONLY pending the 2.1 pts/win calibration test recommended in the audit report §8.

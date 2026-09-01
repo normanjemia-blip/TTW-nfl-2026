@@ -170,7 +170,7 @@ class CandidateSrcBBlendFix(unittest.TestCase):
     BASE="TTW_NFL_2026_LIVE_EXPORT_20260901_BASE.xlsx"
     BASE_SHA="39c7c567364234068245e68d0af943ca71e4a128b652f57cec258d40ac1e3f35"
     CAND="TTW_NFL_Power_Ratings_2026_v1.4_SRCB_BLENDFIX_CANDIDATE.xlsx"
-    CAND_SHA="8be3b9511a6fadf6d723d8ce7f0001198f1b4423bf1162c77316fda918f442cb"
+    CAND_SHA="a71e8ba3356fe456d678eb2db75ec67ddfdbe287e743cc9901600cf57c97e22e"
     SLATE="audit/TTW_NFL_2026_Candidate_Week1_Slate_20260901.csv"
     MANIFEST="audit/TTW_NFL_2026_Candidate_Changed_Cells_20260901.csv"
     def test_base_and_candidate_pinned_by_sha(self):
@@ -202,6 +202,20 @@ class CandidateSrcBBlendFix(unittest.TestCase):
         self.assertEqual(len(rows),32*11,"32 teams x 11 cells")
         self.assertEqual(len({r["Team"] for r in rows}),32)
         self.assertEqual(sum(1 for r in rows if "FORMULA CHANGED" in r["Kind"]),32)
+    def test_v14_banner_and_changelog_entry(self):
+        import openpyxl
+        wb=openpyxl.load_workbook(self.CAND,data_only=True)
+        self.assertEqual(wb["START HERE"]["A1"].value,
+                         "TO THE WINDOW \u2014 NFL POWER RATINGS 2026 (v1.4)")
+        ch=wb["CHANGELOG"]
+        self.assertEqual(ch.cell(7,1).value,"1.4")
+        self.assertEqual(ch.cell(7,2).value,"2026-09-01")
+        for topic in ("Source B","all 32 teams","ISNUMBER","TEAM RATINGS!D5:D36",
+                      "Source C","VALIDATE-ONLY","weights","thresholds","QB values",
+                      "market lines","overrides","adjustments"):
+            self.assertIn(topic,ch.cell(7,3).value,topic)
+        self.assertIsNone(ch.cell(8,1).value,"exactly one new CHANGELOG row")
+        wb.close()
     def test_authoritative_and_live_base_untouched_by_phase3(self):
         self.assertEqual(hashlib.sha256(open(AUTH,'rb').read()).hexdigest(),AUTH_SHA)
 

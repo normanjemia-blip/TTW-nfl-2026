@@ -2,11 +2,13 @@
 """Build TTW_NFL_Power_Ratings_2026_v1.4_SRCB_BLENDFIX_CANDIDATE.xlsx.
 
 Base: a FRESH read-only export of the live Google Sheet (not the stale repo workbook).
-Two authorized changes only:
+Four authorized changes only:
   (1) PRESEASON Source B populated for all 32 teams with the audited equal-weight
       VSiN(Makinen p29) / ESPN FPI composite  -> cols I (paste), K (source), L (as-of)
   (2) TEAM RATINGS D5:D36 blank-preservation fix so a blank CalcGoverned no longer
       coerces to numeric 0, letting the existing H-column fallback use 100% prior at GP=0
+  (3) START HERE version banner v1.1 -> v1.4                        (Phase 5A)
+  (4) One new CHANGELOG row (row 7) documenting the v1.4 release    (Phase 5A)
 
 Everything else is copied verbatim: every market line, QB value, setting, weight,
 threshold, formula, named range, drawing, and the live-only PRESEASON MONITOR tab.
@@ -33,6 +35,37 @@ DST = os.path.join(ROOT, "TTW_NFL_Power_Ratings_2026_v1.4_SRCB_BLENDFIX_CANDIDAT
 
 PRESEASON = "xl/worksheets/sheet17.xml"
 TEAM_RATINGS = "xl/worksheets/sheet8.xml"
+CHANGELOG = "xl/worksheets/sheet22.xml"
+SHARED = "xl/sharedStrings.xml"
+
+BANNER_OLD = "TO THE WINDOW — NFL POWER RATINGS 2026 (v1.1)"
+BANNER_NEW = "TO THE WINDOW — NFL POWER RATINGS 2026 (v1.4)"
+
+CH_ROW = 7                       # first empty CHANGELOG row in the base
+CH_VERSION = "1.4"
+CH_DATE = "2026-09-01"
+CH_CHANGE = (
+    "Preseason prior sources completed and the Week-1 blend coercion fixed. "
+    "(1) PRESEASON Source B populated for all 32 teams from the equal-weight composite of Steve Makinen's "
+    "2026 VSiN NFL Betting Guide 2.0 page-29 power ratings and ESPN FPI numeric values (ESPN last updated "
+    "2026-08-31T14:44Z); per-row source citation and as-of date recorded. The workbook's own centering and "
+    "weight-renormalization formulas are unchanged. "
+    "(2) TEAM RATINGS!D5:D36 changed to the ISNUMBER-protected lookup "
+    "IFERROR(IF(ISNUMBER(INDEX(CalcGoverned,MATCH($A5,CalcTeams,0))),ROUND(INDEX(CalcGoverned,MATCH($A5,CalcTeams,0)),2),\"\"),\"\"). "
+    "A blank CalcGoverned previously coerced to numeric 0 in Google Sheets, silently compressing every Week-1 "
+    "rating to 80% of its preseason prior. "
+    "(3) With D blank at GP=0 the existing, unmodified H-column fallback now applies, so Week 1 retains 100% of "
+    "the preseason prior. The blend schedule itself is unchanged and still 0.80 at week 1. "
+    "(4) Source C (market win totals) remains blank for all 32 teams. "
+    "(5) Win-totals mode remains VALIDATE-ONLY. "
+    "(6) No change to source weights (A 0.40 / B 0.35 / C 0.25), recommendation thresholds, QB values, market "
+    "lines, team overrides or adjustments. "
+    "Formula behaviour verified natively in Google Sheets on a disposable probe sheet, 2026-09-01.")
+CH_IMPACT = (
+    "No retune and no backtest change: the 2025 walk-forward metrics are unaffected because Source B and the "
+    "GP=0 fallback act only on 2026 preseason priors at zero games played. 2026 Week-1 effective ratings change "
+    "for all 32 teams (mean absolute 0.84 pts, max 2.09) as the intended combined effect of adding Source B and "
+    "removing the unintended 20% Week-1 compression. Edges of 3.0+ on the Week-1 board fall from five to two.")
 
 SRCB_SOURCE = ("Equal-weight composite: Steve Makinen power ratings, 2026 VSiN NFL Betting Guide 2.0 p29 "
                "(private subscriber guide, numeric table only) + ESPN FPI numeric values "
@@ -149,6 +182,27 @@ def build(src):
         tr = replace_cell(tr, "K%d" % r, '<c r="K%d" s="3">%s<v>%d</v></c>' % (r, m.group(1), rank[t]))
         manifest.append(("TEAM RATINGS", "K%d" % r, t, "", str(rank[t]), "Rank (cached)"))
 
+    # --- (3) START HERE version banner ---
+    ss = zin.read(SHARED).decode("utf-8")
+    assert ss.count(BANNER_OLD) == 1, "banner string not unique in sharedStrings"
+    ss = ss.replace(BANNER_OLD, BANNER_NEW)
+    manifest.append(("START HERE", "banner", "", BANNER_OLD, BANNER_NEW, "Version banner (sharedStrings)"))
+
+    # --- (4) one new CHANGELOG row, styles matched to the row above ---
+    ch = zin.read(CHANGELOG).decode("utf-8")
+    old_row = ('<row r="%d"><c r="A%d" s="3"/><c r="B%d" s="3"/><c r="C%d" s="3"/><c r="D%d" s="3"/></row>'
+               % ((CH_ROW,) * 5))
+    assert ch.count(old_row) == 1, "CHANGELOG row %d is not the expected empty row" % CH_ROW
+    cell = lambda col, style, txt: (
+        '<c r="%s%d" s="%d" t="inlineStr"><is><t xml:space="preserve">%s</t></is></c>'
+        % (col, CH_ROW, style, esc(txt)))
+    ch = ch.replace(old_row, '<row r="%d">%s%s%s%s</row>' % (
+        CH_ROW, cell("A", 44, CH_VERSION), cell("B", 43, CH_DATE),
+        cell("C", 44, CH_CHANGE), cell("D", 44, CH_IMPACT)))
+    for col, val in (("A", CH_VERSION), ("B", CH_DATE), ("C", "<v1.4 change entry>"),
+                     ("D", "<v1.4 backtest impact>")):
+        manifest.append(("CHANGELOG", "%s%d" % (col, CH_ROW), "", "(blank)", val, "New CHANGELOG entry"))
+
     zout = zipfile.ZipFile(DST, "w", zipfile.ZIP_DEFLATED)
     for info in zin.infolist():
         data = zin.read(info.filename)
@@ -156,6 +210,10 @@ def build(src):
             data = ps.encode("utf-8")
         elif info.filename == TEAM_RATINGS:
             data = tr.encode("utf-8")
+        elif info.filename == SHARED:
+            data = ss.encode("utf-8")
+        elif info.filename == CHANGELOG:
+            data = ch.encode("utf-8")
         zout.writestr(info, data)
     zout.close()
     zin.close()

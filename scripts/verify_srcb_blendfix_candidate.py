@@ -2,11 +2,12 @@
 """Verify TTW_NFL_Power_Ratings_2026_v1.4_SRCB_BLENDFIX_CANDIDATE.xlsx against the
 live-export base it was built from.
 
-Proves: (a) only the two authorized change sets touched the file, (b) the PRESEASON
-Source B / effective-prior layer reproduces the audited shadow CSV exactly, (c) the
-required DAL/NYG pins, (d) everything else -- market lines, QB values, settings,
-weights, thresholds, adjustments, Source C, formulas, drawings, the live-only monitor
-tab -- is preserved.
+Proves: (a) only the four authorized change sets touched the file -- Source B inputs,
+the TEAM RATINGS D5:D36 fix, the v1.4 banner and one new CHANGELOG row; (b) the
+PRESEASON Source B / effective-prior layer reproduces the audited shadow CSV exactly;
+(c) the required DAL/NYG pins; (d) everything else -- market lines, QB values, settings,
+weights, thresholds, adjustments, Source C, formulas, drawings, styles, CHANGELOG
+history, the live-only monitor tab -- is preserved.
 
 Usage: verify_srcb_blendfix_candidate.py <base_live_export.xlsx> [--emit]
        --emit writes the changed-cell manifest and the 16-game slate CSV into audit/.
@@ -27,7 +28,12 @@ SHADOW = os.path.join(ROOT, "audit", "TTW_NFL_2026_Preseason_Prior_Shadow_202609
 MANIFEST = os.path.join(ROOT, "audit", "TTW_NFL_2026_Candidate_Changed_Cells_20260901.csv")
 SLATE = os.path.join(ROOT, "audit", "TTW_NFL_2026_Candidate_Week1_Slate_20260901.csv")
 
-EDITED_PARTS = {"xl/worksheets/sheet17.xml", "xl/worksheets/sheet8.xml"}  # PRESEASON, TEAM RATINGS
+EDITED_PARTS = {"xl/worksheets/sheet17.xml",   # PRESEASON  — Source B inputs
+                "xl/worksheets/sheet8.xml",    # TEAM RATINGS — D5:D36 fix
+                "xl/worksheets/sheet22.xml",   # CHANGELOG  — one new row (Phase 5A)
+                "xl/sharedStrings.xml"}        # banner v1.1 -> v1.4 (Phase 5A)
+BANNER_NEW = "TO THE WINDOW — NFL POWER RATINGS 2026 (v1.4)"
+BANNER_OLD = "TO THE WINDOW — NFL POWER RATINGS 2026 (v1.1)"
 RESULTS = []
 
 
@@ -78,12 +84,19 @@ def main(base):
     # ---------- package-level ----------
     check("zip_members_identical_set_and_order", nb == nc, "%d members" % len(nc))
     changed_parts = sorted(p for p in nc if zb.read(p) != zc.read(p))
-    check("only_two_worksheet_parts_changed", set(changed_parts) == EDITED_PARTS, str(changed_parts))
+    check("only_four_expected_parts_changed", set(changed_parts) == EDITED_PARTS, str(changed_parts))
     draw = [p for p in nc if p.startswith("xl/drawings/") or p.startswith("xl/persons/")]
     check("drawings_persons_byte_identical", all(zb.read(p) == zc.read(p) for p in draw),
           "%d parts" % len(draw))
-    for p in ("xl/sharedStrings.xml", "xl/styles.xml", "xl/workbook.xml"):
+    for p in ("xl/styles.xml", "xl/workbook.xml"):
         check("unchanged_" + p.split("/")[-1], zb.read(p) == zc.read(p))
+
+    # sharedStrings may differ ONLY by the version banner -- nothing else in the string table.
+    sb, sc = zb.read("xl/sharedStrings.xml").decode(), zc.read("xl/sharedStrings.xml").decode()
+    check("sharedStrings_differs_only_by_banner",
+          sb.count(BANNER_OLD) == 1 and sc.count(BANNER_NEW) == 1
+          and BANNER_OLD not in sc and sb.replace(BANNER_OLD, BANNER_NEW) == sc,
+          "banner v1.1 -> v1.4, no other string changed")
 
     # ---------- formulas ----------
     fb, fc = formula_map(base), formula_map(CAND)
@@ -103,12 +116,33 @@ def main(base):
     cb, cc = const_map(base), const_map(CAND)
     cdiff = sorted(set(cb) ^ set(cc)) + sorted(k for k in cb if k in cc and cb[k] != cc[k])
     expect_new = {("PRESEASON", "%s%d" % (col, r)) for col in "IKL" for r in range(5, 37)}
-    check("only_srcB_input_constants_added", set(cdiff) == expect_new,
+    expect_new |= {("CHANGELOG", "%s7" % col) for col in "ABCD"}       # Phase 5A entry
+    expect_new |= {("START HERE", "A1")}                               # Phase 5A banner
+    check("only_srcB_banner_and_changelog_constants_added", set(cdiff) == expect_new,
           "%d cells: %s" % (len(cdiff), sorted({k[0] for k in cdiff})))
+
 
     # ---------- preserved production inputs ----------
     wbb = openpyxl.load_workbook(base, data_only=True)
     wbc = openpyxl.load_workbook(CAND, data_only=True)
+
+    # --- Phase 5A: banner and CHANGELOG content ---
+    check("banner_reads_v14", wbc["START HERE"]["A1"].value == BANNER_NEW,
+          repr(wbc["START HERE"]["A1"].value))
+    chb, chc = wbb["CHANGELOG"], wbc["CHANGELOG"]
+    check("changelog_history_preserved",
+          all(chb.cell(r, c).value == chc.cell(r, c).value
+              for r in range(1, 7) for c in range(1, 5)), "rows 1-6 unchanged")
+    entry = [chc.cell(7, c).value for c in range(1, 5)]
+    required = ["Source B", "all 32 teams", "ISNUMBER", "TEAM RATINGS!D5:D36", "100%",
+                "Source C", "VALIDATE-ONLY", "weights", "thresholds", "QB values",
+                "market lines", "overrides", "adjustments"]
+    missing = [t for t in required if t not in (entry[2] or "")]
+    check("changelog_entry_v14_complete",
+          entry[0] == "1.4" and entry[1] == "2026-09-01" and entry[3] and not missing,
+          "missing topics: %s" % missing if missing else "version/date/change/impact all present")
+    check("changelog_single_new_row",
+          all(chc.cell(8, c).value is None for c in range(1, 5)), "row 8 still empty")
     for sheet, rng in (("MARKET LINES", (5, 61, 1, 19)), ("QB VALUES", (5, 36, 1, 14)),
                        ("ADJUSTMENTS", (5, 104, 1, 13)), ("SETTINGS", (1, 80, 1, 4)),
                        ("PRESEASON MONITOR", (1, 40, 1, 18))):
