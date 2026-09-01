@@ -13,13 +13,13 @@ Both `or True` escape paths are gone (`grep -c "or True"` → **0**). Two checks
 
 **Mutation test — the repaired checks have teeth.** A throwaway copy with SETTINGS ATS BET set to 3.0 and PRESEASON M5 set to 0.30 produced 5 failures with exact diagnostics (`ATS BET at >=: got 3.0 want 1.5`; `ARI row 5: A=0.4 B=0.3 C=0.25`). The candidate was restored bit-for-bit afterwards (SHA re-verified).
 
-Refreshed totals: **verifier 37 checks / 0 failed**, gates PASS, monitor validator PASS, linkcheck PASS, `tests/run_tests.py` **40/40**, `git diff --check` clean.
+Refreshed totals: **verifier 37 checks / 0 failed**, gates PASS, monitor validator PASS, linkcheck PASS, `tests/run_tests.py` **47/47** (28 pre-existing + 6 candidate + 6 blend-fix semantics + 7 added this phase: five pinning the native-Sheets evidence, two asserting the verifier keeps no escape paths), `git diff --check` clean.
 
 ---
 
 ## 2. PR #1 scope narrative corrected (item 2)
 
-Updated to the measured current values: **16 commits, 107 files changed, 10,329 insertions, 0 deletions**, against a `main` that holds exactly one file. Corrected in `TTW_NFL_2026_Candidate_Verification_20260901.md` §6 and in the PR body.
+Updated to the measured values: **16 commits, 107 files changed, 10,329 insertions, 0 deletions** at commit `7589d69`, against a `main` that holds exactly one file. Because each new commit moves these totals, the figures are now quoted against a named commit — at `efcbc47` (this phase's commit) it is **17 commits, 109 files, 10,590 insertions, 0 deletions**. Corrected in `TTW_NFL_2026_Candidate_Verification_20260901.md` §6 and in the PR body.
 
 ---
 

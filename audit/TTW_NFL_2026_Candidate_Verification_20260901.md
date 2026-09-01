@@ -156,8 +156,9 @@ The candidate rebuilds **byte-identically** from the committed base export (`tes
 PR #1 stays **draft**; no merge is proposed. Its file count is fully explained and is not scope creep. Current values, measured against `origin/main`:
 
 - `origin/main` contains **exactly one file** — the original uploaded `TTW_NFL_v1_1_1 Version 2.xlsx`. It has never received any project work.
-- The branch carries **16 commits** spanning the entire project (baseline audit → v1.1 promotion → QB activation → market lines → monitoring workflow → reconciliations → the 2026-09-01 audit → this candidate → the Phase 4 Sheets test).
-- The diff is **107 files changed, 10,329 insertions, 0 deletions**: nothing on `main` is modified or removed. The count reflects a repository being populated for the first time, not a large change to existing work.
+- The branch carries the entire project (baseline audit → v1.1 promotion → QB activation → market lines → monitoring workflow → reconciliations → the 2026-09-01 audit → the candidate → the Phase 4 Sheets test).
+- Measured at commit `7589d69`: **16 commits, 107 files changed, 10,329 insertions, 0 deletions**. Each later commit adds to those totals — at `efcbc47` it is **17 commits, 109 files, 10,590 insertions, 0 deletions**. Figures are quoted against a named commit precisely because they move; the durable facts are that **deletions stay 0** and `main` still holds one file.
+- Nothing on `main` is modified or removed. The count reflects a repository being populated for the first time, not a large change to existing work.
 
 Three options for the owner, in the order I would recommend them:
 
