@@ -6,7 +6,7 @@
 
 | | |
 |---|---|
-| **Sheet** | `TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE` · ID `1RXJkgGgnaWKPiNT3DVEvAOQRRaUftzkjpVg35ih9Iew` |
+| **Sheet** | ID `1RXJkgGgnaWKPiNT3DVEvAOQRRaUftzkjpVg35ih9Iew` · titled `TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE` at verification time, renamed to `TTW_NFL_Power_Ratings_2026_v1.4_AUTHORITATIVE` at closeout (§11) |
 | **modifiedTime after promotion** | **2026-09-01T16:50:10.503Z** — matches the reported promotion timestamp exactly |
 | Identity preserved | Same Sheet ID, title, `createdTime` (2026-07-23T11:23:20.760Z) and parent folder |
 | **Native pre-write rollback copy** | `TTW_NFL_Power_Ratings_2026_PRE_v1.4_ROLLBACK_20260901T165005Z` · ID `1EoPQ4ishczoI6x-pQAkYTzmewm3CmSVrFpw1lVzbWY8` · created **2026-09-01T16:50:06.033Z**, i.e. **4.5 seconds before** the write landed — confirmed to exist and to pre-date the promotion |
@@ -102,10 +102,49 @@ Cell-for-cell identical to the pre-promotion checkpoint: **MARKET LINES, QB VALU
 
 **PASS.** The promotion applied exactly the approved 133 cells and nothing else. All 224 individually-addressed recalculations landed correctly, the GP=0 fallback holds for all 32 teams, formula count and coordinates are untouched, the slate reconciles 16/16, all five pins hold, and the error budget is unchanged at exactly six inherited errors with zero new ones.
 
-**Production is now v1.4.** PR #1 remains a draft; nothing was written to production during this verification.
+**Production is now v1.4.** Nothing was written to production during this verification; the only later production change was the metadata-only title rename in §11.
+
+---
+
+## 11. Release closeout (Phase 5D, 2026-09-01)
+
+| Step | Result |
+|---|---|
+| Fresh read-only production export | ZIP SHA `39d42aa4863422e0b6df30553e1eb635cd451c9b9ecf63d2272acd78ed2a7fa9` |
+| **Semantic verification before committing** | **SEMANTICALLY IDENTICAL** to both the approved candidate and the 16:50 post-promotion export — 22 sheets, 57,399 formulas, 101,491 constants; combined fingerprint `b6169953b71eed19579d974a399b0f431eb326d7a7923bd6c03847b591ee183b` |
+| Repo authoritative workbook | v1.1 removed from the active root (preserved in Git history), replaced by `TTW_NFL_Power_Ratings_2026_v1.4_AUTHORITATIVE.xlsx`. Exactly one authoritative file in root, enforced by a test. |
+| `run_gates.py` | Re-pinned to the real v1.4 baseline (§11.1) |
+| Gate mutation tests | **10/10** — every regression fails explicitly (§11.2) |
+| **Production Drive title renamed** | `TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE` → **`TTW_NFL_Power_Ratings_2026_v1.4_AUTHORITATIVE`**. Metadata only — `update_file` cannot touch cells. **modifiedTime 2026-09-01T16:50:10.503Z → 2026-09-01T17:16:27.743Z**; `fileSize` unchanged at 349,135 bytes; Sheet ID, `createdTime` and parent unchanged. |
+
+Three different ZIP SHAs (`a71e8ba3` candidate, `fde0164c` 16:50 export, `39d42aa4` closeout export) all carry the **same semantic fingerprint** — the clearest possible demonstration that archive bytes are not a drift test.
+
+### 11.1 The re-pinned gate baseline
+
+`scripts/run_gates.py` now asserts the v1.4 reality: 22 sheets · 57,399 formulas · banner v1.4 · **as-of 2026-09-01** · season 2026 / week 1 · BET labels **Y** · ATS **1.5/1.5/1.0** · Totals 3.0/1.5/1.0 · **VALIDATE-ONLY** · HFA 1.6 / regression 0.33 / 2.1 pts-per-win · week-1 blend 0.80 · 272 REG games · **Source B populated 32/32** with as-of 2026-09-01 and Sources-used 2 · **Source C blank** · weights **0.40/0.35/0.25** · **D5:D36 ISNUMBER-protected** · GP=0 for all 32 · **GP=0 fallback: D blank and F=H=J=prior for all 32** · pins DAL −1.07/r22, NYG −1.90/r24, DAL@NYG +0.77 / NYG −0.8 / +3.27.
+
+### 11.2 Mutation testing — the gates can actually fail
+
+`tests/test_gate_mutations.py` corrupts a throwaway copy toward each v1.1-era regression and asserts the suite fails with a diagnostic naming it. The real workbook is never modified.
+
+| Mutation | Gate response |
+|---|---|
+| Banner reverted to v1.1 | FAIL — "banner is not v1.4" |
+| Source B cleared (I5:I36) | FAIL — "Source B populated 0/32" |
+| Old coercing D formula restored | FAIL — "not the ISNUMBER-protected formula … old coercing form" |
+| As-of reverted to 2026-07-13 | FAIL — "as-of date is … expected 2026-09-01" |
+| ATS BET changed to 3.0 | FAIL — "ATS thresholds drifted" |
+| Source B weight changed to 0.30 | FAIL — "source weights drifted" |
+| Source C populated | FAIL — "Source C must remain blank" |
+| BET labels flipped to N | FAIL — "BET labels must be Y at v1.4" |
+| *(control)* unmutated workbook | PASS |
+
+### 11.3 Scope held
+
+Source C remains blank and **VALIDATE-ONLY** pending the 2.1 pts/win calibration. The six inherited zero-sample `#DIV/0!` cells (`CALC!B39:B43`, `DATA QUALITY!B8`) are **outside this release** and unchanged at 6. The pre-write rollback Sheet `1EoPQ4ish…` and both disposable probe Sheets were **not deleted**.
 
 ### Follow-ups for the owner
 
-1. The **repo's `run_gates.py` still audits the v1.1 workbook** (`SETTINGS!B7 = 2026-07-13`, `PRESEASON SrcB blank`) and therefore still reports the pre-promotion shape. That is correct today — the repo workbook was deliberately never modified — but now that production is v1.4, decide whether the repo's authoritative copy should be refreshed from production and the gate baselines re-pinned.
-2. Source C stays **VALIDATE-ONLY** pending the 2.1 pts/win calibration test (audit report §8).
-3. PR #1 merge decision (`TTW_NFL_2026_Candidate_Verification_20260901.md` §6).
+1. Source C stays **VALIDATE-ONLY** pending the 2.1 pts/win calibration test (audit report §8).
+2. The six inherited `#DIV/0!` cells remain open; `audit/DQ_DIV0_Diagnosis.md` carries a proposed `COUNT()` guard that has never been applied.
+3. Historical one-shot scripts for v1.2–v1.3 still reference the v1.1 filename by design — see the README note.

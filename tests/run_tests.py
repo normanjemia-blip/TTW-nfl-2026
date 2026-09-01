@@ -3,8 +3,12 @@
 import unittest, subprocess, csv, hashlib, os, sys, glob
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
-AUTH="TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE.xlsx"
-AUTH_SHA="79923992e9cfe156af47207b1756010af9a375592997be8e194bc75e4e9d313f"
+AUTH="TTW_NFL_Power_Ratings_2026_v1.4_AUTHORITATIVE.xlsx"
+# Pinned SHA of the COMMITTED LOCAL artifact. This is NOT a live-drift test: Google
+# repackages every export, so a fresh export of the same unchanged Sheet has a different
+# ZIP SHA. Live drift is measured semantically -- see scripts/semantic_fingerprint.py.
+AUTH_SHA="39d42aa4863422e0b6df30553e1eb635cd451c9b9ecf63d2272acd78ed2a7fa9"
+AUTH_FINGERPRINT="b6169953b71eed19579d974a399b0f431eb326d7a7923bd6c03847b591ee183b"
 
 def sh(cmd): return subprocess.run(cmd,shell=True,capture_output=True,text=True)
 
@@ -19,9 +23,20 @@ class Gates(unittest.TestCase):
 class Authoritative(unittest.TestCase):
     def test_authoritative_workbook_unmodified(self):
         self.assertEqual(hashlib.sha256(open(AUTH,'rb').read()).hexdigest(),AUTH_SHA,
-                         "AUTHORITATIVE workbook must not be modified")
+                         "committed AUTHORITATIVE artifact must not be modified")
+    def test_authoritative_semantic_fingerprint_pinned(self):
+        """The drift test that survives Google repackaging."""
+        sys.path.insert(0,os.path.join(ROOT,"scripts"))
+        import semantic_fingerprint as SF
+        fp=SF.fingerprint(AUTH)
+        self.assertEqual(fp["digests"]["combined"],AUTH_FINGERPRINT)
+        self.assertEqual(len(fp["formulas"]),57399)
+        self.assertEqual(len(fp["sheets"]),22)
+    def test_single_active_authoritative_workbook(self):
+        act=[p for p in glob.glob("*.xlsx") if "AUTHORITATIVE" in p]
+        self.assertEqual(act,[AUTH],"exactly one authoritative workbook may sit in the root")
     def test_no_new_spreadsheet_added(self):
-        allowed={"TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE.xlsx","TTW_NFL_v1_1_1 Version 2.xlsx",
+        allowed={"TTW_NFL_Power_Ratings_2026_v1.4_AUTHORITATIVE.xlsx","TTW_NFL_v1_1_1 Version 2.xlsx",
                  "TTW_NFL_Power_Ratings_2026_v1.2_QB_WORKING.xlsx","TTW_NFL_Power_Ratings_2026_v1.2.1_QB_CANDIDATE.xlsx",
                  "TTW_NFL_Power_Ratings_2026_v1.2.2_QB_SWEEP_CANDIDATE.xlsx","TTW_NFL_Power_Ratings_2026_v1.3_MARKET_CANDIDATE.xlsx",
                  # Phase 3 (2026-09-01): read-only live-Sheet export used as the candidate base,
@@ -166,7 +181,7 @@ class ShadowAudit20260901(unittest.TestCase):
     def test_authoritative_workbook_untouched_by_shadow_audit(self):
         import hashlib
         h=hashlib.sha256(open(os.path.join(ROOT,
-            "TTW_NFL_Power_Ratings_2026_v1.1_AUTHORITATIVE.xlsx"),"rb").read()).hexdigest()
+            AUTH),"rb").read()).hexdigest()
         self.assertEqual(h,AUTH_SHA)
 
 class CandidateSrcBBlendFix(unittest.TestCase):
@@ -362,8 +377,9 @@ class ProductionPostPromotion(unittest.TestCase):
 
 def load_tests(loader,tests,pattern):
     sys.path.insert(0,os.path.join(ROOT,"tests"))
-    import test_blend_fix_semantics as B
+    import test_blend_fix_semantics as B, test_gate_mutations as M
     tests.addTests(loader.loadTestsFromModule(B))
+    tests.addTests(loader.loadTestsFromModule(M))
     return tests
 
 if __name__=="__main__":
